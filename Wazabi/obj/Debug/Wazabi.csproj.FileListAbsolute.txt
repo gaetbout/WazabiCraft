@@ -1,0 +1,11 @@
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.dll.config
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.dll
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.pdb
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.dll
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.SqlServer.dll
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.xml
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.SqlServer.xml
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\fr\EntityFramework.resources.dll
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.dll
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.pdb

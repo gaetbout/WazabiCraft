@@ -1,0 +1,6 @@
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.exe.config
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.exe
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.pdb
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.exe
+C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.pdb

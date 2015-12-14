@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WazabiModelStoreContainer" CdmEntityContainer="WazabiEntities">
+    <EntitySetMapping Name="Cartes">
+      <EntityTypeMapping TypeName="IsTypeOf(WazabiModel.Carte)">
+        <MappingFragment StoreEntitySet="Cartes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodeEffet" ColumnName="CodeEffet" />
+          <ScalarProperty Name="Cout" ColumnName="Cout" />
+          <ScalarProperty Name="PartieCarte_Carte_Id" ColumnName="PartieCarte_Carte_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Des">
+      <EntityTypeMapping TypeName="IsTypeOf(WazabiModel.De)">
+        <MappingFragment StoreEntitySet="Des">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Valeur" ColumnName="Valeur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JoueurParties">
+      <EntityTypeMapping TypeName="IsTypeOf(WazabiModel.JoueurPartie)">
+        <MappingFragment StoreEntitySet="JoueurParties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ordre" ColumnName="Ordre" />
+          <ScalarProperty Name="PartieJoueurPartie1_JoueurPartie_Id" ColumnName="PartieJoueurPartie1_JoueurPartie_Id" />
+          <ScalarProperty Name="Joueur_Id" ColumnName="Joueur_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Joueurs">
+      <EntityTypeMapping TypeName="IsTypeOf(WazabiModel.Joueur)">
+        <MappingFragment StoreEntitySet="Joueurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Sel" ColumnName="Sel" />
+          <ScalarProperty Name="CodeBloc" ColumnName="CodeBloc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parties">
+      <EntityTypeMapping TypeName="IsTypeOf(WazabiModel.Partie)">
+        <MappingFragment StoreEntitySet="Parties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateHeureCreation" ColumnName="DateHeureCreation" />
+          <ScalarProperty Name="Sens" ColumnName="Sens" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="Vainqueur_Id" ColumnName="Vainqueur_Id" />
+          <ScalarProperty Name="JoueurCourant_Id" ColumnName="JoueurCourant_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="JoueurPartieCarte" TypeName="WazabiModel.JoueurPartieCarte" StoreEntitySet="JoueurPartieCarte">
+      <EndProperty Name="Cartes">
+        <ScalarProperty Name="Id" ColumnName="Cartes_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurParties">
+        <ScalarProperty Name="Id" ColumnName="JoueurParties_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueurPartieDe" TypeName="WazabiModel.JoueurPartieDe" StoreEntitySet="JoueurPartieDe">
+      <EndProperty Name="Des">
+        <ScalarProperty Name="Id" ColumnName="Des_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurParties">
+        <ScalarProperty Name="Id" ColumnName="JoueurParties_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8fc26317-2594-42fd-8189-1658b2bcd9c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49335/UCCImpl/GestionJoueur.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GestionJoueur.xsd" MetadataType="Schema" ID="48cc4642-cbc7-42b8-b1e2-4afb12bea252" SourceId="1" SourceUrl="http://localhost:49335/UCCImpl/GestionJoueur.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionJoueur1.xsd" MetadataType="Schema" ID="917700a6-f71c-4ed4-8108-ec6a4480c31f" SourceId="1" SourceUrl="http://localhost:49335/UCCImpl/GestionJoueur.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionJoueur.wsdl" MetadataType="Wsdl" ID="c2cab78c-42c4-4ae7-ad9f-2b87afcbf049" SourceId="1" SourceUrl="http://localhost:49335/UCCImpl/GestionJoueur.svc?wsdl" />
+    <MetadataFile FileName="GestionJoueur.disco" MetadataType="Disco" ID="18a048dc-8873-4176-9a96-2ae6498b2685" SourceId="1" SourceUrl="http://localhost:49335/UCCImpl/GestionJoueur.svc?disco" />
+    <MetadataFile FileName="GestionJoueur2.xsd" MetadataType="Schema" ID="65c19721-ba48-411c-bc32-0b9df4fad7c1" SourceId="1" SourceUrl="http://localhost:49335/UCCImpl/GestionJoueur.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
