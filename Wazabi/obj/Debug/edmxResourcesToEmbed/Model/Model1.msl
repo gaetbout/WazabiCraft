@@ -47,7 +47,6 @@
           <ScalarProperty Name="DateHeureCreation" ColumnName="DateHeureCreation" />
           <ScalarProperty Name="Sens" ColumnName="Sens" />
           <ScalarProperty Name="Etat" ColumnName="Etat" />
-          <ScalarProperty Name="Vainqueur_Id" ColumnName="Vainqueur_Id" />
           <ScalarProperty Name="JoueurCourant_Id" ColumnName="JoueurCourant_Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -67,6 +66,23 @@
       <EndProperty Name="JoueurParties">
         <ScalarProperty Name="Id" ColumnName="JoueurParties_Id" />
       </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartieJoueur1" TypeName="WazabiModel.PartieJoueur1" StoreEntitySet="Parties">
+      <EndProperty Name="Joueur">
+        <ScalarProperty Name="Id" ColumnName="Createur_Id" />
+      </EndProperty>
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueurPartie1" TypeName="WazabiModel.JoueurPartie1" StoreEntitySet="Parties">
+      <EndProperty Name="Joueur">
+        <ScalarProperty Name="Id" ColumnName="Vainqueur_Id" />
+      </EndProperty>
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Vainqueur_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

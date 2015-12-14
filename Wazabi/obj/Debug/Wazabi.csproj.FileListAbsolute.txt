@@ -9,3 +9,14 @@ C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\fr\
 C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
 C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.pdb
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll.config
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.pdb
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.dll
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.xml
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
