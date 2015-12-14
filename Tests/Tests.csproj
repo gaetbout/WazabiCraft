@@ -47,9 +47,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Wazabi">
-      <HintPath>..\Wazabi\bin\Wazabi.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -62,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\Wazabi.JoueurClient.datasource" />
     <None Include="Service References\ServiceReference\GestionJoueur.wsdl" />
     <None Include="Service References\ServiceReference\GestionJoueur.xsd">
       <SubType>Designer</SubType>

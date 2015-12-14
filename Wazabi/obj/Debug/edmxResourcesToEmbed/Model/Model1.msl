@@ -7,7 +7,8 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CodeEffet" ColumnName="CodeEffet" />
           <ScalarProperty Name="Cout" ColumnName="Cout" />
-          <ScalarProperty Name="PartieCarte_Carte_Id" ColumnName="PartieCarte_Carte_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Effet" ColumnName="Effet" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -24,8 +25,6 @@
         <MappingFragment StoreEntitySet="JoueurParties">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Ordre" ColumnName="Ordre" />
-          <ScalarProperty Name="PartieJoueurPartie1_JoueurPartie_Id" ColumnName="PartieJoueurPartie1_JoueurPartie_Id" />
-          <ScalarProperty Name="Joueur_Id" ColumnName="Joueur_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,7 +35,7 @@
           <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
           <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
           <ScalarProperty Name="Sel" ColumnName="Sel" />
-          <ScalarProperty Name="CodeBloc" ColumnName="CodeBloc" />
+          <ScalarProperty Name="IconeRef" ColumnName="IconeRef" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -47,34 +46,9 @@
           <ScalarProperty Name="DateHeureCreation" ColumnName="DateHeureCreation" />
           <ScalarProperty Name="Sens" ColumnName="Sens" />
           <ScalarProperty Name="Etat" ColumnName="Etat" />
-          <ScalarProperty Name="JoueurCourant_Id" ColumnName="JoueurCourant_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="JoueurPartieCarte" TypeName="WazabiModel.JoueurPartieCarte" StoreEntitySet="JoueurPartieCarte">
-      <EndProperty Name="Cartes">
-        <ScalarProperty Name="Id" ColumnName="Cartes_Id" />
-      </EndProperty>
-      <EndProperty Name="JoueurParties">
-        <ScalarProperty Name="Id" ColumnName="JoueurParties_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="JoueurPartieDe" TypeName="WazabiModel.JoueurPartieDe" StoreEntitySet="JoueurPartieDe">
-      <EndProperty Name="Des">
-        <ScalarProperty Name="Id" ColumnName="Des_Id" />
-      </EndProperty>
-      <EndProperty Name="JoueurParties">
-        <ScalarProperty Name="Id" ColumnName="JoueurParties_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PartieJoueur1" TypeName="WazabiModel.PartieJoueur1" StoreEntitySet="Parties">
-      <EndProperty Name="Joueur">
-        <ScalarProperty Name="Id" ColumnName="Createur_Id" />
-      </EndProperty>
-      <EndProperty Name="Partie">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="JoueurPartie1" TypeName="WazabiModel.JoueurPartie1" StoreEntitySet="Parties">
       <EndProperty Name="Joueur">
         <ScalarProperty Name="Id" ColumnName="Vainqueur_Id" />
@@ -83,6 +57,62 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
       <Condition ColumnName="Vainqueur_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueurPartie2" TypeName="WazabiModel.JoueurPartie2" StoreEntitySet="Parties">
+      <EndProperty Name="Joueur">
+        <ScalarProperty Name="Id" ColumnName="Createur_Id" />
+      </EndProperty>
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueurJoueurPartie" TypeName="WazabiModel.JoueurJoueurPartie" StoreEntitySet="JoueurParties">
+      <EndProperty Name="Joueur">
+        <ScalarProperty Name="Id" ColumnName="Joueur_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartieJoueurPartie" TypeName="WazabiModel.PartieJoueurPartie" StoreEntitySet="JoueurParties">
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="PartieJoueurPartie_JoueurPartie_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartieJoueurPartie1" TypeName="WazabiModel.PartieJoueurPartie1" StoreEntitySet="JoueurParties">
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="PartieJoueurPartie1_JoueurPartie_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DeJoueurPartie" TypeName="WazabiModel.DeJoueurPartie" StoreEntitySet="DeJoueurPartie">
+      <EndProperty Name="De">
+        <ScalarProperty Name="Id" ColumnName="Des_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="DeJoueurPartie_De_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueurPartieCarte" TypeName="WazabiModel.JoueurPartieCarte" StoreEntitySet="JoueurPartieCarte">
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="JoueurPartieCarte_Carte_Id" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="Id" ColumnName="Cartes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartieCarte" TypeName="WazabiModel.PartieCarte" StoreEntitySet="PartieCarte">
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="PartieCarte_Carte_Id" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="Id" ColumnName="Pioche_Id" />
+      </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>
