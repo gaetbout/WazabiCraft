@@ -94,7 +94,7 @@
     <Property Name="Pseudo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MotDePasse" Type="varbinary(max)" Nullable="false" />
     <Property Name="Sel" Type="varbinary(max)" Nullable="false" />
-    <Property Name="IconeRef" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IconeRef" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Parties">
     <Key>
@@ -302,7 +302,7 @@
           <Property Name="Pseudo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MotDePasse" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="Sel" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="IconeRef" Type="String" Nullable="false" />
+          <Property Name="IconeRef" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Partie">
           <Key>

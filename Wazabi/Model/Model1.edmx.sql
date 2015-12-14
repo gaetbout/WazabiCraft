@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/14/2015 14:01:29
+-- Date Created: 12/14/2015 14:29:29
 -- Generated from EDMX file: C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,23 +17,38 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_JoueurJoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurJoueurPartie];
-GO
 IF OBJECT_ID(N'[dbo].[FK_JoueurPartie1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie1];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieCarte]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Cartes] DROP CONSTRAINT [FK_PartieCarte];
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartie2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie2];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieJoueur1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_PartieJoueur1];
+IF OBJECT_ID(N'[dbo].[FK_JoueurJoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurJoueurPartie];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_PartieJoueurPartie];
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_De]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_De];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_JoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_JoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_JoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_JoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_Carte]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_Carte];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Partie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Partie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Carte]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Carte];
 GO
 
 -- --------------------------------------------------
@@ -54,6 +69,15 @@ IF OBJECT_ID(N'[dbo].[Joueurs]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Parties]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Parties];
+GO
+IF OBJECT_ID(N'[dbo].[DeJoueurPartie]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DeJoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[JoueurPartieCarte]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JoueurPartieCarte];
+GO
+IF OBJECT_ID(N'[dbo].[PartieCarte]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PartieCarte];
 GO
 
 -- --------------------------------------------------
@@ -80,7 +104,7 @@ GO
 -- Creating table 'JoueurParties'
 CREATE TABLE [dbo].[JoueurParties] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Ordre] nvarchar(max)  NOT NULL,
+    [Ordre] nvarchar(max)  NULL,
     [Joueur_Id] int  NOT NULL,
     [PartieJoueurPartie_JoueurPartie_Id] int  NOT NULL,
     [PartieJoueurPartie1_JoueurPartie_Id] int  NOT NULL
@@ -93,7 +117,7 @@ CREATE TABLE [dbo].[Joueurs] (
     [Pseudo] nvarchar(max)  NOT NULL,
     [MotDePasse] varbinary(max)  NOT NULL,
     [Sel] varbinary(max)  NOT NULL,
-    [IconeRef] nvarchar(max)  NOT NULL
+    [IconeRef] nvarchar(max)  NULL
 );
 GO
 
@@ -103,6 +127,7 @@ CREATE TABLE [dbo].[Parties] (
     [DateHeureCreation] datetime  NOT NULL,
     [Sens] bit  NOT NULL,
     [Etat] int  NOT NULL,
+    [Nom] nvarchar(max)  NOT NULL,
     [Vainqueur_Id] int  NULL,
     [Createur_Id] int  NOT NULL
 );
