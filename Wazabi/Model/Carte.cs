@@ -14,19 +14,10 @@ namespace Wazabi.Model
     
     public partial class Carte
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Carte()
-        {
-            this.JoueurParties = new HashSet<JoueurPartie>();
-        }
-    
         public int Id { get; set; }
         public string CodeEffet { get; set; }
         public string Cout { get; set; }
-        public int PartieCarte_Carte_Id { get; set; }
-    
-        public virtual Partie Parties { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<JoueurPartie> JoueurParties { get; set; }
+        public string Description { get; set; }
+        public string Effet { get; set; }
     }
 }

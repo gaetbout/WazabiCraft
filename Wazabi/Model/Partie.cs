@@ -17,22 +17,21 @@ namespace Wazabi.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Partie()
         {
-            this.Cartes = new HashSet<Carte>();
-            this.JoueurParties1 = new HashSet<JoueurPartie>();
+            this.Joueurs = new HashSet<JoueurPartie>();
+            this.Pioche = new HashSet<Carte>();
         }
     
         public int Id { get; set; }
-        public string DateHeureCreation { get; set; }
-        public string Sens { get; set; }
-        public string Etat { get; set; }
-        public int JoueurCourant_Id { get; set; }
+        public System.DateTime DateHeureCreation { get; set; }
+        public bool Sens { get; set; }
+        public int Etat { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carte> Cartes { get; set; }
-        public virtual JoueurPartie JoueurParties { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<JoueurPartie> JoueurParties1 { get; set; }
-        public virtual Joueur Createur { get; set; }
         public virtual Joueur Vainqueur { get; set; }
+        public virtual Joueur Createur { get; set; }
+        public virtual JoueurPartie JoueurCourant { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<JoueurPartie> Joueurs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Carte> Pioche { get; set; }
     }
 }

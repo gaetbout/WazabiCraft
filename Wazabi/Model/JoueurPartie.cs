@@ -17,23 +17,17 @@ namespace Wazabi.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JoueurPartie()
         {
-            this.Parties = new HashSet<Partie>();
-            this.Cartes = new HashSet<Carte>();
             this.Des = new HashSet<De>();
+            this.Cartes = new HashSet<Carte>();
         }
     
         public int Id { get; set; }
         public string Ordre { get; set; }
-        public int PartieJoueurPartie1_JoueurPartie_Id { get; set; }
-        public int Joueur_Id { get; set; }
     
-        public virtual Joueur Joueurs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Partie> Parties { get; set; }
-        public virtual Partie Parties1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carte> Cartes { get; set; }
+        public virtual Joueur Joueur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<De> Des { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Carte> Cartes { get; set; }
     }
 }
