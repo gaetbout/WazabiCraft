@@ -23,3 +23,17 @@ C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\fr\EntityFramework.resource
 C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
 C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\wazabi.xml
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\wazabi.xml
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.dll.config
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.pdb
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.pdb
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.xml
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb

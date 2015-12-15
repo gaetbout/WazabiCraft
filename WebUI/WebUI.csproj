@@ -203,14 +203,14 @@
     <Folder Include="Views\Accuel\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReferenceJoueur\" />
-    <WCFMetadataStorage Include="Service References\ServiceReferencePartie\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Wazabi\Wazabi.csproj">
       <Project>{4e7e6d6a-58d6-45e6-8ae9-3daacd6107f7}</Project>
       <Name>Wazabi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceJoueur\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencePartie\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

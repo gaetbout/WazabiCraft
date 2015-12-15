@@ -93,6 +93,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UCCImpl\EtatCreation.cs" />
+    <Compile Include="UCCImpl\EtatEnCours.cs" />
+    <Compile Include="UCCImpl\EtatFinie.cs" />
+    <Compile Include="UCCImpl\EtatImpl.cs" />
     <Compile Include="UCCImpl\GestionDe.svc.cs">
       <DependentUpon>GestionDe.svc</DependentUpon>
     </Compile>
