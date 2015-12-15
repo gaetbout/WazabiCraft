@@ -1,0 +1,44 @@
+﻿.field-validation-error { color: #f00; }
+
+.field-validation-valid { display: none; }
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid { display: none; }
+
+#imageHeader {
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+
+#HtmlLanding {
+  background: url(../Images/landing-page.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#HtmlError404 {
+  background: url(../Images/page-404.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#HtmlError500 {
+  background: url(../Images/page-500.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

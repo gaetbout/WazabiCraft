@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="DCSF5r6MjmZ6wWJ1FrvUPKPnELE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="WgycsulyzyYIx2qVNnjq35W1zZo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IGestionJoueur">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IGestionJoueur" contract="ServiceReferenceJoueur.IGestionJoueur" bindingType="basicHttpBinding" address="http://localhost:49335/UCCImpl/GestionJoueur.svc" bindingConfiguration="BasicHttpBinding_IGestionJoueur">
+    <endpoint name="BasicHttpBinding_IGestionJoueur" contract="ServiceReferenceJoueur.IGestionJoueur" bindingType="basicHttpBinding" address="http://localhost:53150/UCCImpl/GestionJoueur.svc" bindingConfiguration="BasicHttpBinding_IGestionJoueur">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49335/UCCImpl/GestionJoueur.svc</serializedValue>
+          <serializedValue>http://localhost:53150/UCCImpl/GestionJoueur.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

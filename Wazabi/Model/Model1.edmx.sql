@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/14/2015 14:29:29
--- Generated from EDMX file: C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx
+-- Date Created: 12/14/2015 23:01:03
+-- Generated from EDMX file: c:\users\pwasilewski\documents\visual studio 2013\Projects\Wazabi2\Wazabi2\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,38 +17,38 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_JoueurPartie1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie1];
-GO
-IF OBJECT_ID(N'[dbo].[FK_JoueurPartie2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie2];
-GO
-IF OBJECT_ID(N'[dbo].[FK_JoueurJoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurJoueurPartie];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
-GO
 IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_De]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_De];
 GO
 IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_JoueurPartie]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_JoueurPartie];
 GO
-IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_JoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_JoueurPartie];
+IF OBJECT_ID(N'[dbo].[FK_JoueurJoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurJoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartie1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartie2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie2];
 GO
 IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_Carte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_Carte];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Partie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Partie];
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_JoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_JoueurPartie];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Carte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Carte];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Partie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Partie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
 GO
 
 -- --------------------------------------------------
@@ -58,8 +58,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Cartes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Cartes];
 GO
+IF OBJECT_ID(N'[dbo].[DeJoueurPartie]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DeJoueurPartie];
+GO
 IF OBJECT_ID(N'[dbo].[Des]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Des];
+GO
+IF OBJECT_ID(N'[dbo].[JoueurPartieCarte]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JoueurPartieCarte];
 GO
 IF OBJECT_ID(N'[dbo].[JoueurParties]', 'U') IS NOT NULL
     DROP TABLE [dbo].[JoueurParties];
@@ -67,17 +73,11 @@ GO
 IF OBJECT_ID(N'[dbo].[Joueurs]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Joueurs];
 GO
-IF OBJECT_ID(N'[dbo].[Parties]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Parties];
-GO
-IF OBJECT_ID(N'[dbo].[DeJoueurPartie]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DeJoueurPartie];
-GO
-IF OBJECT_ID(N'[dbo].[JoueurPartieCarte]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[JoueurPartieCarte];
-GO
 IF OBJECT_ID(N'[dbo].[PartieCarte]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PartieCarte];
+GO
+IF OBJECT_ID(N'[dbo].[Parties]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Parties];
 GO
 
 -- --------------------------------------------------
@@ -90,7 +90,8 @@ CREATE TABLE [dbo].[Cartes] (
     [CodeEffet] nvarchar(max)  NOT NULL,
     [Cout] nvarchar(max)  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
-    [Effet] nvarchar(max)  NOT NULL
+    [Effet] nvarchar(max)  NOT NULL,
+    [ImageRef] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -104,10 +105,10 @@ GO
 -- Creating table 'JoueurParties'
 CREATE TABLE [dbo].[JoueurParties] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Ordre] nvarchar(max)  NULL,
+    [Ordre] nvarchar(max)  NOT NULL,
     [Joueur_Id] int  NOT NULL,
     [PartieJoueurPartie_JoueurPartie_Id] int  NOT NULL,
-    [PartieJoueurPartie1_JoueurPartie_Id] int  NOT NULL
+    [JoueurPartiePartie_JoueurPartie_Id] int  NOT NULL
 );
 GO
 
@@ -124,10 +125,10 @@ GO
 -- Creating table 'Parties'
 CREATE TABLE [dbo].[Parties] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [Nom] nvarchar(max)  NOT NULL,
     [DateHeureCreation] datetime  NOT NULL,
     [Sens] bit  NOT NULL,
     [Etat] int  NOT NULL,
-    [Nom] nvarchar(max)  NOT NULL,
     [Vainqueur_Id] int  NULL,
     [Createur_Id] int  NOT NULL
 );
@@ -136,21 +137,21 @@ GO
 -- Creating table 'DeJoueurPartie'
 CREATE TABLE [dbo].[DeJoueurPartie] (
     [Des_Id] int  NOT NULL,
-    [DeJoueurPartie_De_Id] int  NOT NULL
+    [DeJoueurPartie_Des_Id] int  NOT NULL
 );
 GO
 
 -- Creating table 'JoueurPartieCarte'
 CREATE TABLE [dbo].[JoueurPartieCarte] (
-    [JoueurPartieCarte_Carte_Id] int  NOT NULL,
-    [Cartes_Id] int  NOT NULL
+    [Cartes_Id] int  NOT NULL,
+    [JoueurPartieCarte_Cartes_Id] int  NOT NULL
 );
 GO
 
 -- Creating table 'PartieCarte'
 CREATE TABLE [dbo].[PartieCarte] (
-    [PartieCarte_Carte_Id] int  NOT NULL,
-    [Pioche_Id] int  NOT NULL
+    [Pioche_Id] int  NOT NULL,
+    [PartieCarte_Cartes_Id] int  NOT NULL
 );
 GO
 
@@ -188,57 +189,27 @@ ADD CONSTRAINT [PK_Parties]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Des_Id], [DeJoueurPartie_De_Id] in table 'DeJoueurPartie'
+-- Creating primary key on [Des_Id], [DeJoueurPartie_Des_Id] in table 'DeJoueurPartie'
 ALTER TABLE [dbo].[DeJoueurPartie]
 ADD CONSTRAINT [PK_DeJoueurPartie]
-    PRIMARY KEY CLUSTERED ([Des_Id], [DeJoueurPartie_De_Id] ASC);
+    PRIMARY KEY CLUSTERED ([Des_Id], [DeJoueurPartie_Des_Id] ASC);
 GO
 
--- Creating primary key on [JoueurPartieCarte_Carte_Id], [Cartes_Id] in table 'JoueurPartieCarte'
+-- Creating primary key on [Cartes_Id], [JoueurPartieCarte_Cartes_Id] in table 'JoueurPartieCarte'
 ALTER TABLE [dbo].[JoueurPartieCarte]
 ADD CONSTRAINT [PK_JoueurPartieCarte]
-    PRIMARY KEY CLUSTERED ([JoueurPartieCarte_Carte_Id], [Cartes_Id] ASC);
+    PRIMARY KEY CLUSTERED ([Cartes_Id], [JoueurPartieCarte_Cartes_Id] ASC);
 GO
 
--- Creating primary key on [PartieCarte_Carte_Id], [Pioche_Id] in table 'PartieCarte'
+-- Creating primary key on [Pioche_Id], [PartieCarte_Cartes_Id] in table 'PartieCarte'
 ALTER TABLE [dbo].[PartieCarte]
 ADD CONSTRAINT [PK_PartieCarte]
-    PRIMARY KEY CLUSTERED ([PartieCarte_Carte_Id], [Pioche_Id] ASC);
+    PRIMARY KEY CLUSTERED ([Pioche_Id], [PartieCarte_Cartes_Id] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [Vainqueur_Id] in table 'Parties'
-ALTER TABLE [dbo].[Parties]
-ADD CONSTRAINT [FK_JoueurPartie1]
-    FOREIGN KEY ([Vainqueur_Id])
-    REFERENCES [dbo].[Joueurs]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartie1'
-CREATE INDEX [IX_FK_JoueurPartie1]
-ON [dbo].[Parties]
-    ([Vainqueur_Id]);
-GO
-
--- Creating foreign key on [Createur_Id] in table 'Parties'
-ALTER TABLE [dbo].[Parties]
-ADD CONSTRAINT [FK_JoueurPartie2]
-    FOREIGN KEY ([Createur_Id])
-    REFERENCES [dbo].[Joueurs]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartie2'
-CREATE INDEX [IX_FK_JoueurPartie2]
-ON [dbo].[Parties]
-    ([Createur_Id]);
-GO
 
 -- Creating foreign key on [Joueur_Id] in table 'JoueurParties'
 ALTER TABLE [dbo].[JoueurParties]
@@ -270,91 +241,121 @@ ON [dbo].[JoueurParties]
     ([PartieJoueurPartie_JoueurPartie_Id]);
 GO
 
--- Creating foreign key on [PartieJoueurPartie1_JoueurPartie_Id] in table 'JoueurParties'
-ALTER TABLE [dbo].[JoueurParties]
-ADD CONSTRAINT [FK_PartieJoueurPartie1]
-    FOREIGN KEY ([PartieJoueurPartie1_JoueurPartie_Id])
-    REFERENCES [dbo].[Parties]
+-- Creating foreign key on [Vainqueur_Id] in table 'Parties'
+ALTER TABLE [dbo].[Parties]
+ADD CONSTRAINT [FK_JoueurPartie1]
+    FOREIGN KEY ([Vainqueur_Id])
+    REFERENCES [dbo].[Joueurs]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_PartieJoueurPartie1'
-CREATE INDEX [IX_FK_PartieJoueurPartie1]
-ON [dbo].[JoueurParties]
-    ([PartieJoueurPartie1_JoueurPartie_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartie1'
+CREATE INDEX [IX_FK_JoueurPartie1]
+ON [dbo].[Parties]
+    ([Vainqueur_Id]);
+GO
+
+-- Creating foreign key on [Createur_Id] in table 'Parties'
+ALTER TABLE [dbo].[Parties]
+ADD CONSTRAINT [FK_JoueurPartie2]
+    FOREIGN KEY ([Createur_Id])
+    REFERENCES [dbo].[Joueurs]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartie2'
+CREATE INDEX [IX_FK_JoueurPartie2]
+ON [dbo].[Parties]
+    ([Createur_Id]);
 GO
 
 -- Creating foreign key on [Des_Id] in table 'DeJoueurPartie'
 ALTER TABLE [dbo].[DeJoueurPartie]
-ADD CONSTRAINT [FK_DeJoueurPartie_De]
+ADD CONSTRAINT [FK_DeJoueurPartie_Des]
     FOREIGN KEY ([Des_Id])
     REFERENCES [dbo].[Des]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [DeJoueurPartie_De_Id] in table 'DeJoueurPartie'
+-- Creating foreign key on [DeJoueurPartie_Des_Id] in table 'DeJoueurPartie'
 ALTER TABLE [dbo].[DeJoueurPartie]
-ADD CONSTRAINT [FK_DeJoueurPartie_JoueurPartie]
-    FOREIGN KEY ([DeJoueurPartie_De_Id])
+ADD CONSTRAINT [FK_DeJoueurPartie_JoueurParties]
+    FOREIGN KEY ([DeJoueurPartie_Des_Id])
     REFERENCES [dbo].[JoueurParties]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_DeJoueurPartie_JoueurPartie'
-CREATE INDEX [IX_FK_DeJoueurPartie_JoueurPartie]
+-- Creating non-clustered index for FOREIGN KEY 'FK_DeJoueurPartie_JoueurParties'
+CREATE INDEX [IX_FK_DeJoueurPartie_JoueurParties]
 ON [dbo].[DeJoueurPartie]
-    ([DeJoueurPartie_De_Id]);
-GO
-
--- Creating foreign key on [JoueurPartieCarte_Carte_Id] in table 'JoueurPartieCarte'
-ALTER TABLE [dbo].[JoueurPartieCarte]
-ADD CONSTRAINT [FK_JoueurPartieCarte_JoueurPartie]
-    FOREIGN KEY ([JoueurPartieCarte_Carte_Id])
-    REFERENCES [dbo].[JoueurParties]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ([DeJoueurPartie_Des_Id]);
 GO
 
 -- Creating foreign key on [Cartes_Id] in table 'JoueurPartieCarte'
 ALTER TABLE [dbo].[JoueurPartieCarte]
-ADD CONSTRAINT [FK_JoueurPartieCarte_Carte]
+ADD CONSTRAINT [FK_JoueurPartieCarte_Cartes]
     FOREIGN KEY ([Cartes_Id])
     REFERENCES [dbo].[Cartes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartieCarte_Carte'
-CREATE INDEX [IX_FK_JoueurPartieCarte_Carte]
-ON [dbo].[JoueurPartieCarte]
-    ([Cartes_Id]);
-GO
-
--- Creating foreign key on [PartieCarte_Carte_Id] in table 'PartieCarte'
-ALTER TABLE [dbo].[PartieCarte]
-ADD CONSTRAINT [FK_PartieCarte_Partie]
-    FOREIGN KEY ([PartieCarte_Carte_Id])
-    REFERENCES [dbo].[Parties]
+-- Creating foreign key on [JoueurPartieCarte_Cartes_Id] in table 'JoueurPartieCarte'
+ALTER TABLE [dbo].[JoueurPartieCarte]
+ADD CONSTRAINT [FK_JoueurPartieCarte_JoueurParties]
+    FOREIGN KEY ([JoueurPartieCarte_Cartes_Id])
+    REFERENCES [dbo].[JoueurParties]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
+-- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartieCarte_JoueurParties'
+CREATE INDEX [IX_FK_JoueurPartieCarte_JoueurParties]
+ON [dbo].[JoueurPartieCarte]
+    ([JoueurPartieCarte_Cartes_Id]);
+GO
+
 -- Creating foreign key on [Pioche_Id] in table 'PartieCarte'
 ALTER TABLE [dbo].[PartieCarte]
-ADD CONSTRAINT [FK_PartieCarte_Carte]
+ADD CONSTRAINT [FK_PartieCarte_Cartes]
     FOREIGN KEY ([Pioche_Id])
     REFERENCES [dbo].[Cartes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_PartieCarte_Carte'
-CREATE INDEX [IX_FK_PartieCarte_Carte]
+-- Creating foreign key on [PartieCarte_Cartes_Id] in table 'PartieCarte'
+ALTER TABLE [dbo].[PartieCarte]
+ADD CONSTRAINT [FK_PartieCarte_Parties]
+    FOREIGN KEY ([PartieCarte_Cartes_Id])
+    REFERENCES [dbo].[Parties]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PartieCarte_Parties'
+CREATE INDEX [IX_FK_PartieCarte_Parties]
 ON [dbo].[PartieCarte]
-    ([Pioche_Id]);
+    ([PartieCarte_Cartes_Id]);
+GO
+
+-- Creating foreign key on [JoueurPartiePartie_JoueurPartie_Id] in table 'JoueurParties'
+ALTER TABLE [dbo].[JoueurParties]
+ADD CONSTRAINT [FK_JoueurPartiePartie]
+    FOREIGN KEY ([JoueurPartiePartie_JoueurPartie_Id])
+    REFERENCES [dbo].[Parties]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_JoueurPartiePartie'
+CREATE INDEX [IX_FK_JoueurPartiePartie]
+ON [dbo].[JoueurParties]
+    ([JoueurPartiePartie_JoueurPartie_Id]);
 GO
 
 -- --------------------------------------------------

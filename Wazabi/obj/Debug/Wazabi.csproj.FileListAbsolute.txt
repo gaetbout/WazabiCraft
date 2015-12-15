@@ -1,33 +1,12 @@
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.dll.config
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.dll
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\Wazabi.pdb
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.dll
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.SqlServer.dll
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.xml
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\EntityFramework.SqlServer.xml
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\bin\fr\EntityFramework.resources.dll
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.dll
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Wazabi\obj\Debug\Wazabi.pdb
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll.config
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.pdb
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.xml
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.dll.config
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.pdb
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.xml
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\Wazabi.dll.config
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\Wazabi.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\Wazabi.pdb
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\DevTrends.WCFDataAnnotations.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\EntityFramework.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\EntityFramework.SqlServer.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\DevTrends.WCFDataAnnotations.pdb
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\EntityFramework.xml
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\EntityFramework.SqlServer.xml
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\fr\EntityFramework.resources.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\obj\Debug\Wazabi.dll
+C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\obj\Debug\Wazabi.pdb

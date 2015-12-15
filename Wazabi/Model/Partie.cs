@@ -22,16 +22,19 @@ namespace Wazabi.Model
         }
     
         public int Id { get; set; }
+        public string Nom { get; set; }
         public System.DateTime DateHeureCreation { get; set; }
         public bool Sens { get; set; }
         public int Etat { get; set; }
+        public Nullable<int> Vainqueur_Id { get; set; }
+        public int Createur_Id { get; set; }
     
-        public virtual Joueur Vainqueur { get; set; }
-        public virtual Joueur Createur { get; set; }
-        public virtual JoueurPartie JoueurCourant { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JoueurPartie> Joueurs { get; set; }
+        public virtual Joueur Vainqueur { get; set; }
+        public virtual Joueur Createur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Carte> Pioche { get; set; }
+        public virtual JoueurPartie JoueurCourant { get; set; }
     }
 }

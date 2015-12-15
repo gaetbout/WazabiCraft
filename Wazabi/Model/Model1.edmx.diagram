@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e2bdf927b34a491f90fca14599268620" Name="Diagram1" ZoomLevel="90">
-        <EntityTypeShape EntityType="WazabiModel.Carte" Width="1.5" PointX="5.875" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="WazabiModel.De" Width="1.5" PointX="1.5" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="WazabiModel.JoueurPartie" Width="1.5" PointX="3.625" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="WazabiModel.Joueur" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WazabiModel.Partie" Width="1.5" PointX="6.625" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="WazabiModel.JoueurPartie1" />
-        <AssociationConnector Association="WazabiModel.JoueurPartie2" />
-        <AssociationConnector Association="WazabiModel.JoueurJoueurPartie" />
-        <AssociationConnector Association="WazabiModel.PartieJoueurPartie" />
-        <AssociationConnector Association="WazabiModel.PartieJoueurPartie1" />
-        <AssociationConnector Association="WazabiModel.DeJoueurPartie" />
-        <AssociationConnector Association="WazabiModel.JoueurPartieCarte" />
-        <AssociationConnector Association="WazabiModel.PartieCarte" />
-        </Diagram>
+      <Diagram DiagramId="4f1a48f1e68642f2b2a9ccd524fd62d4" Name="Diagram1">
+        <EntityTypeShape EntityType="WazabiModel.Carte" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WazabiModel.De" Width="1.5" PointX="0.875" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WazabiModel.JoueurPartie" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WazabiModel.Joueur" Width="1.5" PointX="1" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WazabiModel.Partie" Width="1.5" PointX="5.875" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="WazabiModel.FK_JoueurJoueurPartie" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.FK_PartieJoueurPartie" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.FK_JoueurPartie1" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.FK_JoueurPartie2" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.DeJoueurPartie" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.JoueurPartieCarte" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.PartieCarte" ManuallyRouted="false" />
+        <AssociationConnector Association="WazabiModel.JoueurPartiePartie" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

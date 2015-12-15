@@ -19,5 +19,6 @@ namespace Wazabi.Model
         public string Cout { get; set; }
         public string Description { get; set; }
         public string Effet { get; set; }
+        public string ImageRef { get; set; }
     }
 }

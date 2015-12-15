@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Cryptography;
-using System.ServiceModel;
 using System.Text;
-using System.Web.ModelBinding;
-using System.Web.UI.WebControls;
 using Wazabi.Model;
+using Wazabi.UCC;
 
-namespace Wazabi.UCC
+namespace Wazabi.UCCImpl
 {
-    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "GestionJoueur" à la fois dans le code, le fichier svc et le fichier de configuration.
-    // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez GestionJoueur.svc ou GestionJoueur.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class GestionJoueur : IGestionJoueur
     {
         private readonly WazabiEntities context = new WazabiEntities();
 
         public void Inscription(JoueurClient joueur)
         {
-            Joueur nouveauJoueur =  new Joueur();
+            Joueur nouveauJoueur = new Joueur();
             if (context.Joueurs.FirstOrDefault(j => j.Pseudo.Equals(joueur.Pseudo)) != null)
             {
                 throw new Exception("Le pseudo est déjà utilisé");
@@ -47,7 +41,7 @@ namespace Wazabi.UCC
         public JoueurClient Connexion(JoueurClient joueur)
         {
             Joueur joueurEspere = context.Joueurs.FirstOrDefault(j => j.Pseudo.Equals(joueur.Pseudo));
-            
+
             //Identifiant inexistant
             if (joueurEspere == null)
             {

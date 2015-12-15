@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'c:\users\pwasilewski\documents\visual studio 2013\Projects\Wazabi2\Wazabi2\Model\Model1.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

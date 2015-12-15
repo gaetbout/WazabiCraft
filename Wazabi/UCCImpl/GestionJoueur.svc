@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Wazabi.UCC.GestionJoueur" CodeBehind="GestionJoueur.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Wazabi.UCCImpl.GestionJoueur" CodeBehind="GestionJoueur.svc.cs" %>

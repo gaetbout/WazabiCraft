@@ -1,13 +1,10 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using Ninject;
 using WebUI.ServiceReferenceJoueur;
-using WebUI.ServiceReferencePartie;
-
-#endregion
 
 namespace WebUI.Infrastructure
 {
@@ -34,7 +31,7 @@ namespace WebUI.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IGestionJoueur>().To<GestionJoueurClient>();
-            kernel.Bind<IGestionPartie>().To<GestionPartieClient>();
+            //kernel.Bind<IGestionPartie>().To<GestionPartieClient>();
         }
     }
 }
