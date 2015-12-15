@@ -89,10 +89,21 @@
     </Content>
     <Content Include="wazabi.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logique\StrategyCarte.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\ChangerSensDe.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\DonnerUnDe.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\FairePasserTour.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\MettreAUneCarte.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\MettreTousADeuxCartes.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\PrendreNbeCarte.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\RejouerChangerSens.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\SupprimerNbeDe.cs" />
+    <Compile Include="Model\CartePartielle.cs" />
     <Compile Include="UCCImpl\EtatCreation.cs" />
     <Compile Include="UCCImpl\EtatEnCours.cs" />
     <Compile Include="UCCImpl\EtatFinie.cs" />
