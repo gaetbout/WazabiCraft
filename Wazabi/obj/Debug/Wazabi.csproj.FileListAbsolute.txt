@@ -10,3 +10,16 @@ C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\E
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\bin\fr\EntityFramework.resources.dll
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\obj\Debug\Wazabi.dll
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi2\obj\Debug\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.dll.config
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\bin\wazabi.xml

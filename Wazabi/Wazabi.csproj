@@ -73,6 +73,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UCCImpl\GestionDe.svc" />
     <Content Include="UCCImpl\GestionPartie.svc" />
     <Content Include="Model\Model1.edmx.sql" />
     <Content Include="UCCImpl\GestionJoueur.svc" />
@@ -86,9 +87,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="wazabi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UCCImpl\GestionDe.svc.cs">
+      <DependentUpon>GestionDe.svc</DependentUpon>
+    </Compile>
+    <Compile Include="UCC\IGestionDe.cs" />
     <Compile Include="UCCImpl\GestionPartie.svc.cs">
       <DependentUpon>GestionPartie.svc</DependentUpon>
     </Compile>
@@ -144,6 +152,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <None Include="wazabi.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

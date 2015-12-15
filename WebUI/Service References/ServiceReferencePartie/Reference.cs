@@ -15,7 +15,7 @@ namespace WebUI.ServiceReferencePartie {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi")]
     [System.SerializableAttribute()]
     public partial class JoueurClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -121,6 +121,12 @@ namespace WebUI.ServiceReferencePartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/LancerPartie", ReplyAction="http://tempuri.org/IGestionPartie/LancerPartieResponse")]
         System.Threading.Tasks.Task<bool> LancerPartieAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/init", ReplyAction="http://tempuri.org/IGestionPartie/initResponse")]
+        void init();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/init", ReplyAction="http://tempuri.org/IGestionPartie/initResponse")]
+        System.Threading.Tasks.Task initAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -164,6 +170,14 @@ namespace WebUI.ServiceReferencePartie {
         
         public System.Threading.Tasks.Task<bool> LancerPartieAsync() {
             return base.Channel.LancerPartieAsync();
+        }
+        
+        public void init() {
+            base.Channel.init();
+        }
+        
+        public System.Threading.Tasks.Task initAsync() {
+            return base.Channel.initAsync();
         }
     }
 }

@@ -32,3 +32,43 @@ C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\WebUI\bin\fr\
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\WebUI\bin\fr\System.Web.Mvc.resources.dll
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\WebUI\obj\Debug\WebUI.dll
 C:\Users\pwasilewski\Documents\Visual Studio 2013\Projects\Wazabi2\WebUI\obj\Debug\WebUI.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\WebUI.dll.config
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\WebUI.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\WebUI.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Common.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Helpers.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Mvc.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Razor.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.Razor.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\WebActivator.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Common.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Common.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Razor.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Webpages.Razor.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Helpers.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\System.Web.Mvc.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Razor.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.Deployment.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.Razor.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\obj\Debug\WebUI.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\obj\Debug\WebUI.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\wazabi.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Wazabi.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\EntityFramework.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\EntityFramework.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\bin\fr\EntityFramework.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache

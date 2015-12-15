@@ -1,0 +1,12 @@
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\Wazabi.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\EntityFramework.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\EntityFramework.xml
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\ConsoleApplication1\bin\Debug\wazabi.xml

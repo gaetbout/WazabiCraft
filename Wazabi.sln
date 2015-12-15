@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj
 		{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7} = {4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wazabi", "..\..\Documents\Visual Studio 2013\Projects\Wazabi2\Wazabi\Wazabi.csproj", "{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wazabi", "Wazabi\Wazabi.csproj", "{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

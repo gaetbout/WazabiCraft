@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Wazabi.GestionDe" CodeBehind="GestionDe.svc.cs" %>

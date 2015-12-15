@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/14/2015 23:01:03
--- Generated from EDMX file: c:\users\pwasilewski\documents\visual studio 2013\Projects\Wazabi2\Wazabi2\Model\Model1.edmx
+-- Date Created: 12/15/2015 12:27:28
+-- Generated from EDMX file: C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,14 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_De]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_De];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_JoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_JoueurPartie];
-GO
 IF OBJECT_ID(N'[dbo].[FK_JoueurJoueurPartie]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurJoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
 GO
 IF OBJECT_ID(N'[dbo].[FK_JoueurPartie1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie1];
@@ -32,23 +29,26 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_JoueurPartie2]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_JoueurPartie2];
 GO
-IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_Carte]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_Carte];
+IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_Des]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_Des];
 GO
-IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_JoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_JoueurPartie];
+IF OBJECT_ID(N'[dbo].[FK_DeJoueurPartie_JoueurParties]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeJoueurPartie] DROP CONSTRAINT [FK_DeJoueurPartie_JoueurParties];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Carte]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Carte];
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_Cartes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_Cartes];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Partie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Partie];
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartieCarte_JoueurParties]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurPartieCarte] DROP CONSTRAINT [FK_JoueurPartieCarte_JoueurParties];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
+IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Cartes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Cartes];
 GO
-IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
+IF OBJECT_ID(N'[dbo].[FK_PartieCarte_Parties]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PartieCarte] DROP CONSTRAINT [FK_PartieCarte_Parties];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JoueurPartiePartie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_JoueurPartiePartie];
 GO
 
 -- --------------------------------------------------
@@ -58,14 +58,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Cartes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Cartes];
 GO
-IF OBJECT_ID(N'[dbo].[DeJoueurPartie]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DeJoueurPartie];
-GO
 IF OBJECT_ID(N'[dbo].[Des]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Des];
-GO
-IF OBJECT_ID(N'[dbo].[JoueurPartieCarte]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[JoueurPartieCarte];
 GO
 IF OBJECT_ID(N'[dbo].[JoueurParties]', 'U') IS NOT NULL
     DROP TABLE [dbo].[JoueurParties];
@@ -73,11 +67,17 @@ GO
 IF OBJECT_ID(N'[dbo].[Joueurs]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Joueurs];
 GO
-IF OBJECT_ID(N'[dbo].[PartieCarte]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PartieCarte];
-GO
 IF OBJECT_ID(N'[dbo].[Parties]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Parties];
+GO
+IF OBJECT_ID(N'[dbo].[DeJoueurPartie]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DeJoueurPartie];
+GO
+IF OBJECT_ID(N'[dbo].[JoueurPartieCarte]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JoueurPartieCarte];
+GO
+IF OBJECT_ID(N'[dbo].[PartieCarte]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PartieCarte];
 GO
 
 -- --------------------------------------------------
@@ -88,17 +88,19 @@ GO
 CREATE TABLE [dbo].[Cartes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [CodeEffet] nvarchar(max)  NOT NULL,
-    [Cout] nvarchar(max)  NOT NULL,
+    [Cout] int  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
     [Effet] nvarchar(max)  NOT NULL,
-    [ImageRef] nvarchar(max)  NOT NULL
+    [ImageRef] nvarchar(max)  NOT NULL,
+    [NbCartes] int  NOT NULL
 );
 GO
 
 -- Creating table 'Des'
 CREATE TABLE [dbo].[Des] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Valeur] nvarchar(max)  NOT NULL
+    [Valeur] nvarchar(max)  NOT NULL,
+    [ImageRef] nvarchar(max)  NULL
 );
 GO
 

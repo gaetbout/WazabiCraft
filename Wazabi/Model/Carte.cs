@@ -16,9 +16,10 @@ namespace Wazabi.Model
     {
         public int Id { get; set; }
         public string CodeEffet { get; set; }
-        public string Cout { get; set; }
+        public int Cout { get; set; }
         public string Description { get; set; }
         public string Effet { get; set; }
         public string ImageRef { get; set; }
+        public int NbCartes { get; set; }
     }
 }

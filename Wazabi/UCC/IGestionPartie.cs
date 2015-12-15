@@ -10,5 +10,8 @@ namespace Wazabi.UCC
 
         [OperationContract]
         bool LancerPartie();
+
+        [OperationContract]
+        void init();
     }
 }
