@@ -12,7 +12,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * si sens == 0 => droite
          * si sens == 1 => gauche
          **/
-
+            
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int sens)
         {
             if (sens != 0 && sens != 1)

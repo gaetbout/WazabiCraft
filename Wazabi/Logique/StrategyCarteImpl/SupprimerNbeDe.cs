@@ -19,6 +19,21 @@ namespace Wazabi.Logique.StrategyCarteImpl
             {
                 throw new ArgumentException("Le nombre de Dé a supprimer doit être égal à 1 ou 2");
             }
+            if (nbDe == 1)
+            {
+                int d = 0;
+                foreach (De de in partie.JoueurCourant.Des)
+                {
+                    if (de.Valeur.Equals("d"))
+                    {
+                        d++;
+                    }
+                }
+                if (d >= 2)
+                {
+                    return false;
+                }
+            }
             for (int i = 0; i < nbDe; i++)
             {
                 try

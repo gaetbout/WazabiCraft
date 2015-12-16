@@ -12,7 +12,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
         /**
         * Permet de piocher 3 cartes
         **/
-
+ 
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbCartes)
         {
             if (nbCartes != 3)

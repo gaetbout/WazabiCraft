@@ -7,7 +7,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
     {
         /**
          * Permet de donner un dé au joueur passé en paramètre 
-         * */
+         **/
 
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
