@@ -1,5 +1,6 @@
 ﻿using Wazabi.Model;
 using System;
+using System.Linq;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {
@@ -13,14 +14,14 @@ namespace Wazabi.Logique.StrategyCarteImpl
         {
             if (partie.Sens) //Bon sens joueur courant => joueur d'avant
             {
-                //partie.JoueurCourant = partie.Joueurs.
+                partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre + 1);
             }
             else // mauvais sens => joueurCourant = joueur d'après
             {
+                partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre - 1);
             }
             partie.Sens = !partie.Sens;
-            throw new ArgumentException("Pas encore fait");
-            //return false;
+            return true;
         }
     }
 }

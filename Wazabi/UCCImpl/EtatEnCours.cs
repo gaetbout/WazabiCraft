@@ -56,10 +56,18 @@ namespace Wazabi.UCCImpl
         {
             if (partie.Sens)
             {
+                if (partie.JoueurCourant.Ordre == partie.Joueurs.Count)
+                {
+                    return partie.Joueurs.ElementAt(0);
+                }
                 return partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre + 1);
             }
             else
             {
+                if (partie.JoueurCourant.Ordre == 1)
+                {
+                    return partie.Joueurs.ElementAt(partie.Joueurs.Count-1);
+                }
                 return partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre - 1);
             }
         }
