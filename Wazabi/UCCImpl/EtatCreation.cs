@@ -30,6 +30,7 @@ namespace Wazabi.UCCImpl
             temp.Ordre = (context.Joueurs.Count() + 1);
             temp.PartieJoueurPartie_JoueurPartie_Id = partie.Id;
             this.partie.Joueurs.Add(temp);
+            context.SaveChanges();
             return true;
         }
 
@@ -47,6 +48,17 @@ namespace Wazabi.UCCImpl
         public override JoueurPartie Suivant()
         {
             throw new Exception("Partie pas encore lancée!");
+        }
+
+        public override void QuitterPartie(JoueurClient joueur)
+        {
+            partie.Joueurs.Remove(partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id));
+            context.SaveChanges();
+        }
+
+        public override void CloturerPartie(Joueur vainqueur)
+        {
+            throw new Exception("Impossible de cloturer la partie car elle n'a pas démarrer!");
         }
     }
 }

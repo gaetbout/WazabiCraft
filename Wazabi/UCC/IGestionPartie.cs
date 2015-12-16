@@ -19,5 +19,8 @@ namespace Wazabi.UCC
 
         [OperationContract]
         PartieClient PartieCourante();
+
+        [OperationContract]
+        void QuitterPartie(JoueurClient joueur);
     }
 }

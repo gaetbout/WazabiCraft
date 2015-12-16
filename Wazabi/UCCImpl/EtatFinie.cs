@@ -34,5 +34,15 @@ namespace Wazabi.UCCImpl
         {
             throw new Exception("Partie déja finie!");
         }
+
+        public override void QuitterPartie(JoueurClient joueur)
+        {
+            throw new Exception("Impossible de quitter la partie car elle est cloturé!");
+        }
+
+        public override void CloturerPartie(Joueur vainqueur)
+        {
+            throw new Exception("Impossible de cloturer la partie car elle est déja cloturé!");
+        }
     }
 }

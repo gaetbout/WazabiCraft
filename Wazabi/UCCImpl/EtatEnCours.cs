@@ -37,6 +37,7 @@ namespace Wazabi.UCCImpl
                     partie.Pioche.Remove(partie.Pioche.ElementAt(rand));
                 }
             }
+            context.SaveChanges();
         }
 
         public override void TourSuivant(GestionDe gestionDe)
@@ -48,6 +49,7 @@ namespace Wazabi.UCCImpl
                 partie.Pioche.Remove(pioche);
                 partie.JoueurCourant.Cartes.Add(pioche);
             }
+            context.SaveChanges();
         }
 
         public override JoueurPartie Suivant()
@@ -60,6 +62,30 @@ namespace Wazabi.UCCImpl
             {
                 return partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre - 1);
             }
+        }
+
+        public override void QuitterPartie(JoueurClient joueur)
+        {
+            partie.Joueurs.Remove(partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id));
+            if (partie.Joueurs.Count() == 1)
+            {
+                Joueur vainqueur = (partie.Joueurs.FirstOrDefault()).Joueur;
+                CloturerPartie(vainqueur);
+            }
+            else
+            {
+                this.partie.JoueurCourant = Suivant();
+            }
+            context.SaveChanges();
+        }
+
+        public override void CloturerPartie(Joueur vainqueur)
+        {
+            this.partie.EtatType = Partie.State.FINIE;
+            this.partie.Etat = (int)Partie.State.FINIE;
+            this.partie.Vainqueur = context.Joueurs.FirstOrDefault(j => j.Id == vainqueur.Id);
+            this.partie.Vainqueur_Id = this.partie.Vainqueur.Id;
+            context.SaveChanges();
         }
     }
 }

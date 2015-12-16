@@ -18,5 +18,7 @@ namespace Wazabi.UCCImpl
         public abstract void InitPlateau(int nbCarteJoueur);
         public abstract void TourSuivant(GestionDe gestionDe);
         public abstract JoueurPartie Suivant();
+        public abstract void QuitterPartie(JoueurClient joueur);
+        public abstract void CloturerPartie(Joueur vainqueur);
     }
 }

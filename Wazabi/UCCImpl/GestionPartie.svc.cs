@@ -114,7 +114,12 @@ namespace Wazabi.UCCImpl
 
         public bool LancerPartie()
         {
-            return this.etat.LancerPartie();
+            if (this.etat.LancerPartie())
+            {
+                InitPlateau();
+                return true;
+            }
+            return false;
         }
 
         public bool RejoindrePartie(JoueurClient joueur)
@@ -165,6 +170,22 @@ namespace Wazabi.UCCImpl
         private JoueurPartie Suivant()
         {
             return this.etat.Suivant();
+        }
+
+
+        public void QuitterPartie(JoueurClient joueur)
+        {
+            if (partie == null) throw new Exception("Aucune partie en cours, impossible de quitter!");
+            if (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id) == null) throw new Exception("Joueur pas présent dans la partie, impossible de quitter!");
+            this.etat.QuitterPartie(joueur);
+        }
+
+
+        public void CloturerPartie(Joueur vainqueur)
+        {
+            if (partie == null) throw new Exception("On ne peut pas cloturer la partie car il n'y a pas de partie en cours!");
+            if (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == vainqueur.Id) == null) throw new Exception("Le vainqueur est pas présent dans la partie, impossible de cloturer!");
+            this.etat.CloturerPartie(vainqueur);
         }
     }
 }
