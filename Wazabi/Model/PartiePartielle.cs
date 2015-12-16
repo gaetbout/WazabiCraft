@@ -17,5 +17,6 @@ namespace Wazabi.Model
             get { return (State) this.Etat; }
             set { this.Etat = (int) value; }
         }
+
     }
 }

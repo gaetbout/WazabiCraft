@@ -18,7 +18,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Valeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ImageRef" Type="String" Nullable="true" />
+    <Property Name="ImageRef" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="JoueurPartie">
     <Key>
@@ -47,7 +47,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nom" Type="String" Nullable="false" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="DateHeureCreation" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Sens" Type="Boolean" Nullable="false" />
     <Property Name="Etat" Type="Int32" Nullable="false" />
@@ -58,6 +58,7 @@
     <NavigationProperty Name="Createur" Relationship="Self.FK_JoueurPartie2" FromRole="Parties" ToRole="Joueurs" />
     <NavigationProperty Name="Pioche" Relationship="Self.PartieCarte" FromRole="Parties" ToRole="Cartes" />
     <NavigationProperty Name="JoueurCourant" Relationship="WazabiModel.JoueurPartiePartie" FromRole="Partie" ToRole="JoueurPartie" />
+    <NavigationProperty Name="JoueursQuiDoiventPasser" Relationship="WazabiModel.JoueursQuiDoiventPasserTour" FromRole="Partie" ToRole="JoueurPartie" />
   </EntityType>
   <Association Name="FK_JoueurJoueurPartie">
     <End Role="Joueurs" Type="WazabiModel.Joueur" Multiplicity="1" />
@@ -157,9 +158,17 @@
       <End Role="JoueurPartie" EntitySet="JoueurParties" />
       <End Role="Partie" EntitySet="Parties" />
     </AssociationSet>
+    <AssociationSet Name="JoueursQuiDoiventPasserTour" Association="WazabiModel.JoueursQuiDoiventPasserTour">
+      <End Role="JoueurPartie" EntitySet="JoueurParties" />
+      <End Role="Partie" EntitySet="Parties" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="JoueurPartiePartie">
     <End Type="WazabiModel.JoueurPartie" Role="JoueurPartie" Multiplicity="0..1" />
     <End Type="WazabiModel.Partie" Role="Partie" Multiplicity="1" />
+  </Association>
+  <Association Name="JoueursQuiDoiventPasserTour">
+    <End Type="WazabiModel.JoueurPartie" Role="JoueurPartie" Multiplicity="*" />
+    <End Type="WazabiModel.Partie" Role="Partie" Multiplicity="0..1" />
   </Association>
 </Schema>

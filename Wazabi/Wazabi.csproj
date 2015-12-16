@@ -101,10 +101,26 @@
     <Compile Include="Logique\StrategyCarteImpl\FairePasserTour.cs" />
     <Compile Include="Logique\StrategyCarteImpl\MettreAUneCarte.cs" />
     <Compile Include="Logique\StrategyCarteImpl\MettreTousADeuxCartes.cs" />
-    <Compile Include="Logique\StrategyCarteImpl\PrendreNbeCarte.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\PiocherTroisCartes.cs" />
+    <Compile Include="Logique\StrategyCarteImpl\PrendreUneCarte.cs" />
     <Compile Include="Logique\StrategyCarteImpl\RejouerChangerSens.cs" />
     <Compile Include="Logique\StrategyCarteImpl\SupprimerNbeDe.cs" />
+    <Compile Include="Model\Carte.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CartePartielle.cs" />
+    <Compile Include="Model\De.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Joueur.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JoueurPartie.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Partie.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="UCCImpl\EtatCreation.cs" />
     <Compile Include="UCCImpl\EtatEnCours.cs" />
     <Compile Include="UCCImpl\EtatFinie.cs" />
@@ -122,21 +138,6 @@
     </Compile>
     <Compile Include="UCC\IGestionPartie.cs" />
     <Compile Include="JoueurClient.cs" />
-    <Compile Include="Model\Carte.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\De.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Joueur.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\JoueurPartie.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Partie.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\PartiePartielle.cs" />
     <Compile Include="PartieClient.cs" />
     <Compile Include="UCCImpl\GestionJoueur.svc.cs">

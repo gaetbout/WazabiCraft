@@ -1,4 +1,5 @@
 ﻿using Wazabi.Model;
+using System;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {
@@ -8,7 +9,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * Permet de faire rejouer le joueur courrant et change le sens de jeu 
          **/
 
-        public bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
             if (partie.Sens) //Bon sens joueur courant => joueur d'avant
             {
@@ -18,8 +19,8 @@ namespace Wazabi.Logique.StrategyCarteImpl
             {
             }
             partie.Sens = !partie.Sens;
-            //throw new NotFiniteNumberException("YAY");
-            return false;
+            throw new ArgumentException("Pas encore fait");
+            //return false;
         }
     }
 }

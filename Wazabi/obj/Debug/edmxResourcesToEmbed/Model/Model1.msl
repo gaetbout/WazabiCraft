@@ -89,5 +89,14 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="JoueursQuiDoiventPasserTour" TypeName="WazabiModel.JoueursQuiDoiventPasserTour" StoreEntitySet="JoueurParties">
+      <EndProperty Name="Partie">
+        <ScalarProperty Name="Id" ColumnName="JoueursQuiDoiventPasserTour_JoueurPartie_Id" />
+      </EndProperty>
+      <EndProperty Name="JoueurPartie">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="JoueursQuiDoiventPasserTour_JoueurPartie_Id" IsNull="false" />
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

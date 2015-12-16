@@ -13,11 +13,11 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * si sens == 1 => gauche
          **/
 
-        public bool faireOperation(Partie partie, Joueur joueurAdverse, int sens)
+        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int sens)
         {
             if (sens != 0 && sens != 1)
             {
-                throw new ArgumentException("Lit la Doc");
+                throw new ArgumentException("L'entier sens doit être égal à 1 ou 0");
             }
             // Si bad sens, on reverse liste
             if (sens == 1)
@@ -33,6 +33,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
                 jTmp.Des = dePrec;
                 dePrec = deTmp;
             }
+            //On met les dé du dernier au premier
             partie.Joueurs.FirstOrDefault().Des = dePrec;
 
             //re-reverse liste 

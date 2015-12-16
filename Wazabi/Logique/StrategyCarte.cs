@@ -34,6 +34,6 @@ namespace Wazabi.Logique
             return tmp;
         }
 
-        //bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe);
+        public abstract bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe);
     }
 }

@@ -7,10 +7,13 @@ namespace Wazabi.Logique.StrategyCarteImpl
     public class SupprimerNbeDe : StrategyCarte
     {
         /**
-         * Permet de supprimer nbDe au joueur courant
+         * Il faut vérifier la contrainte avant d'utiliser cette méhode :
+         * Le dé est retiré de la partie.On ne peut pas jouer cette carte si on
+         * obtient dans le même tour 2 figures <figure ref="d" /> ou plus avec ses dés
+         * Permet de supprimer nbDe (1 ou 2) au joueur courant
          * */
 
-        public bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
             if (nbDe < 0 || nbDe > 2)
             {
@@ -25,6 +28,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
                 }
                 catch (ArgumentException e)
                 {
+                    //Return true signifie que le joueur n'a plus de Dés
                     return true;
                 }
             }
