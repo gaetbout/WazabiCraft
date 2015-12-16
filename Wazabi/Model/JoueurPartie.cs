@@ -22,7 +22,7 @@ namespace Wazabi.Model
         }
     
         public int Id { get; set; }
-        public string Ordre { get; set; }
+        public int Ordre { get; set; }
         public int Joueur_Id { get; set; }
         public int PartieJoueurPartie_JoueurPartie_Id { get; set; }
     

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
@@ -11,6 +9,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
         /**
          * Permet de piocher nbCartes  
          **/
+
         public bool faireOperation(Partie partie, Joueur joueurAdverse, int nbCartes)
         {
             if (nbCartes != 1 && nbCartes != 3)
@@ -34,6 +33,5 @@ namespace Wazabi.Logique.StrategyCarteImpl
             }
             return true;
         }
-
     }
 }

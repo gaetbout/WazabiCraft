@@ -19,11 +19,23 @@
   <wsdl:message name="IGestionPartie_LancerPartie_OutputMessage">
     <wsdl:part name="parameters" element="tns:LancerPartieResponse" />
   </wsdl:message>
-  <wsdl:message name="IGestionPartie_init_InputMessage">
-    <wsdl:part name="parameters" element="tns:init" />
+  <wsdl:message name="IGestionPartie_Init_InputMessage">
+    <wsdl:part name="parameters" element="tns:Init" />
   </wsdl:message>
-  <wsdl:message name="IGestionPartie_init_OutputMessage">
-    <wsdl:part name="parameters" element="tns:initResponse" />
+  <wsdl:message name="IGestionPartie_Init_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_RejoindrePartie_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejoindrePartie" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_RejoindrePartie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejoindrePartieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_PartieCourante_InputMessage">
+    <wsdl:part name="parameters" element="tns:PartieCourante" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_PartieCourante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PartieCouranteResponse" />
   </wsdl:message>
   <wsdl:portType name="IGestionPartie">
     <wsdl:operation name="CreerPartie">
@@ -34,9 +46,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/LancerPartie" message="tns:IGestionPartie_LancerPartie_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/LancerPartieResponse" message="tns:IGestionPartie_LancerPartie_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="init">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/init" message="tns:IGestionPartie_init_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/initResponse" message="tns:IGestionPartie_init_OutputMessage" />
+    <wsdl:operation name="Init">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/Init" message="tns:IGestionPartie_Init_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/InitResponse" message="tns:IGestionPartie_Init_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejoindrePartie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/RejoindrePartie" message="tns:IGestionPartie_RejoindrePartie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/RejoindrePartieResponse" message="tns:IGestionPartie_RejoindrePartie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PartieCourante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/PartieCourante" message="tns:IGestionPartie_PartieCourante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/PartieCouranteResponse" message="tns:IGestionPartie_PartieCourante_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGestionPartie" type="tns:IGestionPartie">
@@ -59,8 +79,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="init">
-      <soap:operation soapAction="http://tempuri.org/IGestionPartie/init" style="document" />
+    <wsdl:operation name="Init">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/Init" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejoindrePartie">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/RejoindrePartie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartieCourante">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/PartieCourante" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Wazabi.Model;
+﻿using Wazabi.Model;
 
-namespace Wazabi.Logique.StrategyCarteImpl 
+namespace Wazabi.Logique.StrategyCarteImpl
 {
     public class FairePasserTour : StrategyCarte
     {

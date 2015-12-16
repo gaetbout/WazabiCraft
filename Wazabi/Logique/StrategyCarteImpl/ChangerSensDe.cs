@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
@@ -13,6 +12,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * si sens == 0 => droite
          * si sens == 1 => gauche
          **/
+
         public bool faireOperation(Partie partie, Joueur joueurAdverse, int sens)
         {
             if (sens != 0 && sens != 1)

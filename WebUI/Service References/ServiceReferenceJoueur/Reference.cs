@@ -111,10 +111,10 @@ namespace WebUI.ServiceReferenceJoueur {
     public interface IGestionJoueur {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/Inscription", ReplyAction="http://tempuri.org/IGestionJoueur/InscriptionResponse")]
-        void Inscription(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
+        bool Inscription(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/Inscription", ReplyAction="http://tempuri.org/IGestionJoueur/InscriptionResponse")]
-        System.Threading.Tasks.Task InscriptionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
+        System.Threading.Tasks.Task<bool> InscriptionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/Connexion", ReplyAction="http://tempuri.org/IGestionJoueur/ConnexionResponse")]
         WebUI.ServiceReferenceJoueur.JoueurClient Connexion(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
@@ -150,11 +150,11 @@ namespace WebUI.ServiceReferenceJoueur {
                 base(binding, remoteAddress) {
         }
         
-        public void Inscription(WebUI.ServiceReferenceJoueur.JoueurClient joueur) {
-            base.Channel.Inscription(joueur);
+        public bool Inscription(WebUI.ServiceReferenceJoueur.JoueurClient joueur) {
+            return base.Channel.Inscription(joueur);
         }
         
-        public System.Threading.Tasks.Task InscriptionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur) {
+        public System.Threading.Tasks.Task<bool> InscriptionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur) {
             return base.Channel.InscriptionAsync(joueur);
         }
         

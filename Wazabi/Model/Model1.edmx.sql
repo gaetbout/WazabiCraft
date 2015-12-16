@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/15/2015 12:27:28
--- Generated from EDMX file: C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\Model\Model1.edmx
+-- Date Created: 12/15/2015 22:26:46
+-- Generated from EDMX file: C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -107,7 +107,7 @@ GO
 -- Creating table 'JoueurParties'
 CREATE TABLE [dbo].[JoueurParties] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Ordre] nvarchar(max)  NOT NULL,
+    [Ordre] int  NOT NULL,
     [Joueur_Id] int  NOT NULL,
     [PartieJoueurPartie_JoueurPartie_Id] int  NOT NULL,
     [JoueurPartiePartie_JoueurPartie_Id] int  NOT NULL

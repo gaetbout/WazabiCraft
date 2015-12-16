@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Wazabi.Model;
@@ -11,12 +10,12 @@ namespace Wazabi.UCCImpl
     {
         private readonly WazabiEntities context = new WazabiEntities();
 
-        public void Inscription(JoueurClient joueur)
+        public bool Inscription(JoueurClient joueur)
         {
             Joueur nouveauJoueur = new Joueur();
             if (context.Joueurs.FirstOrDefault(j => j.Pseudo.Equals(joueur.Pseudo)) != null)
             {
-                throw new Exception("Le pseudo est déjà utilisé");
+                return false;
             }
 
             byte[] mdp = Encoding.UTF8.GetBytes(joueur.Mdp);
@@ -36,6 +35,7 @@ namespace Wazabi.UCCImpl
 
             context.Joueurs.Add(nouveauJoueur);
             context.SaveChanges();
+            return true;
         }
 
         public JoueurClient Connexion(JoueurClient joueur)

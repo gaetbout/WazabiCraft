@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
@@ -11,6 +9,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
         /**
          * Permet de mettre tous les joueurs à deux carte random ssi il ne s'agit pas du joueurCourant
          **/
+
         public bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
             foreach (JoueurPartie jpTmp in partie.Joueurs)

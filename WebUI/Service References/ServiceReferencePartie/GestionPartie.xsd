@@ -9,4 +9,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JoueurClient" nillable="true" type="tns:JoueurClient" />
+  <xs:complexType name="PartieClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateHeureCreation" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Etat" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sens" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartieClient" nillable="true" type="tns:PartieClient" />
 </xs:schema>

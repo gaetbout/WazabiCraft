@@ -118,6 +118,19 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur.wsdl" />
+    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceReferenceJoueur\WebUI.ServiceReferenceJoueur.JoueurClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\ServiceReferenceJoueur\GestionJoueur.disco" />
     <None Include="Service References\ServiceReferenceJoueur\configuration91.svcinfo" />
     <None Include="Service References\ServiceReferenceJoueur\configuration.svcinfo" />
@@ -143,12 +156,15 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccuelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartieController.cs" />
+    <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure.Binders\SessionModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReferenceJoueur\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -164,19 +180,9 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur.wsdl" />
-    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceJoueur\GestionJoueur2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Service References\ServiceReferenceJoueur\WebUI.ServiceReferenceJoueur.JoueurClient.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <Content Include="Views\Principal\Index.cshtml" />
+    <Content Include="Views\Principal\CreerPartie.cshtml" />
+    <Content Include="Views\Partie\EnAttente.cshtml" />
     <None Include="Service References\ServiceReferencePartie\GestionPartie.wsdl" />
     <None Include="Service References\ServiceReferencePartie\GestionPartie.xsd">
       <SubType>Designer</SubType>
@@ -187,6 +193,9 @@
     <None Include="Service References\ServiceReferencePartie\GestionPartie2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServiceReferencePartie\WebUI.ServiceReferencePartie.PartieClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,8 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Accuel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wazabi\Wazabi.csproj">

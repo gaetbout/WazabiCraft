@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using WebUI.Infrastructure.Binders;
+using WebUI.Models;
 
 namespace WebUI
 {
@@ -13,6 +11,8 @@ namespace WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ModelBinders.Binders.Add(typeof (Session), new SessionModelBinder());
         }
     }
 }

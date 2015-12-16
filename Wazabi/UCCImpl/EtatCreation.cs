@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.UCCImpl
 {
     public class EtatCreation : EtatImpl
     {
-
         public EtatCreation(WazabiEntities cont, Partie partie)
             : base(cont, partie)
         {
@@ -27,14 +24,29 @@ namespace Wazabi.UCCImpl
 
         public override bool RejoindrePartie(JoueurClient joueur)
         {
-          /*  JoueurPartie temp = new JoueurPartie();
-            Joueur j = new Joueur();
-            j.IconeRef = joueur.
-            temp.Joueur = joueur;
+            JoueurPartie temp = new JoueurPartie();
+            temp.Joueur = context.Joueurs.FirstOrDefault(j => j.Id == joueur.Id);
             temp.Joueur_Id = joueur.Id;
-            this.partie.Joueurs.Add();*/
+            temp.Ordre = (context.Joueurs.Count() + 1);
+            temp.PartieJoueurPartie_JoueurPartie_Id = partie.Id;
+            this.partie.Joueurs.Add(temp);
             return true;
         }
 
+
+        public override void InitPlateau(int nbCarteJoueur)
+        {
+            throw new Exception("Partie pas encore lancée!");
+        }
+
+        public override void TourSuivant(GestionDe gestionDe)
+        {
+            throw new Exception("Partie pas encore lancée!");
+        }
+
+        public override JoueurPartie Suivant()
+        {
+            throw new Exception("Partie pas encore lancée!");
+        }
     }
 }

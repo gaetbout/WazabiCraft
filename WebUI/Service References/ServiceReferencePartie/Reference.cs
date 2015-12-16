@@ -106,15 +106,124 @@ namespace WebUI.ServiceReferencePartie {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PartieClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi")]
+    [System.SerializableAttribute()]
+    public partial class PartieClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateHeureCreationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EtatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SensField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateHeureCreation {
+            get {
+                return this.DateHeureCreationField;
+            }
+            set {
+                if ((this.DateHeureCreationField.Equals(value) != true)) {
+                    this.DateHeureCreationField = value;
+                    this.RaisePropertyChanged("DateHeureCreation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Etat {
+            get {
+                return this.EtatField;
+            }
+            set {
+                if ((this.EtatField.Equals(value) != true)) {
+                    this.EtatField = value;
+                    this.RaisePropertyChanged("Etat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Sens {
+            get {
+                return this.SensField;
+            }
+            set {
+                if ((this.SensField.Equals(value) != true)) {
+                    this.SensField = value;
+                    this.RaisePropertyChanged("Sens");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferencePartie.IGestionPartie")]
     public interface IGestionPartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/CreerPartie", ReplyAction="http://tempuri.org/IGestionPartie/CreerPartieResponse")]
-        void CreerPartie(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom);
+        bool CreerPartie(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/CreerPartie", ReplyAction="http://tempuri.org/IGestionPartie/CreerPartieResponse")]
-        System.Threading.Tasks.Task CreerPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom);
+        System.Threading.Tasks.Task<bool> CreerPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/LancerPartie", ReplyAction="http://tempuri.org/IGestionPartie/LancerPartieResponse")]
         bool LancerPartie();
@@ -122,11 +231,23 @@ namespace WebUI.ServiceReferencePartie {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/LancerPartie", ReplyAction="http://tempuri.org/IGestionPartie/LancerPartieResponse")]
         System.Threading.Tasks.Task<bool> LancerPartieAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/init", ReplyAction="http://tempuri.org/IGestionPartie/initResponse")]
-        void init();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/Init", ReplyAction="http://tempuri.org/IGestionPartie/InitResponse")]
+        void Init();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/init", ReplyAction="http://tempuri.org/IGestionPartie/initResponse")]
-        System.Threading.Tasks.Task initAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/Init", ReplyAction="http://tempuri.org/IGestionPartie/InitResponse")]
+        System.Threading.Tasks.Task InitAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/RejoindrePartie", ReplyAction="http://tempuri.org/IGestionPartie/RejoindrePartieResponse")]
+        bool RejoindrePartie(WebUI.ServiceReferencePartie.JoueurClient joueur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/RejoindrePartie", ReplyAction="http://tempuri.org/IGestionPartie/RejoindrePartieResponse")]
+        System.Threading.Tasks.Task<bool> RejoindrePartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/PartieCourante", ReplyAction="http://tempuri.org/IGestionPartie/PartieCouranteResponse")]
+        WebUI.ServiceReferencePartie.PartieClient PartieCourante();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/PartieCourante", ReplyAction="http://tempuri.org/IGestionPartie/PartieCouranteResponse")]
+        System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient> PartieCouranteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,11 +277,11 @@ namespace WebUI.ServiceReferencePartie {
                 base(binding, remoteAddress) {
         }
         
-        public void CreerPartie(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom) {
-            base.Channel.CreerPartie(joueur, nom);
+        public bool CreerPartie(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom) {
+            return base.Channel.CreerPartie(joueur, nom);
         }
         
-        public System.Threading.Tasks.Task CreerPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom) {
+        public System.Threading.Tasks.Task<bool> CreerPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur, string nom) {
             return base.Channel.CreerPartieAsync(joueur, nom);
         }
         
@@ -172,12 +293,28 @@ namespace WebUI.ServiceReferencePartie {
             return base.Channel.LancerPartieAsync();
         }
         
-        public void init() {
-            base.Channel.init();
+        public void Init() {
+            base.Channel.Init();
         }
         
-        public System.Threading.Tasks.Task initAsync() {
-            return base.Channel.initAsync();
+        public System.Threading.Tasks.Task InitAsync() {
+            return base.Channel.InitAsync();
+        }
+        
+        public bool RejoindrePartie(WebUI.ServiceReferencePartie.JoueurClient joueur) {
+            return base.Channel.RejoindrePartie(joueur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RejoindrePartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur) {
+            return base.Channel.RejoindrePartieAsync(joueur);
+        }
+        
+        public WebUI.ServiceReferencePartie.PartieClient PartieCourante() {
+            return base.Channel.PartieCourante();
+        }
+        
+        public System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient> PartieCouranteAsync() {
+            return base.Channel.PartieCouranteAsync();
         }
     }
 }

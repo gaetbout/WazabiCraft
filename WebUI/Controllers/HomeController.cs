@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using System.Web.WebPages;
 using DevTrends.WCFDataAnnotations;
+using WebUI.Models;
 using WebUI.ServiceReferenceJoueur;
 
 namespace WebUI.Controllers
@@ -34,21 +32,21 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Connexion(JoueurClient login)
+        public ActionResult Connexion(Session session, JoueurClient login)
         {
-
-            //TODO verifier les champs
-            if (ModelState.IsValid)
+            if (PseudoEstValid(login) && MdpEstValid(login))
             {
-                JoueurClient personne = Repository.Connexion(login);
-                if (personne == null)
+                JoueurClient joueur = Repository.Connexion(login);
+                if (joueur == null)
                 {
                     ModelState.AddModelError("Fail", "Vos données sont incorrectes");
                     return View(login);
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Accuel");
+                    session.Id = joueur.Id;
+                    session.Pseudo = joueur.Pseudo;
+                    return RedirectToAction("Index", "Principal");
                 }
             }
             else
@@ -63,19 +61,40 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Inscription(JoueurClient personne)
+        public ActionResult Inscription(JoueurClient login)
         {
-            //TODO verifier les champs
-            if (ModelState.IsValid)
+            if (PseudoEstValid(login) && MdpEstValid(login) && ConfirmMdpEstValid(login))
             {
-                Repository.Inscription(personne);
-
-                return (RedirectToAction("Index"));
+                if (Repository.Inscription(login))
+                {
+                    return (RedirectToAction("Index"));
+                }
+                else
+                {
+                    ModelState.AddModelError("Fail", "Ce pseudo est déjà utilisé");
+                    return View("Inscription", login);
+                }
             }
             else
             {
-                return View("Inscription", personne);
+                return View("Inscription", login);
             }
+        }
+
+        private bool PseudoEstValid(JoueurClient joueur)
+        {
+            return joueur.Pseudo != null && !joueur.Pseudo.Trim().IsEmpty();
+        }
+
+        private bool MdpEstValid(JoueurClient joueur)
+        {
+            return joueur.Mdp != null && !joueur.Mdp.Trim().IsEmpty();
+        }
+
+        private bool ConfirmMdpEstValid(JoueurClient joueur)
+        {
+            return joueur.ConfirmPassword != null && !joueur.Mdp.Trim().IsEmpty() &&
+                   joueur.ConfirmPassword.Equals(joueur.Mdp);
         }
     }
 }

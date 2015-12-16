@@ -73,6 +73,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UCCImpl\GestionCarte.svc" />
     <Content Include="UCCImpl\GestionDe.svc" />
     <Content Include="UCCImpl\GestionPartie.svc" />
     <Content Include="Model\Model1.edmx.sql" />
@@ -108,9 +109,13 @@
     <Compile Include="UCCImpl\EtatEnCours.cs" />
     <Compile Include="UCCImpl\EtatFinie.cs" />
     <Compile Include="UCCImpl\EtatImpl.cs" />
+    <Compile Include="UCCImpl\GestionCarte.svc.cs">
+      <DependentUpon>GestionCarte.svc</DependentUpon>
+    </Compile>
     <Compile Include="UCCImpl\GestionDe.svc.cs">
       <DependentUpon>GestionDe.svc</DependentUpon>
     </Compile>
+    <Compile Include="UCC\IGestionCarte.cs" />
     <Compile Include="UCC\IGestionDe.cs" />
     <Compile Include="UCCImpl\GestionPartie.svc.cs">
       <DependentUpon>GestionPartie.svc</DependentUpon>

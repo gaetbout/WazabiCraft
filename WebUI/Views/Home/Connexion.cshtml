@@ -11,6 +11,7 @@
     }))
     {
         <h2 class="form-signin-heading">@ViewBag.Title</h2>
+        @Html.ValidationMessage("Fail")
         @Html.TextBoxFor(model => model.Pseudo, new
         {
             @class = "form-control",
@@ -21,8 +22,8 @@
         @Html.PasswordFor(model => model.Mdp, new
         {
             @class = "form-control",
-            placeholder = Html.DisplayNameFor(model => model.Mdp)
+            placeholder = "Mot de passe"
         })
-        <input type="submit" value="Se connecter" class="btn btn-lg btn-primary btn-block btnsc" />
+        <input type="submit" value="Se connecter" class="btn btn-lg btn-primary btn-block btnsc"/>
     }
 </div>

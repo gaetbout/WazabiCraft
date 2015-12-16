@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
@@ -11,6 +8,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
         /**
          * Permet de donner un dé au joueur passé en paramètre 
          * */
+
         public bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
             base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);

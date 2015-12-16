@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Wazabi.Logique;
+﻿using Wazabi.Logique;
 
 namespace Wazabi.Model
 {
@@ -10,15 +6,20 @@ namespace Wazabi.Model
     {
         private StrategyCarte strategy;
 
+        public Carte()
+        {
+        }
+
         public Carte(StrategyCarte strategy)
         {
             this.strategy = strategy;
         }
 
-        public bool executeStrategy(){
+        public bool executeStrategy()
+        {
             //TODO 
-            return strategy.faireOperation(null,null,0);
+            return false;
+            //return strategy.faireOperation(null,null,0);
         }
-
     }
 }

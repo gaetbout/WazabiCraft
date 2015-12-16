@@ -6,7 +6,7 @@ namespace Wazabi.UCC
     public interface IGestionJoueur
     {
         [OperationContract]
-        void Inscription(JoueurClient joueur);
+        bool Inscription(JoueurClient joueur);
 
         [OperationContract]
         JoueurClient Connexion(JoueurClient joueur);

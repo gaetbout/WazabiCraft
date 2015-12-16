@@ -25,7 +25,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Ordre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ordre" Type="Int32" Nullable="false" />
     <Property Name="Joueur_Id" Type="Int32" Nullable="false" />
     <Property Name="PartieJoueurPartie_JoueurPartie_Id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Joueur" Relationship="Self.FK_JoueurJoueurPartie" FromRole="JoueurParties" ToRole="Joueurs" />

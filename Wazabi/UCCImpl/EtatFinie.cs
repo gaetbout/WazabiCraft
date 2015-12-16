@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.UCCImpl
 {
     public class EtatFinie : EtatImpl
     {
-
         public EtatFinie(WazabiEntities cont, Partie partie)
             : base(cont, partie)
         {
@@ -22,6 +18,21 @@ namespace Wazabi.UCCImpl
         public override bool RejoindrePartie(JoueurClient joueur)
         {
             return false;
+        }
+
+        public override void InitPlateau(int nbCarteJoueur)
+        {
+            throw new Exception("Partie déja finie!");
+        }
+
+        public override void TourSuivant(GestionDe gestionDe)
+        {
+            throw new Exception("Partie déja finie!");
+        }
+
+        public override JoueurPartie Suivant()
+        {
+            throw new Exception("Partie déja finie!");
         }
     }
 }

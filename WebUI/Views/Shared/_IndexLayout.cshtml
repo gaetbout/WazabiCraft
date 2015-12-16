@@ -5,37 +5,37 @@
 <!DOCTYPE html>
 <html id="@ViewBag.Background">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="~/Content/Error.css" rel="stylesheet" />
-    <link href="~/Content/signin.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="~/Content/Error.css" rel="stylesheet"/>
+    <link href="~/Content/signin.css" rel="stylesheet"/>
     <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <title>@ViewBag.Title</title>
-    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.png"/>
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a id="imageHeader" class="navbar-brand" href="@Url.Action("Index", "Principal")">
-                <img src="~/Images/header.png" runat="server" />
-            </a>
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-        <div class="navbar-collapse collapse" id="navbar-main">
-            @Html.Action("Resume", "Home")
-
-        </div>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a id="imageHeader" class="navbar-brand" href="@Url.Action("Index", "Principal")">
+            <img src="~/Images/header.png" runat="server"/>
+        </a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
 
-    <div>
-        @RenderBody()
+    <div class="navbar-collapse collapse" id="navbar-main">
+        @Html.Action("Resume", "Home")
+
     </div>
+</div>
+
+<div>
+    @RenderBody()
+</div>
 </body>
 </html>

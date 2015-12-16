@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="053fdb9f-8ba5-43eb-92c1-711c11c9e44c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0936a567-0611-41c4-92c6-08267c81b874" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:53150/UCCImpl/GestionPartie.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GestionPartie.disco" MetadataType="Disco" ID="32cf922a-fbbe-4d8b-a525-a05e4e86670f" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?disco" />
-    <MetadataFile FileName="GestionPartie.xsd" MetadataType="Schema" ID="8c6c7bfe-d62d-40e6-aca2-08f50edafdcd" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd2" />
-    <MetadataFile FileName="GestionPartie1.xsd" MetadataType="Schema" ID="5bd44b69-4101-421e-b7e8-847fec4d2945" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd0" />
-    <MetadataFile FileName="GestionPartie2.xsd" MetadataType="Schema" ID="d2f5aa8f-9e44-485b-a772-d24fcf1cf317" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd1" />
-    <MetadataFile FileName="GestionPartie.wsdl" MetadataType="Wsdl" ID="27c35b17-7d07-4f4f-8c0a-f78f9afe04d8" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?wsdl" />
+    <MetadataFile FileName="GestionPartie.disco" MetadataType="Disco" ID="4c8dff91-4c6c-442c-9a31-fb6969f57f1b" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?disco" />
+    <MetadataFile FileName="GestionPartie.xsd" MetadataType="Schema" ID="6d74e4a3-9be1-4615-982f-1e8d74dfd7f5" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionPartie1.xsd" MetadataType="Schema" ID="318e5656-2517-4bd0-8ac7-fb7765c5dff0" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionPartie2.xsd" MetadataType="Schema" ID="7f5290fd-ca04-4b52-83a5-48a920480507" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionPartie.wsdl" MetadataType="Wsdl" ID="3de197ed-df69-4a08-8576-c7774f53dd24" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

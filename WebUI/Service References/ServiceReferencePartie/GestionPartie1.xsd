@@ -11,7 +11,9 @@
   </xs:element>
   <xs:element name="CreerPartieResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreerPartieResult" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="LancerPartie">
@@ -26,14 +28,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="init">
+  <xs:element name="Init">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="initResponse">
+  <xs:element name="InitResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejoindrePartie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Wazabi" minOccurs="0" name="joueur" nillable="true" type="q2:JoueurClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejoindrePartieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RejoindrePartieResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartieCourante">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartieCouranteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wazabi" minOccurs="0" name="PartieCouranteResult" nillable="true" type="q3:PartieClient" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

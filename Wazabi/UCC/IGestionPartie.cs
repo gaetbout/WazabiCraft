@@ -6,12 +6,18 @@ namespace Wazabi.UCC
     public interface IGestionPartie
     {
         [OperationContract]
-        void CreerPartie(JoueurClient joueur, string nom);
+        bool CreerPartie(JoueurClient joueur, string nom);
 
         [OperationContract]
         bool LancerPartie();
 
         [OperationContract]
-        void init();
+        void Init();
+
+        [OperationContract]
+        bool RejoindrePartie(JoueurClient joueur);
+
+        [OperationContract]
+        PartieClient PartieCourante();
     }
 }

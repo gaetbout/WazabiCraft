@@ -1,0 +1,20 @@
+﻿@model WebUI.Controllers.NomPartieModel
+
+@{
+    ViewBag.Title = "Créer une partie";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        @using (Html.BeginForm("CreerPartie", "Principal", FormMethod.Post))
+        {
+            <h2 class="form-signin-heading">@ViewBag.Title</h2>
+            <div class="form-group">
+                @Html.TextBoxFor(modelItem => modelItem.Nom, "", new {@class = "form-control input-lg", autofocus = "autofocus", tabindex = "1", placeholder = "Nom de la partie"})
+            </div>
+
+            <input type="submit" value="Créer la partie !" class="btn btn-lg btn-primary btn-block btnsc"/>
+        }
+    </div>
+</div>

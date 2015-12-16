@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Linq;
-using System.ServiceModel;
-using Wazabi.Model;
-using Wazabi.UCC;
-using System.Xml.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.ServiceModel;
 using System.Web.Hosting;
+using System.Xml.Linq;
+using Wazabi.Model;
+using Wazabi.UCC;
 
 namespace Wazabi.UCCImpl
 {
@@ -20,16 +20,12 @@ namespace Wazabi.UCCImpl
         public int MAX_JOUEURS;
 
         private readonly WazabiEntities context = new WazabiEntities();
+        private GestionDe gestionDe;
+        private GestionCarte gestionCarte = new GestionCarte();
         public Partie partie = null;
         public EtatImpl etat;
 
-
-        public GestionPartie()
-        {
-
-        }
-
-        public void init()
+        public void Init()
         {
             XDocument xdoc;
             try
@@ -64,7 +60,8 @@ namespace Wazabi.UCCImpl
             }
             context.SaveChanges();
 
-            GestionDe gestionDe = new GestionDe(int.Parse(des.First().Attribute("nbParJoueur").Value), int.Parse(des.First().Attribute("nbTotalDes").Value), lesDes);
+            GestionDe gestionDe = new GestionDe(int.Parse(des.First().Attribute("nbParJoueur").Value),
+                int.Parse(des.First().Attribute("nbTotalDes").Value), lesDes);
 
             //Charger les cartes 
             IEnumerable<XElement> cartes = from carte in xdoc.Descendants("carte") select carte;
@@ -83,20 +80,20 @@ namespace Wazabi.UCCImpl
             context.SaveChanges();
         }
 
-        public void CreerPartie(JoueurClient joueur, string nom)
+        public bool CreerPartie(JoueurClient joueur, string nom)
         {
             Joueur temp = context.Joueurs.FirstOrDefault(j => j.Id == joueur.Id);
             if (temp == null)
             {
-                throw new Exception("Le joueur qui essaie de creer la partie n'existe pas en base de donnée");
+                return false;
             }
 
             Partie partieEnCours =
                 context.Parties.FirstOrDefault(
-                    p => p.EtatType == Partie.State.CREATION || p.EtatType == Partie.State.EN_COURS);
+                    p => p.Etat == (int) Partie.State.CREATION || p.Etat == (int) Partie.State.EN_COURS);
             if (partieEnCours != null)
             {
-                throw new Exception("Une partie est déja en cours, vous ne pouvez pas en créer une nouvelle!");
+                return false;
             }
 
             partie = new Partie();
@@ -104,12 +101,15 @@ namespace Wazabi.UCCImpl
             partie.EtatType = Partie.State.CREATION;
             partie.DateHeureCreation = DateTime.Now;
             partie.Nom = nom;
+            partie.Sens = true;
 
             etat = new EtatCreation(context, partie);
 
             context.Parties.Add(partie);
             context.SaveChanges();
-        }
+
+            return true;
+    }
 
 
         public bool LancerPartie()
@@ -124,7 +124,10 @@ namespace Wazabi.UCCImpl
             {
                 throw new Exception("Le joueur qui essaie de rejoindre la partie n'existe pas en base de donnée");
             }
-            if (this.partie == null) throw new Exception("Aucune partie en attente!");
+            if (this.partie == null)
+            {
+                return false;
+            }
             if (this.etat.RejoindrePartie(joueur))
             {
                 if (this.partie.Joueurs.Count() == this.MIN_JOUEURS) LancerPartie();
@@ -133,5 +136,35 @@ namespace Wazabi.UCCImpl
             return false;
         }
 
+        public PartieClient PartieCourante()
+        {
+            if (this.partie == null)
+            {
+                return null;
+            }
+            PartieClient partie = new PartieClient();
+            partie.Id = this.partie.Id;
+            partie.Nom = this.partie.Nom;
+            partie.DateHeureCreation = this.partie.DateHeureCreation;
+            partie.Etat = this.partie.Etat;
+            partie.Sens = this.partie.Sens;
+            return partie;
+        }
+
+        private void InitPlateau()
+        {
+            this.etat.InitPlateau(this.NB_CARTES_JOUEUR);
+        }
+
+
+        private void TourSuivant()
+        {
+            this.etat.TourSuivant(this.gestionDe);
+        }
+
+        private JoueurPartie Suivant()
+        {
+            return this.etat.Suivant();
+        }
     }
 }
