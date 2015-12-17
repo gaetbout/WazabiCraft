@@ -60,5 +60,10 @@ namespace Wazabi.UCCImpl
         {
             throw new Exception("Impossible de cloturer la partie car elle n'a pas démarrer!");
         }
+
+        public override PartieClient PartieCourante()
+        {
+            return new PartieClient(partie);
+        }
     }
 }

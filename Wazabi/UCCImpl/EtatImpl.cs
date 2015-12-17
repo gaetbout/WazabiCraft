@@ -21,5 +21,6 @@ namespace Wazabi.UCCImpl
         public abstract JoueurPartie Suivant();
         public abstract void QuitterPartie(JoueurClient joueur);
         public abstract void CloturerPartie(Joueur vainqueur);
+        public abstract PartieClient PartieCourante();
     }
 }

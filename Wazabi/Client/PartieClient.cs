@@ -25,8 +25,10 @@ namespace Wazabi.Client
             {
                 Joueurs.Add(new JoueurPartieClient(joueurPartie));
             }
-
-            JoueurCourant = new JoueurPartieClient(partie.JoueurCourant);
+            if (partie.JoueurCourant != null)
+            {
+                JoueurCourant = new JoueurPartieClient(partie.JoueurCourant);    
+            }
         }
 
         [DataMember]

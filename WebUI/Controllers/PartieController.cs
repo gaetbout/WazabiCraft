@@ -38,7 +38,7 @@ namespace WebUI.Controllers
             {
                 return RedirectToAction("Plateau");
             }
-            return View();
+            return View(Repository.PartieCourante());
         }
     }
 }

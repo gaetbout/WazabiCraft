@@ -83,7 +83,7 @@ namespace Wazabi.UCCImpl
                         tmp.Description = carte.Value;
                         tmp.Effet = carte.Attribute("effet").Value;
                         tmp.ImageRef = carte.Attribute("src").Value;
-                        context.Cartes.Add(tmp);    
+                        context.Cartes.Add(tmp);
                     }
                 }
             }
@@ -100,7 +100,7 @@ namespace Wazabi.UCCImpl
 
             Partie partieEnCours =
                 context.Parties.FirstOrDefault(
-                    p => p.Etat == (int) Partie.State.CREATION || p.Etat == (int) Partie.State.EN_COURS);
+                    p => p.Etat == (int)Partie.State.CREATION || p.Etat == (int)Partie.State.EN_COURS);
             if (partieEnCours != null)
             {
                 return false;
@@ -159,12 +159,11 @@ namespace Wazabi.UCCImpl
 
         public PartieClient PartieCourante()
         {
-            if (Partie == null)
+            if (Etat == null)
             {
                 return null;
             }
-
-            return new PartieClient(Partie);
+            return Etat.PartieCourante();
         }
 
         private void InitPlateau()

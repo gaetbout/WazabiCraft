@@ -45,5 +45,10 @@ namespace Wazabi.UCCImpl
         {
             throw new Exception("Impossible de cloturer la partie car elle est déja cloturé!");
         }
+
+        public override PartieClient PartieCourante()
+        {
+            return null;
+        }
     }
 }

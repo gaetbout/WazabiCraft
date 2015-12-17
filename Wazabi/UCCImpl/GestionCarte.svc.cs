@@ -13,7 +13,8 @@ namespace Wazabi.UCC
 
         public List<Carte> GenererPioche()
         {
-            return context.Cartes.OrderBy(c => new Random().Next()).ToList();
+            List<Carte> pioche = new List<Carte>(context.Cartes);
+            return pioche.OrderBy(c => new Random().Next()).ToList();
         }
     }
 }

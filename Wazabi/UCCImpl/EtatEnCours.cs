@@ -96,5 +96,10 @@ namespace Wazabi.UCCImpl
             this.partie.Vainqueur_Id = this.partie.Vainqueur.Id;
             context.SaveChanges();
         }
+
+        public override PartieClient PartieCourante()
+        {
+            return new PartieClient(partie);
+        }
     }
 }

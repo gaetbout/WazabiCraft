@@ -1,6 +1,30 @@
-﻿
+﻿@using WebUI.ServiceReferencePartie
+@model PartieClient
 @{
     ViewBag.Title = "Plateau en attente";
     Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
 }
 
+<p>
+    Tours de : @Model.JoueurCourant.Pseudo
+
+    <div class="panel-heading">
+        <h4> Joueurs suivants</h4>
+    </div>
+    <div class="panel-body">
+        @{
+            IEnumerable<JoueurPartieClient> liste = Model.Joueurs;
+            
+            if (!Model.Sens)
+            {
+                liste = liste.Reverse();
+            }
+
+            foreach (var joueur in liste)
+            {
+                <p>@joueur.Pseudo</p>
+            }
+        }
+
+    </div>
+</p>
