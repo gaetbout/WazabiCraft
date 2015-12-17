@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebUI.ServiceReferencePartie.PartieClient>
+
+@{
+    ViewBag.Title = "L'historique des Parties";
+    Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            Date de Création
+        </th>
+        <th>
+            Créateur
+        </th>
+        <th>
+            Vainqueur
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Createur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vainqueur)
+        </td>
+    </tr>
+}
+
+</table>

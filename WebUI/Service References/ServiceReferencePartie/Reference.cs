@@ -116,6 +116,12 @@ namespace WebUI.ServiceReferencePartie {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreateurField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateCreationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int EtatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -133,6 +139,9 @@ namespace WebUI.ServiceReferencePartie {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SensField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VainqueurField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -140,6 +149,32 @@ namespace WebUI.ServiceReferencePartie {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Createur {
+            get {
+                return this.CreateurField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreateurField, value) != true)) {
+                    this.CreateurField = value;
+                    this.RaisePropertyChanged("Createur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DateCreation {
+            get {
+                return this.DateCreationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateCreationField, value) != true)) {
+                    this.DateCreationField = value;
+                    this.RaisePropertyChanged("DateCreation");
+                }
             }
         }
         
@@ -217,6 +252,19 @@ namespace WebUI.ServiceReferencePartie {
                 if ((this.SensField.Equals(value) != true)) {
                     this.SensField = value;
                     this.RaisePropertyChanged("Sens");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Vainqueur {
+            get {
+                return this.VainqueurField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VainqueurField, value) != true)) {
+                    this.VainqueurField = value;
+                    this.RaisePropertyChanged("Vainqueur");
                 }
             }
         }
@@ -533,6 +581,24 @@ namespace WebUI.ServiceReferencePartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/QuitterPartie", ReplyAction="http://tempuri.org/IGestionPartie/QuitterPartieResponse")]
         System.Threading.Tasks.Task QuitterPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetParties", ReplyAction="http://tempuri.org/IGestionPartie/GetPartiesResponse")]
+        WebUI.ServiceReferencePartie.PartieClient[] GetParties();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetParties", ReplyAction="http://tempuri.org/IGestionPartie/GetPartiesResponse")]
+        System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient[]> GetPartiesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetJoueurPartie", ReplyAction="http://tempuri.org/IGestionPartie/GetJoueurPartieResponse")]
+        WebUI.ServiceReferencePartie.JoueurPartieClient[] GetJoueurPartie(int idPartie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetJoueurPartie", ReplyAction="http://tempuri.org/IGestionPartie/GetJoueurPartieResponse")]
+        System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.JoueurPartieClient[]> GetJoueurPartieAsync(int idPartie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/ClearBD", ReplyAction="http://tempuri.org/IGestionPartie/ClearBDResponse")]
+        void ClearBD();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/ClearBD", ReplyAction="http://tempuri.org/IGestionPartie/ClearBDResponse")]
+        System.Threading.Tasks.Task ClearBDAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -608,6 +674,30 @@ namespace WebUI.ServiceReferencePartie {
         
         public System.Threading.Tasks.Task QuitterPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur) {
             return base.Channel.QuitterPartieAsync(joueur);
+        }
+        
+        public WebUI.ServiceReferencePartie.PartieClient[] GetParties() {
+            return base.Channel.GetParties();
+        }
+        
+        public System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient[]> GetPartiesAsync() {
+            return base.Channel.GetPartiesAsync();
+        }
+        
+        public WebUI.ServiceReferencePartie.JoueurPartieClient[] GetJoueurPartie(int idPartie) {
+            return base.Channel.GetJoueurPartie(idPartie);
+        }
+        
+        public System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.JoueurPartieClient[]> GetJoueurPartieAsync(int idPartie) {
+            return base.Channel.GetJoueurPartieAsync(idPartie);
+        }
+        
+        public void ClearBD() {
+            base.Channel.ClearBD();
+        }
+        
+        public System.Threading.Tasks.Task ClearBDAsync() {
+            return base.Channel.ClearBDAsync();
         }
     }
 }

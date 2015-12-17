@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using System.Web.WebPages;
 using WebUI.Models;
 using WebUI.ServiceReferencePartie;
@@ -61,6 +62,11 @@ namespace WebUI.Controllers
             {
                 return View("Index");
             }
+        }
+
+        public ActionResult VoirParties()
+        {
+            return View(Repository.GetParties());
         }
 
         public PartialViewResult Pseudo(Session session)

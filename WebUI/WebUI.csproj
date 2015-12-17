@@ -212,6 +212,10 @@
     </Content>
     <Content Include="Views\Partie\Plateau.cshtml" />
     <Content Include="Views\Partie\PlateauEnAttente.cshtml" />
+    <Content Include="Service References\ServiceReferencePartie\WebUI.ServiceReferencePartie.JoueurPartieClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Principal\VoirParties.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

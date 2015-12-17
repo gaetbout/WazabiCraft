@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Test
             IGestionPartie gestionPartie = new GestionPartieClient();
             
             gestionPartie.ClearBD();
+            gestionPartie.Init();
 
             Console.WriteLine("Inscription du joueur Quentin avec comme mdp quentin");
             Tests.ServiceJoueur.JoueurClient joueur = new Tests.ServiceJoueur.JoueurClient();
@@ -89,6 +91,13 @@ namespace Test
                 {
                     Console.WriteLine("JoueurPartie : " + jpc.Pseudo);
                 }
+            }
+
+            Console.WriteLine("Quentin quitte la partie donc Piotr devient le vainqueur!");
+            gestionPartie.QuitterPartie(participant);
+            foreach (Tests.ServicePartie.PartieClient partie in gestionPartie.GetParties())
+            {
+                Console.WriteLine("Partie => " + partie.Nom + " etat " + partie.Etat);
             }
 
             Console.ReadLine();

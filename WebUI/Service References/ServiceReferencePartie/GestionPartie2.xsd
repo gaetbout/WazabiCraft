@@ -76,4 +76,40 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetParties">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0" name="GetPartiesResult" nillable="true" type="q5:ArrayOfPartieClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJoueurPartie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPartie" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJoueurPartieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0" name="GetJoueurPartieResult" nillable="true" type="q6:ArrayOfJoueurPartieClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearBD">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearBDResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

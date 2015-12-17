@@ -75,6 +75,8 @@ namespace Wazabi.UCCImpl
 
         public override void QuitterPartie(JoueurClient joueur)
         {
+            (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id)).Cartes.Clear();
+            (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id)).Des.Clear();
             partie.Joueurs.Remove(partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id));
             if (partie.Joueurs.Count() == 1)
             {
@@ -92,7 +94,7 @@ namespace Wazabi.UCCImpl
         {
             this.partie.EtatType = Partie.State.FINIE;
             this.partie.Etat = (int) Partie.State.FINIE;
-            this.partie.Vainqueur = context.Joueurs.FirstOrDefault(j => j.Id == vainqueur.Id);
+            this.partie.Vainqueur = vainqueur;
             this.partie.Vainqueur_Id = this.partie.Vainqueur.Id;
             context.SaveChanges();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -204,15 +205,7 @@ namespace Wazabi.UCCImpl
 
             foreach (Partie partie in context.Parties)
             {
-                JoueurPartieClient jpc = new JoueurPartieClient();
-                jpc.Id = partie.JoueurCourant.Id;
-                jpc.Pseudo = partie.JoueurCourant.Joueur.Pseudo;
-                PartieClient temp = new PartieClient();
-                temp.Etat = partie.Etat;
-                temp.Id = partie.Id;
-                temp.Nom = partie.Nom;
-                temp.Sens = partie.Sens;
-                temp.JoueurCourant = jpc;
+                PartieClient temp = new PartieClient(partie);
                 collection.Add(temp);
             }
             return collection;
@@ -227,9 +220,7 @@ namespace Wazabi.UCCImpl
 
             foreach (JoueurPartie jp in partie.Joueurs)
             {
-                JoueurPartieClient jpc = new JoueurPartieClient();
-                jpc.Id = jp.Id;
-                jpc.Pseudo = jp.Joueur.Pseudo;
+                JoueurPartieClient jpc = new JoueurPartieClient(jp);
                 collection.Add(jpc);
             }
 
@@ -239,9 +230,11 @@ namespace Wazabi.UCCImpl
 
         public void ClearBD()
         {
-            context.Database.ExecuteSqlCommand("DELETE FROM JoueurParties");
-            context.Database.ExecuteSqlCommand("DELETE FROM Parties");
-            context.Database.ExecuteSqlCommand("DELETE FROM Joueurs");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurPartieCarte]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurParties]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[PartieCarte]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Parties]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Joueurs]");
         }
     }
 }

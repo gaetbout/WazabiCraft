@@ -11,12 +11,15 @@
   <xs:element name="JoueurClient" nillable="true" type="tns:JoueurClient" />
   <xs:complexType name="PartieClient">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Createur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Etat" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="JoueurCourant" nillable="true" type="tns:JoueurPartieClient" />
       <xs:element minOccurs="0" name="Joueurs" nillable="true" type="tns:ArrayOfJoueurPartieClient" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sens" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Vainqueur" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PartieClient" nillable="true" type="tns:PartieClient" />
@@ -64,4 +67,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfJoueurPartieClient" nillable="true" type="tns:ArrayOfJoueurPartieClient" />
+  <xs:complexType name="ArrayOfPartieClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartieClient" nillable="true" type="tns:PartieClient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartieClient" nillable="true" type="tns:ArrayOfPartieClient" />
 </xs:schema>

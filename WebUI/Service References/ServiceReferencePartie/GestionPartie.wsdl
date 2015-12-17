@@ -43,6 +43,24 @@
   <wsdl:message name="IGestionPartie_QuitterPartie_OutputMessage">
     <wsdl:part name="parameters" element="tns:QuitterPartieResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestionPartie_GetParties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParties" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_GetParties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_GetJoueurPartie_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJoueurPartie" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_GetJoueurPartie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJoueurPartieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_ClearBD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearBD" />
+  </wsdl:message>
+  <wsdl:message name="IGestionPartie_ClearBD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearBDResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGestionPartie">
     <wsdl:operation name="CreerPartie">
       <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/CreerPartie" message="tns:IGestionPartie_CreerPartie_InputMessage" />
@@ -67,6 +85,18 @@
     <wsdl:operation name="QuitterPartie">
       <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/QuitterPartie" message="tns:IGestionPartie_QuitterPartie_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/QuitterPartieResponse" message="tns:IGestionPartie_QuitterPartie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/GetParties" message="tns:IGestionPartie_GetParties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/GetPartiesResponse" message="tns:IGestionPartie_GetParties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJoueurPartie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/GetJoueurPartie" message="tns:IGestionPartie_GetJoueurPartie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/GetJoueurPartieResponse" message="tns:IGestionPartie_GetJoueurPartie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearBD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionPartie/ClearBD" message="tns:IGestionPartie_ClearBD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionPartie/ClearBDResponse" message="tns:IGestionPartie_ClearBD_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGestionPartie" type="tns:IGestionPartie">
@@ -118,6 +148,33 @@
     </wsdl:operation>
     <wsdl:operation name="QuitterPartie">
       <soap:operation soapAction="http://tempuri.org/IGestionPartie/QuitterPartie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParties">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/GetParties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJoueurPartie">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/GetJoueurPartie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearBD">
+      <soap:operation soapAction="http://tempuri.org/IGestionPartie/ClearBD" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
