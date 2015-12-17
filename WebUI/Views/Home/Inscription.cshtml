@@ -4,24 +4,22 @@
     ViewBag.Title = "Inscription";
     Layout = "~/Views/Shared/_IndexLayout.cshtml";
 }
-<div class="container">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-        @using (Html.BeginForm("Inscription", "Home", FormMethod.Post))
-        {
-            @Html.HiddenFor(m => m.Id)
-            <h2 class="form-signin-heading">@ViewBag.Title</h2>
-            @Html.ValidationMessage("Fail")
-            <div class="form-group">
-                @Html.TextBoxFor(modelItem => modelItem.Pseudo, null, new {@class = "form-control input-lg", autofocus = "autofocus", tabindex = "1", placeholder = Html.DisplayNameFor(model => model.Pseudo)})
-            </div>
-            <div class="form-group">
-                @Html.PasswordFor(modelItem => modelItem.Mdp, new {@class = "form-control input-lg", tabindex = "2", placeholder = "Mot de passe"})
-            </div>
-            <div class="form-group">
-                @Html.PasswordFor(modelItem => modelItem.ConfirmPassword, new {@class = "form-control input-lg", tabindex = "3", placeholder = "Confirmer mot de passe"})
-            </div>
 
-            <input type="submit" value="S'inscrire" class="btn btn-lg btn-primary btn-block btnsc"/>
-        }
+@using (Html.BeginForm("Inscription", "Home", FormMethod.Post, new
+{
+    @class = "form-signin"
+}))
+{
+    @Html.ValidationMessage("Fail")
+    <div class="form-group">
+        @Html.TextBoxFor(modelItem => modelItem.Pseudo, null, new {@class = "form-control input-lg", autofocus = "autofocus", tabindex = "1", placeholder = Html.DisplayNameFor(model => model.Pseudo)})
     </div>
-</div>
+    <div class="form-group">
+        @Html.PasswordFor(modelItem => modelItem.Mdp, new {@class = "form-control input-lg", tabindex = "2", placeholder = "Mot de passe"})
+    </div>
+    <div class="form-group">
+        @Html.PasswordFor(modelItem => modelItem.ConfirmPassword, new {@class = "form-control input-lg", tabindex = "3", placeholder = "Confirmer mot de passe"})
+    </div>
+
+    <input type="submit" value="S'inscrire" class="btn btn-lg btn-primary btn-block btnsc"/>
+}

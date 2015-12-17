@@ -17,9 +17,8 @@ namespace Wazabi.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Partie()
         {
-            this.Joueurs = new HashSet<JoueurPartie>();
             this.Pioche = new HashSet<Carte>();
-            this.JoueursQuiDoiventPasser = new HashSet<JoueurPartie>();
+            this.Joueurs = new HashSet<JoueurPartie>();
         }
     
         public int Id { get; set; }
@@ -30,14 +29,12 @@ namespace Wazabi.Model
         public Nullable<int> Vainqueur_Id { get; set; }
         public int Createur_Id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<JoueurPartie> Joueurs { get; set; }
         public virtual Joueur Vainqueur { get; set; }
         public virtual Joueur Createur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Carte> Pioche { get; set; }
         public virtual JoueurPartie JoueurCourant { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<JoueurPartie> JoueursQuiDoiventPasser { get; set; }
+        public virtual ICollection<JoueurPartie> Joueurs { get; set; }
     }
 }

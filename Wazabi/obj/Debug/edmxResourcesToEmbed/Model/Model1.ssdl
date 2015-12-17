@@ -13,10 +13,6 @@
       <End Role="Joueurs" EntitySet="Joueurs" />
       <End Role="JoueurParties" EntitySet="JoueurParties" />
     </AssociationSet>
-    <AssociationSet Name="FK_PartieJoueurPartie" Association="WazabiModel.Store.FK_PartieJoueurPartie">
-      <End Role="Parties" EntitySet="Parties" />
-      <End Role="JoueurParties" EntitySet="JoueurParties" />
-    </AssociationSet>
     <AssociationSet Name="FK_JoueurPartie1" Association="WazabiModel.Store.FK_JoueurPartie1">
       <End Role="Joueurs" EntitySet="Joueurs" />
       <End Role="Parties" EntitySet="Parties" />
@@ -49,13 +45,13 @@
       <End Role="Parties" EntitySet="Parties" />
       <End Role="PartieCarte" EntitySet="PartieCarte" />
     </AssociationSet>
-    <AssociationSet Name="JoueurPartiePartie" Association="WazabiModel.Store.JoueurPartiePartie">
-      <End Role="JoueurPartie" EntitySet="JoueurParties" />
+    <AssociationSet Name="PartieJoueurPartie" Association="WazabiModel.Store.PartieJoueurPartie">
       <End Role="Partie" EntitySet="Parties" />
+      <End Role="JoueurPartie" EntitySet="JoueurParties" />
     </AssociationSet>
-    <AssociationSet Name="JoueursQuiDoiventPasserTour" Association="WazabiModel.Store.JoueursQuiDoiventPasserTour">
-      <End Role="JoueurPartie" EntitySet="JoueurParties" />
+    <AssociationSet Name="PartieJoueurPartie1" Association="WazabiModel.Store.PartieJoueurPartie1">
       <End Role="Partie" EntitySet="Parties" />
+      <End Role="JoueurPartie" EntitySet="JoueurParties" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Cartes">
@@ -76,6 +72,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Valeur" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NbFace" Type="int" Nullable="false" />
     <Property Name="ImageRef" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="JoueurParties">
@@ -85,9 +82,9 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ordre" Type="int" Nullable="false" />
     <Property Name="Joueur_Id" Type="int" Nullable="false" />
+    <Property Name="NbSkips" Type="int" Nullable="false" />
     <Property Name="PartieJoueurPartie_JoueurPartie_Id" Type="int" Nullable="false" />
-    <Property Name="JoueurPartiePartie_JoueurPartie_Id" Type="int" Nullable="false" />
-    <Property Name="JoueursQuiDoiventPasserTour_JoueurPartie_Id" Type="int" Nullable="true" />
+    <Property Name="PartieJoueurPartie1_JoueurPartie_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Joueurs">
     <Key>
@@ -147,18 +144,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PartieJoueurPartie">
-    <End Role="Parties" Type="WazabiModel.Store.Parties" Multiplicity="1" />
-    <End Role="JoueurParties" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Parties">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="JoueurParties">
-        <PropertyRef Name="PartieJoueurPartie_JoueurPartie_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_JoueurPartie1">
     <End Role="Joueurs" Type="WazabiModel.Store.Joueurs" Multiplicity="0..1" />
     <End Role="Parties" Type="WazabiModel.Store.Parties" Multiplicity="*" />
@@ -183,27 +168,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="JoueurPartiePartie">
-    <End Role="JoueurPartie" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
+  <Association Name="PartieJoueurPartie">
     <End Role="Partie" Type="WazabiModel.Store.Parties" Multiplicity="1" />
+    <End Role="JoueurPartie" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Partie">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="JoueurPartie">
-        <PropertyRef Name="JoueurPartiePartie_JoueurPartie_Id" />
+        <PropertyRef Name="PartieJoueurPartie_JoueurPartie_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="JoueursQuiDoiventPasserTour">
-    <End Role="JoueurPartie" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
+  <Association Name="PartieJoueurPartie1">
     <End Role="Partie" Type="WazabiModel.Store.Parties" Multiplicity="0..1" />
+    <End Role="JoueurPartie" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Partie">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="JoueurPartie">
-        <PropertyRef Name="JoueursQuiDoiventPasserTour_JoueurPartie_Id" />
+        <PropertyRef Name="PartieJoueurPartie1_JoueurPartie_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

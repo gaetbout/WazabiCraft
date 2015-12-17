@@ -14,7 +14,7 @@ namespace Wazabi.UCCImpl
         }
 
         public abstract bool LancerPartie();
-        public abstract bool RejoindrePartie(JoueurClient joueur);
+        public abstract bool RejoindrePartie(Joueur joueur);
         public abstract void InitPlateau(int nbCarteJoueur);
         public abstract void TourSuivant(GestionDe gestionDe);
         public abstract JoueurPartie Suivant();

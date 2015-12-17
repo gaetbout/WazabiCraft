@@ -15,7 +15,7 @@ namespace Wazabi.UCCImpl
             return false;
         }
 
-        public override bool RejoindrePartie(JoueurClient joueur)
+        public override bool RejoindrePartie(Joueur joueur)
         {
             return false;
         }

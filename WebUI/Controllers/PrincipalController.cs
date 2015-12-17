@@ -12,6 +12,7 @@ namespace WebUI.Controllers
         public PrincipalController(IGestionPartie referencePartie)
         {
             Repository = referencePartie;
+            Repository.Init();
         }
 
         public ActionResult Index(Session session)
@@ -60,6 +61,11 @@ namespace WebUI.Controllers
             {
                 return View("Index");
             }
+        }
+
+        public PartialViewResult Pseudo(Session session)
+        {
+            return PartialView(session);
         }
     }
 

@@ -2,34 +2,29 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+    Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
 }
 
-<div class="container">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-        <h2 class="form-signin-heading">@ViewBag.Title</h2>
 
-        @if (Model == null)
-        {
-            <div class="form-group">
-                <a class="btn btn-lg btn-success btn-block btnsc" href="@Url.Action("CreerPartie")">Créer une partie</a>
-            </div>
-        }
-        else if (Model.Etat == 0)
-        {
-            <div class="form-group">
-                <a class="btn btn-lg btn-warning btn-block btnsc" href="@Url.Action("RejoindrePartie")">Rejoindre la partie</a>
-            </div>
-        }
-        else if (Model.Etat == 1)
-        {
-            <div class="form-group">
-                <a class="btn btn-lg btn-danger btn-block btnsc" href="" disabled="disabled">Une partie est déjà en cours</a>
-            </div>
-        }
-
-        <div class="form-group">
-            <a class="btn btn-lg btn-info btn-block btnsc" href="">Voir parties</a>
-        </div>
+@if (Model == null)
+{
+    <div class="form-group">
+        <a class="btn btn-lg btn-success btn-block btnsc" href="@Url.Action("CreerPartie")">Créer une partie</a>
     </div>
+}
+else if (Model.Etat == 0)
+{
+    <div class="form-group">
+        <a class="btn btn-lg btn-warning btn-block btnsc" href="@Url.Action("RejoindrePartie")">Rejoindre la partie</a>
+    </div>
+}
+else if (Model.Etat == 1)
+{
+    <div class="form-group">
+        <a class="btn btn-lg btn-danger btn-block btnsc" href="" disabled="disabled">Une partie est déjà en cours</a>
+    </div>
+}
+
+<div class="form-group">
+    <a class="btn btn-lg btn-info btn-block btnsc" href="">Voir parties</a>
 </div>

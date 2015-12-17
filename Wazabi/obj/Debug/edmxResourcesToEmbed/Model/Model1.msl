@@ -19,6 +19,7 @@
         <MappingFragment StoreEntitySet="Des">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Valeur" ColumnName="Valeur" />
+          <ScalarProperty Name="NbFace" ColumnName="NbFace" />
           <ScalarProperty Name="ImageRef" ColumnName="ImageRef" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -29,7 +30,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Ordre" ColumnName="Ordre" />
           <ScalarProperty Name="Joueur_Id" ColumnName="Joueur_Id" />
-          <ScalarProperty Name="PartieJoueurPartie_JoueurPartie_Id" ColumnName="PartieJoueurPartie_JoueurPartie_Id" />
+          <ScalarProperty Name="NbSkips" ColumnName="NbSkips" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -81,22 +82,22 @@
         <ScalarProperty Name="Id" ColumnName="PartieCarte_Cartes_Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="JoueurPartiePartie" TypeName="WazabiModel.JoueurPartiePartie" StoreEntitySet="JoueurParties">
+    <AssociationSetMapping Name="PartieJoueurPartie" TypeName="WazabiModel.PartieJoueurPartie" StoreEntitySet="JoueurParties">
       <EndProperty Name="Partie">
-        <ScalarProperty Name="Id" ColumnName="JoueurPartiePartie_JoueurPartie_Id" />
+        <ScalarProperty Name="Id" ColumnName="PartieJoueurPartie_JoueurPartie_Id" />
       </EndProperty>
       <EndProperty Name="JoueurPartie">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="JoueursQuiDoiventPasserTour" TypeName="WazabiModel.JoueursQuiDoiventPasserTour" StoreEntitySet="JoueurParties">
+    <AssociationSetMapping Name="PartieJoueurPartie1" TypeName="WazabiModel.PartieJoueurPartie1" StoreEntitySet="JoueurParties">
       <EndProperty Name="Partie">
-        <ScalarProperty Name="Id" ColumnName="JoueursQuiDoiventPasserTour_JoueurPartie_Id" />
+        <ScalarProperty Name="Id" ColumnName="PartieJoueurPartie1_JoueurPartie_Id" />
       </EndProperty>
       <EndProperty Name="JoueurPartie">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
-      <Condition ColumnName="JoueursQuiDoiventPasserTour_JoueurPartie_Id" IsNull="false" />
+      <Condition ColumnName="PartieJoueurPartie1_JoueurPartie_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

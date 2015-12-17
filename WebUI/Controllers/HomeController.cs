@@ -16,11 +16,6 @@ namespace WebUI.Controllers
             Repository = personneRepository;
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public PartialViewResult Resume()
         {
             return PartialView();
@@ -67,7 +62,7 @@ namespace WebUI.Controllers
             {
                 if (Repository.Inscription(login))
                 {
-                    return (RedirectToAction("Index"));
+                    return (RedirectToAction("Connexion"));
                 }
                 else
                 {

@@ -12,12 +12,12 @@ namespace Wazabi.Logique.StrategyCarteImpl
 
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
-            base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
+           /* base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
             if (partie.JoueursQuiDoiventPasser.Where(x=> x.Id == joueurAdverse.Id).Count() == 1)
             {
                 throw new ArgumentException("Ce joueur doit déjà passer son tour");
             }
-            partie.JoueursQuiDoiventPasser.Add(partie.Joueurs.Where(x => x.Id == joueurAdverse.Id).FirstOrDefault());
+            partie.JoueursQuiDoiventPasser.Add(partie.Joueurs.Where(x => x.Id == joueurAdverse.Id).FirstOrDefault());*/
             return true;
         }
     }

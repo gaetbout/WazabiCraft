@@ -37,6 +37,7 @@ C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
+C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\wazabi.xml
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll.config
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\Wazabi.dll
@@ -50,4 +51,4 @@ C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xm
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache

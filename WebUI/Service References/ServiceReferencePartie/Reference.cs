@@ -248,6 +248,12 @@ namespace WebUI.ServiceReferencePartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/PartieCourante", ReplyAction="http://tempuri.org/IGestionPartie/PartieCouranteResponse")]
         System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient> PartieCouranteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/QuitterPartie", ReplyAction="http://tempuri.org/IGestionPartie/QuitterPartieResponse")]
+        void QuitterPartie(WebUI.ServiceReferencePartie.JoueurClient joueur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/QuitterPartie", ReplyAction="http://tempuri.org/IGestionPartie/QuitterPartieResponse")]
+        System.Threading.Tasks.Task QuitterPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -315,6 +321,14 @@ namespace WebUI.ServiceReferencePartie {
         
         public System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient> PartieCouranteAsync() {
             return base.Channel.PartieCouranteAsync();
+        }
+        
+        public void QuitterPartie(WebUI.ServiceReferencePartie.JoueurClient joueur) {
+            base.Channel.QuitterPartie(joueur);
+        }
+        
+        public System.Threading.Tasks.Task QuitterPartieAsync(WebUI.ServiceReferencePartie.JoueurClient joueur) {
+            return base.Channel.QuitterPartieAsync(joueur);
         }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="72c50e3d-8c76-455f-994f-795c242cd481" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="60d9f318-1997-4f46-b20f-f2f098306509" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:53150/UCCImpl/GestionJoueur.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GestionJoueur.xsd" MetadataType="Schema" ID="86484d44-0ca6-416a-b677-9101674c7e6a" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd2" />
-    <MetadataFile FileName="GestionJoueur.wsdl" MetadataType="Wsdl" ID="6d771a1a-4ce9-40a8-9a8d-dc19b63e5f4d" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?wsdl" />
-    <MetadataFile FileName="GestionJoueur1.xsd" MetadataType="Schema" ID="af4d25da-6601-440b-ba70-906fe39b6f5b" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd1" />
-    <MetadataFile FileName="GestionJoueur.disco" MetadataType="Disco" ID="f2cfdcfa-52e6-4ca1-8023-91b506211752" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?disco" />
-    <MetadataFile FileName="GestionJoueur2.xsd" MetadataType="Schema" ID="dc278a47-189c-4c59-8c48-76b7f0ecec27" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionJoueur.xsd" MetadataType="Schema" ID="2ec4426c-a305-4457-9919-0d739c230246" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionJoueur.wsdl" MetadataType="Wsdl" ID="0b243086-5572-4688-85b0-1fef8cfe639c" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?wsdl" />
+    <MetadataFile FileName="GestionJoueur1.xsd" MetadataType="Schema" ID="67059251-d472-4a9c-b6f3-b1f24071e897" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionJoueur.disco" MetadataType="Disco" ID="97809aa0-0508-46a6-a15c-0921888b2246" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?disco" />
+    <MetadataFile FileName="GestionJoueur2.xsd" MetadataType="Schema" ID="fbb8ba58-f509-4669-ab92-ae3020912233" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionJoueur.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

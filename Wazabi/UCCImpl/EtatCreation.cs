@@ -15,20 +15,19 @@ namespace Wazabi.UCCImpl
         {
             partie.EtatType = Partie.State.EN_COURS;
             int i = partie.Joueurs.Count();
-            JoueurPartie courant = partie.Joueurs.ElementAt(new Random().Next(i) + 1);
+            JoueurPartie courant = partie.Joueurs.ElementAt(new Random().Next(i));
 
             partie.JoueurCourant = courant;
             context.SaveChanges();
             return true;
         }
 
-        public override bool RejoindrePartie(JoueurClient joueur)
+        public override bool RejoindrePartie(Joueur joueur)
         {
             JoueurPartie temp = new JoueurPartie();
-            temp.Joueur = context.Joueurs.FirstOrDefault(j => j.Id == joueur.Id);
-            temp.Joueur_Id = joueur.Id;
-            temp.Ordre = (context.Joueurs.Count() + 1);
-            temp.PartieJoueurPartie_JoueurPartie_Id = partie.Id;
+            temp.Joueur = joueur;
+            temp.Ordre = partie.Joueurs.Count();
+
             this.partie.Joueurs.Add(temp);
             context.SaveChanges();
             return true;

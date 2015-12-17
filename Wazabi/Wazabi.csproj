@@ -73,6 +73,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\carte_achievment.png" />
+    <Content Include="images\carte_blaze.png" />
+    <Content Include="images\carte_creeper.png" />
+    <Content Include="images\carte_diamondblock.png" />
+    <Content Include="images\carte_enderman.png" />
+    <Content Include="images\carte_epee.png" />
+    <Content Include="images\carte_minecart.png" />
+    <Content Include="images\carte_pickaxe.png" />
+    <Content Include="images\carte_poulet.png" />
+    <Content Include="images\carte_sorciere.png" />
     <Content Include="UCCImpl\GestionCarte.svc" />
     <Content Include="UCCImpl\GestionDe.svc" />
     <Content Include="UCCImpl\GestionPartie.svc" />
