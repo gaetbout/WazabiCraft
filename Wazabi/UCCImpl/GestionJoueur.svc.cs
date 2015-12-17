@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Wazabi.Client;
 using Wazabi.Model;
 using Wazabi.UCC;
 

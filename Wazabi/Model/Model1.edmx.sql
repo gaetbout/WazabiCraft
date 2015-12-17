@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/17/2015 09:42:47
+-- Date Created: 12/17/2015 12:01:55
 -- Generated from EDMX file: C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -48,7 +48,7 @@ IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PartieJoueurPartie1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Parties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
+    ALTER TABLE [dbo].[JoueurParties] DROP CONSTRAINT [FK_PartieJoueurPartie1];
 GO
 
 -- --------------------------------------------------
@@ -91,8 +91,7 @@ CREATE TABLE [dbo].[Cartes] (
     [Cout] int  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
     [Effet] nvarchar(max)  NOT NULL,
-    [ImageRef] nvarchar(max)  NOT NULL,
-    [NbCartes] int  NOT NULL
+    [ImageRef] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -100,7 +99,6 @@ GO
 CREATE TABLE [dbo].[Des] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Valeur] nvarchar(max)  NOT NULL,
-    [NbFace] int  NOT NULL,
     [ImageRef] nvarchar(max)  NULL
 );
 GO

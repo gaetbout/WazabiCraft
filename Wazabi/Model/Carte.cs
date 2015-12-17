@@ -20,6 +20,5 @@ namespace Wazabi.Model
         public string Description { get; set; }
         public string Effet { get; set; }
         public string ImageRef { get; set; }
-        public int NbCartes { get; set; }
     }
 }

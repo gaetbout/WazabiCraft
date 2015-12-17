@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Wazabi.Client;
 using Wazabi.Model;
 using Wazabi.UCC;
 
@@ -66,7 +67,7 @@ namespace Wazabi.UCCImpl
             {
                 if (partie.JoueurCourant.Ordre == 1)
                 {
-                    return partie.Joueurs.ElementAt(partie.Joueurs.Count-1);
+                    return partie.Joueurs.ElementAt(partie.Joueurs.Count - 1);
                 }
                 return partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre - 1);
             }
@@ -90,7 +91,7 @@ namespace Wazabi.UCCImpl
         public override void CloturerPartie(Joueur vainqueur)
         {
             this.partie.EtatType = Partie.State.FINIE;
-            this.partie.Etat = (int)Partie.State.FINIE;
+            this.partie.Etat = (int) Partie.State.FINIE;
             this.partie.Vainqueur = context.Joueurs.FirstOrDefault(j => j.Id == vainqueur.Id);
             this.partie.Vainqueur_Id = this.partie.Vainqueur.Id;
             context.SaveChanges();

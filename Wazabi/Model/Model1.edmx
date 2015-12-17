@@ -70,7 +70,6 @@
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Effet" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ImageRef" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NbCartes" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Des">
     <Key>
@@ -78,7 +77,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Valeur" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NbFace" Type="int" Nullable="false" />
     <Property Name="ImageRef" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="JoueurParties">
@@ -288,7 +286,6 @@
                     Nullable="false" />
           <Property Name="Effet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ImageRef" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NbCartes" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="De">
           <Key>
@@ -296,7 +293,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Valeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NbFace" Type="Int32" Nullable="false" />
           <Property Name="ImageRef" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="JoueurPartie">
@@ -450,7 +446,6 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Effet" ColumnName="Effet" />
           <ScalarProperty Name="ImageRef" ColumnName="ImageRef" />
-          <ScalarProperty Name="NbCartes" ColumnName="NbCartes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -459,7 +454,6 @@
         <MappingFragment StoreEntitySet="Des">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Valeur" ColumnName="Valeur" />
-          <ScalarProperty Name="NbFace" ColumnName="NbFace" />
           <ScalarProperty Name="ImageRef" ColumnName="ImageRef" />
         </MappingFragment>
       </EntityTypeMapping>

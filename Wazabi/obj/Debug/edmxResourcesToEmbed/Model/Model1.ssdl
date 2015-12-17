@@ -64,7 +64,6 @@
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Effet" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ImageRef" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NbCartes" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Des">
     <Key>
@@ -72,7 +71,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Valeur" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NbFace" Type="int" Nullable="false" />
     <Property Name="ImageRef" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="JoueurParties">

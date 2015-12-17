@@ -18,7 +18,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
             }
             base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
             JoueurPartie joueurPartieAdverse = partie.Joueurs.Where(x => x.Id == joueurAdverse.Id).FirstOrDefault();
-            
+
             //Cas ou on vérifier que tous les joueurs nont plus de carte
             if (joueurPartieAdverse.Cartes.Count == 0)
             {
@@ -27,7 +27,8 @@ namespace Wazabi.Logique.StrategyCarteImpl
                     if (jp.Id != partie.JoueurCourant.Id && jp.Id != joueurPartieAdverse.Id)
                     {
                         if (jp.Cartes.Count > 0)
-                            throw new ArgumentException("Le jouer adverse doit avoir au moins une carte et un autre joueur a au moins une carte");
+                            throw new ArgumentException(
+                                "Le jouer adverse doit avoir au moins une carte et un autre joueur a au moins une carte");
                     }
                 }
                 //On va dans la pioche

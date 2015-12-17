@@ -13,15 +13,7 @@ namespace Wazabi.UCC
 
         public List<Carte> GenererPioche()
         {
-            List<Carte> liste = new List<Carte>();
-            foreach (Carte carte in context.Cartes)
-            {
-                for (int i = 0; i < carte.NbCartes; i++)
-                {
-                    liste.Add(carte);
-                }
-            }
-            return liste.OrderBy(c => new Random().Next()).ToList();
+            return context.Cartes.OrderBy(c => new Random().Next()).ToList();
         }
     }
 }

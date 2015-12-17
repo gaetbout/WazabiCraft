@@ -15,7 +15,7 @@ namespace WebUI.ServiceReferencePartie {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
     [System.SerializableAttribute()]
     public partial class JoueurClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -108,7 +108,7 @@ namespace WebUI.ServiceReferencePartie {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PartieClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PartieClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
     [System.SerializableAttribute()]
     public partial class PartieClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -116,13 +116,16 @@ namespace WebUI.ServiceReferencePartie {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateHeureCreationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int EtatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebUI.ServiceReferencePartie.JoueurPartieClient JoueurCourantField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebUI.ServiceReferencePartie.JoueurPartieClient[] JoueursField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
@@ -137,19 +140,6 @@ namespace WebUI.ServiceReferencePartie {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateHeureCreation {
-            get {
-                return this.DateHeureCreationField;
-            }
-            set {
-                if ((this.DateHeureCreationField.Equals(value) != true)) {
-                    this.DateHeureCreationField = value;
-                    this.RaisePropertyChanged("DateHeureCreation");
-                }
             }
         }
         
@@ -180,6 +170,32 @@ namespace WebUI.ServiceReferencePartie {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebUI.ServiceReferencePartie.JoueurPartieClient JoueurCourant {
+            get {
+                return this.JoueurCourantField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JoueurCourantField, value) != true)) {
+                    this.JoueurCourantField = value;
+                    this.RaisePropertyChanged("JoueurCourant");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebUI.ServiceReferencePartie.JoueurPartieClient[] Joueurs {
+            get {
+                return this.JoueursField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JoueursField, value) != true)) {
+                    this.JoueursField = value;
+                    this.RaisePropertyChanged("Joueurs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Nom {
             get {
                 return this.NomField;
@@ -201,6 +217,269 @@ namespace WebUI.ServiceReferencePartie {
                 if ((this.SensField.Equals(value) != true)) {
                     this.SensField = value;
                     this.RaisePropertyChanged("Sens");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurPartieClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
+    [System.SerializableAttribute()]
+    public partial class JoueurPartieClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebUI.ServiceReferencePartie.CarteClient[] MesCartesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebUI.ServiceReferencePartie.DeClient[] MesDesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PseudoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebUI.ServiceReferencePartie.CarteClient[] MesCartes {
+            get {
+                return this.MesCartesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MesCartesField, value) != true)) {
+                    this.MesCartesField = value;
+                    this.RaisePropertyChanged("MesCartes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebUI.ServiceReferencePartie.DeClient[] MesDes {
+            get {
+                return this.MesDesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MesDesField, value) != true)) {
+                    this.MesDesField = value;
+                    this.RaisePropertyChanged("MesDes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pseudo {
+            get {
+                return this.PseudoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PseudoField, value) != true)) {
+                    this.PseudoField = value;
+                    this.RaisePropertyChanged("Pseudo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarteClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
+    [System.SerializableAttribute()]
+    public partial class CarteClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EffetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Effet {
+            get {
+                return this.EffetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EffetField, value) != true)) {
+                    this.EffetField = value;
+                    this.RaisePropertyChanged("Effet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
+    [System.SerializableAttribute()]
+    public partial class DeClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
                 }
             }
         }

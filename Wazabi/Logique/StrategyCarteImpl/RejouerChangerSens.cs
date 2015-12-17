@@ -1,6 +1,5 @@
-﻿using Wazabi.Model;
-using System;
-using System.Linq;
+﻿using System.Linq;
+using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {

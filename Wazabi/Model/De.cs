@@ -16,7 +16,6 @@ namespace Wazabi.Model
     {
         public int Id { get; set; }
         public string Valeur { get; set; }
-        public int NbFace { get; set; }
         public string ImageRef { get; set; }
     }
 }

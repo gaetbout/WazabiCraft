@@ -1,6 +1,4 @@
-﻿using System;
-using Wazabi.Model;
-using System.Linq;
+﻿using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {
@@ -12,7 +10,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
 
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
         {
-           /* base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
+            /* base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
             if (partie.JoueursQuiDoiventPasser.Where(x=> x.Id == joueurAdverse.Id).Count() == 1)
             {
                 throw new ArgumentException("Ce joueur doit déjà passer son tour");

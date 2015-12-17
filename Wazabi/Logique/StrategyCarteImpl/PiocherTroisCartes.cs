@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {
     public class PiocherTroisCartes : StrategyCarte
     {
-
         /**
         * Permet de piocher 3 cartes
         **/
- 
+
         public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbCartes)
         {
             if (nbCartes != 3)

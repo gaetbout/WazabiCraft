@@ -10,7 +10,6 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Effet" ColumnName="Effet" />
           <ScalarProperty Name="ImageRef" ColumnName="ImageRef" />
-          <ScalarProperty Name="NbCartes" ColumnName="NbCartes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,7 +18,6 @@
         <MappingFragment StoreEntitySet="Des">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Valeur" ColumnName="Valeur" />
-          <ScalarProperty Name="NbFace" ColumnName="NbFace" />
           <ScalarProperty Name="ImageRef" ColumnName="ImageRef" />
         </MappingFragment>
       </EntityTypeMapping>

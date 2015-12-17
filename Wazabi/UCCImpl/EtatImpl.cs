@@ -1,4 +1,5 @@
-﻿using Wazabi.Model;
+﻿using Wazabi.Client;
+using Wazabi.Model;
 
 namespace Wazabi.UCCImpl
 {

@@ -15,7 +15,7 @@ namespace WebUI.ServiceReferenceJoueur {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JoueurClient", Namespace="http://schemas.datacontract.org/2004/07/Wazabi.Client")]
     [System.SerializableAttribute()]
     public partial class JoueurClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

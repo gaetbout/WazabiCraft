@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using Wazabi.Client;
 
 namespace Wazabi.UCC
 {

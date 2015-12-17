@@ -5,6 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Web.Hosting;
 using System.Xml.Linq;
+using Wazabi.Client;
 using Wazabi.Model;
 using Wazabi.UCC;
 
@@ -13,17 +14,17 @@ namespace Wazabi.UCCImpl
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] // 1 seule instance est renvoyé
     public class GestionPartie : IGestionPartie
     {
-        public string BUT;
-        public int NB_CARTES_JOUEUR;
-        public int NB_CARTES_TOTAL;
-        public int MIN_JOUEURS;
-        public int MAX_JOUEURS;
+        public string But;
+        public int NbCartesJoueur;
+        public int NbCartesTotal;
+        public int MinJoueurs;
+        public int MaxJoueurs;
 
         private readonly WazabiEntities context = new WazabiEntities();
         private GestionDe gestionDe;
         private GestionCarte gestionCarte = new GestionCarte();
-        public Partie partie = null;
-        public EtatImpl etat;
+        public Partie Partie = null;
+        public EtatImpl Etat;
 
         public void Init()
         {
@@ -39,11 +40,11 @@ namespace Wazabi.UCCImpl
 
             //Charger les données du jeu
             IEnumerable<XElement> donnees = from wazabi in xdoc.Descendants("wazabi") select wazabi;
-            this.BUT = donnees.First().Attribute("but").Value;
-            this.NB_CARTES_JOUEUR = int.Parse(donnees.First().Attribute("nbCartesParJoueur").Value);
-            this.NB_CARTES_TOTAL = int.Parse(donnees.First().Attribute("nbCartesTotal").Value);
-            this.MIN_JOUEURS = int.Parse(donnees.First().Attribute("minJoueurs").Value);
-            this.MAX_JOUEURS = int.Parse(donnees.First().Attribute("maxJoueurs").Value);
+            this.But = donnees.First().Attribute("but").Value;
+            this.NbCartesJoueur = int.Parse(donnees.First().Attribute("nbCartesParJoueur").Value);
+            this.NbCartesTotal = int.Parse(donnees.First().Attribute("nbCartesTotal").Value);
+            this.MinJoueurs = int.Parse(donnees.First().Attribute("minJoueurs").Value);
+            this.MaxJoueurs = int.Parse(donnees.First().Attribute("maxJoueurs").Value);
 
             //Charges les données des dés 
             IEnumerable<XElement> des = from de in xdoc.Descendants("de") select de;
@@ -53,13 +54,12 @@ namespace Wazabi.UCCImpl
                 string check = face.Attribute("identif").Value;
                 if (!context.Des.Any(d => d.Valeur.Equals(check)))
                 {
-                    De tmp = new De();
-                    tmp.Valeur = face.Attribute("identif").Value;
-                    tmp.NbFace = int.Parse(face.Attribute("nbFaces").Value);
-                    context.Des.Add(tmp);
                     for (int i = 0; i < int.Parse(face.Attribute("nbFaces").Value); i++)
                     {
+                        De tmp = new De();
+                        tmp.Valeur = face.Attribute("identif").Value;
                         lesDes.Add(tmp);
+                        context.Des.Add(tmp);
                     }
                 }
             }
@@ -75,14 +75,16 @@ namespace Wazabi.UCCImpl
                 string check = carte.Attribute("codeEffet").Value;
                 if (!context.Cartes.Any(c => c.CodeEffet.Equals(check)))
                 {
-                    Carte tmp = new Carte();
-                    tmp.Cout = int.Parse(carte.Attribute("cout").Value);
-                    tmp.CodeEffet = carte.Attribute("codeEffet").Value;
-                    tmp.Description = carte.Value;
-                    tmp.Effet = carte.Attribute("effet").Value;
-                    tmp.ImageRef = carte.Attribute("src").Value;
-                    tmp.NbCartes = int.Parse(carte.Attribute("nb").Value);
-                    context.Cartes.Add(tmp);
+                    for (int i = 0; i < int.Parse(carte.Attribute("nb").Value); i++)
+                    {
+                        Carte tmp = new Carte();
+                        tmp.Cout = int.Parse(carte.Attribute("cout").Value);
+                        tmp.CodeEffet = carte.Attribute("codeEffet").Value;
+                        tmp.Description = carte.Value;
+                        tmp.Effet = carte.Attribute("effet").Value;
+                        tmp.ImageRef = carte.Attribute("src").Value;
+                        context.Cartes.Add(tmp);    
+                    }
                 }
             }
             context.SaveChanges();
@@ -104,32 +106,32 @@ namespace Wazabi.UCCImpl
                 return false;
             }
 
-            partie = new Partie();
-            partie.Createur = temp;
-            partie.EtatType = Partie.State.CREATION;
-            partie.DateHeureCreation = DateTime.Now;
-            partie.Nom = nom;
-            partie.Sens = true;
+            Partie = new Partie();
+            Partie.Createur = temp;
+            Partie.EtatType = Partie.State.CREATION;
+            Partie.DateHeureCreation = DateTime.Now;
+            Partie.Nom = nom;
+            Partie.Sens = true;
 
             JoueurPartie joueurPartie = new JoueurPartie();
             joueurPartie.Joueur = temp;
             joueurPartie.Ordre = 0;
 
-            this.partie.Joueurs.Add(joueurPartie);
+            Partie.Joueurs.Add(joueurPartie);
 
-            context.Parties.Add(partie);
+            context.Parties.Add(Partie);
             context.SaveChanges();
 
-            etat = new EtatCreation(context, partie);
+            Etat = new EtatCreation(context, Partie);
             return true;
         }
 
 
         public bool LancerPartie()
         {
-            if (this.etat.LancerPartie())
+            if (Etat.LancerPartie())
             {
-                etat = new EtatEnCours(context, partie);
+                Etat = new EtatEnCours(context, Partie);
                 InitPlateau();
                 return true;
             }
@@ -143,13 +145,13 @@ namespace Wazabi.UCCImpl
             {
                 throw new Exception("Le joueur qui essaie de rejoindre la partie n'existe pas en base de donnée");
             }
-            if (this.partie == null)
+            if (Partie == null)
             {
                 return false;
             }
-            if (this.etat.RejoindrePartie(temp))
+            if (Etat.RejoindrePartie(temp))
             {
-                if (this.partie.Joueurs.Count() == this.MIN_JOUEURS) LancerPartie();
+                if (Partie.Joueurs.Count() == this.MinJoueurs) LancerPartie();
                 return true;
             }
             return false;
@@ -157,52 +159,44 @@ namespace Wazabi.UCCImpl
 
         public PartieClient PartieCourante()
         {
-            if (this.partie == null)
+            if (Partie == null)
             {
                 return null;
             }
-            PartieClient partie = new PartieClient();
-            partie.Id = this.partie.Id;
-            partie.Nom = this.partie.Nom;
-            partie.DateHeureCreation = this.partie.DateHeureCreation;
-            partie.Etat = this.partie.Etat;
-            partie.Sens = this.partie.Sens;
-            return partie;
+
+            return new PartieClient(Partie);
         }
 
         private void InitPlateau()
         {
-            this.etat.InitPlateau(this.NB_CARTES_JOUEUR);
+            Etat.InitPlateau(this.NbCartesJoueur);
         }
-
 
         private void TourSuivant()
         {
-            this.etat.TourSuivant(this.gestionDe);
+            Etat.TourSuivant(this.gestionDe);
         }
 
         private JoueurPartie Suivant()
         {
-            return this.etat.Suivant();
+            return Etat.Suivant();
         }
-
 
         public void QuitterPartie(JoueurClient joueur)
         {
-            if (partie == null) throw new Exception("Aucune partie en cours, impossible de quitter!");
-            if (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id) == null)
+            if (Partie == null) throw new Exception("Aucune partie en cours, impossible de quitter!");
+            if (Partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id) == null)
                 throw new Exception("Joueur pas présent dans la partie, impossible de quitter!");
-            this.etat.QuitterPartie(joueur);
+            Etat.QuitterPartie(joueur);
         }
-
 
         public void CloturerPartie(Joueur vainqueur)
         {
-            if (partie == null)
+            if (Partie == null)
                 throw new Exception("On ne peut pas cloturer la partie car il n'y a pas de partie en cours!");
-            if (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == vainqueur.Id) == null)
+            if (Partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == vainqueur.Id) == null)
                 throw new Exception("Le vainqueur est pas présent dans la partie, impossible de cloturer!");
-            this.etat.CloturerPartie(vainqueur);
+            Etat.CloturerPartie(vainqueur);
         }
     }
 }
