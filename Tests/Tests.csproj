@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F82A742-2300-4C53-A2CF-B2E2BE618B3D}</ProjectGuid>
+    <ProjectGuid>{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tests</RootNamespace>
@@ -32,12 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\Wazabi\bin\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\Wazabi\bin\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -51,7 +45,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ServiceReference\Reference.cs">
+    <Compile Include="Service References\ServiceJoueur\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicePartie\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -59,18 +58,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Properties\DataSources\Wazabi.JoueurClient.datasource" />
-    <None Include="Service References\ServiceReference\GestionJoueur.wsdl" />
-    <None Include="Service References\ServiceReference\GestionJoueur.xsd">
+    <None Include="Service References\ServiceJoueur\GestionJoueur.wsdl" />
+    <None Include="Service References\ServiceJoueur\GestionJoueur.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\GestionJoueur1.xsd">
+    <None Include="Service References\ServiceJoueur\GestionJoueur1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\GestionJoueur2.xsd">
+    <None Include="Service References\ServiceJoueur\GestionJoueur2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\Tests.ServiceReference.JoueurClient.datasource">
+    <None Include="Service References\ServiceJoueur\Tests.ServiceJoueur.JoueurClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicePartie\GestionPartie.wsdl" />
+    <None Include="Service References\ServicePartie\GestionPartie.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicePartie\GestionPartie1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicePartie\GestionPartie2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicePartie\Tests.ServicePartie.JoueurPartieClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicePartie\Tests.ServicePartie.PartieClient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
@@ -78,19 +92,35 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServiceJoueur\" />
+    <WCFMetadataStorage Include="Service References\ServicePartie\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\GestionJoueur.disco" />
+    <None Include="Service References\ServiceJoueur\GestionJoueur.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceJoueur\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceJoueur\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\Reference.svcmap">
+    <None Include="Service References\ServiceJoueur\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicePartie\GestionPartie.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicePartie\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicePartie\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicePartie\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

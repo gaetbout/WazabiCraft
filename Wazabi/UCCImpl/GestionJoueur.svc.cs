@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Wazabi.Client;
@@ -60,6 +61,22 @@ namespace Wazabi.UCCImpl
 
             // Mdp incorrecte
             return null;
+        }
+
+        public ICollection<JoueurClient> GetJoueurs()
+        {
+            ICollection<JoueurClient> collection = new List<JoueurClient>();
+
+            foreach (Joueur joueur in context.Joueurs)
+            {
+                JoueurClient temp = new JoueurClient();
+                temp.ConfirmPassword = System.Text.Encoding.Default.GetString(joueur.MotDePasse);
+                temp.Id = joueur.Id;
+                temp.Mdp = System.Text.Encoding.Default.GetString(joueur.MotDePasse);
+                temp.Pseudo = joueur.Pseudo;
+                collection.Add(temp);
+            }
+            return collection;
         }
     }
 }

@@ -198,5 +198,51 @@ namespace Wazabi.UCCImpl
                 throw new Exception("Le vainqueur est pas présent dans la partie, impossible de cloturer!");
             Etat.CloturerPartie(vainqueur);
         }
+
+        public ICollection<PartieClient> GetParties()
+        {
+            ICollection<PartieClient> collection = new List<PartieClient>();
+
+            foreach (Partie partie in context.Parties)
+            {
+                JoueurPartieClient jpc = new JoueurPartieClient();
+                jpc.Id = partie.JoueurCourant.Id;
+                jpc.Pseudo = partie.JoueurCourant.Joueur.Pseudo;
+                PartieClient temp = new PartieClient();
+                temp.Etat = partie.Etat;
+                temp.Id = partie.Id;
+                temp.Nom = partie.Nom;
+                temp.Sens = partie.Sens;
+                temp.JoueurCourant = jpc;
+                collection.Add(temp);
+            }
+            return collection;
+        }
+
+
+        public ICollection<JoueurPartieClient> GetJoueurPartie(int idPartie)
+        {
+            ICollection<JoueurPartieClient> collection = new List<JoueurPartieClient>();
+
+            Partie partie = context.Parties.FirstOrDefault(p => p.Id == idPartie);
+
+            foreach (JoueurPartie jp in partie.Joueurs)
+            {
+                JoueurPartieClient jpc = new JoueurPartieClient();
+                jpc.Id = jp.Id;
+                jpc.Pseudo = jp.Joueur.Pseudo;
+                collection.Add(jpc);
+            }
+
+            return collection;
+        }
+
+
+        public void ClearBD()
+        {
+            context.Database.ExecuteSqlCommand("DELETE FROM JoueurParties");
+            context.Database.ExecuteSqlCommand("DELETE FROM Parties");
+            context.Database.ExecuteSqlCommand("DELETE FROM Joueurs");
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
 using Wazabi.Client;
 
 namespace Wazabi.UCC
@@ -23,5 +24,14 @@ namespace Wazabi.UCC
 
         [OperationContract]
         void QuitterPartie(JoueurClient joueur);
+
+        [OperationContract]
+        ICollection<PartieClient> GetParties();
+
+        [OperationContract]
+        ICollection<JoueurPartieClient> GetJoueurPartie(int idPartie);
+
+        [OperationContract]
+        void ClearBD();
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="27e4367a-1fbf-49d1-b1e1-dd980807b89e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53150/UCCImpl/GestionPartie.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GestionPartie.disco" MetadataType="Disco" ID="b9134cc7-c419-4418-916e-de1d15e9e00b" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?disco" />
+    <MetadataFile FileName="GestionPartie.xsd" MetadataType="Schema" ID="19c98204-b8e6-4825-a6ca-e9c277cbde0f" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionPartie1.xsd" MetadataType="Schema" ID="00b356fe-c77b-4e73-ab41-c455bb82607d" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionPartie2.xsd" MetadataType="Schema" ID="a4822137-5670-4821-adf6-8b5f2b08f0af" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionPartie.wsdl" MetadataType="Wsdl" ID="5ed1d475-61ba-4464-a2d4-fcd0a9002393" SourceId="1" SourceUrl="http://localhost:53150/UCCImpl/GestionPartie.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

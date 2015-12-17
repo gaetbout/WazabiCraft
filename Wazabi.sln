@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{E1991C16-67A7-4BAB-B570-F9CD04D8EB92}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wazabi", "Wazabi\Wazabi.csproj", "{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7} = {4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +29,10 @@ Global
 		{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7E6D6A-58D6-45E6-8AE9-3DAACD6107F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9BDD98-8D6D-45E8-B46A-661421F6EDCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

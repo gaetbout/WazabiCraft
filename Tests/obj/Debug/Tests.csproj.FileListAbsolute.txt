@@ -1,27 +1,5 @@
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.exe.config
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.exe
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\bin\Debug\Tests.pdb
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.exe
-C:\Users\pwasilewski\documents\visual studio 2013\Projects\Wazabi\Tests\obj\Debug\Tests.pdb
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\Tests.exe.config
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\Tests.exe
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\Tests.pdb
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\EntityFramework.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\EntityFramework.xml
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\bin\Debug\fr\EntityFramework.resources.dll
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\obj\Debug\Tests.exe
-C:\Users\gaetb\Desktop\Projet\WazabiCraft\Tests\obj\Debug\Tests.pdb
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.exe.config
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.exe
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.pdb
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\EntityFramework.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\EntityFramework.xml
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\fr\EntityFramework.resources.dll
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\obj\Debug\Tests.exe
-C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\obj\Debug\Tests.pdb
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.exe.config
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.exe
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.pdb
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.exe
+C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.pdb

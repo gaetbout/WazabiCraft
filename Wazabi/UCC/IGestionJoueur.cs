@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
 using Wazabi.Client;
 
 namespace Wazabi.UCC
@@ -11,5 +12,8 @@ namespace Wazabi.UCC
 
         [OperationContract]
         JoueurClient Connexion(JoueurClient joueur);
+
+        [OperationContract]
+        ICollection<JoueurClient> GetJoueurs();
     }
 }
