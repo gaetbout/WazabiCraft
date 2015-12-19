@@ -10,13 +10,9 @@ namespace Wazabi.Logique.StrategyCarteImpl
         * Permet de piocher 3 cartes
         **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbCartes)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbCartes)
         {
-            if (nbCartes != 3)
-            {
-                throw new ArgumentException("Peut piocher uniquement 3 cartes");
-            }
-            for (int i = 0; i < nbCartes; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Carte tmp = partie.Pioche.FirstOrDefault();
                 partie.Pioche.Remove(tmp);

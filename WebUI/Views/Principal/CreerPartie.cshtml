@@ -5,7 +5,10 @@
     Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
 }
 
-@using (Html.BeginForm("CreerPartie", "Principal", FormMethod.Post))
+@using (Html.BeginForm("CreerPartie", "Principal", FormMethod.Post, new
+{
+    @class = "form-signin"
+}))
 {
     <div class="form-group">
         @Html.TextBoxFor(modelItem => modelItem.Nom, "", new {@class = "form-control input-lg", autofocus = "autofocus", tabindex = "1", placeholder = "Nom de la partie"})

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Wazabi.Client;
+﻿using System.Runtime.Serialization;
 using Wazabi.Model;
 
 namespace Wazabi.Client
@@ -10,7 +8,6 @@ namespace Wazabi.Client
     {
         public JoueurClient()
         {
-            
         }
 
         public JoueurClient(Joueur joueur)

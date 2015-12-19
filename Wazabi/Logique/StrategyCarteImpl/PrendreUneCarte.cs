@@ -7,34 +7,40 @@ namespace Wazabi.Logique.StrategyCarteImpl
     public class PrendreUneCarte : StrategyCarte
     {
         /**
-         * Permet de piocher voler une carte à l'adversaire
+         * Permet de voler une carte à l'adversaire
          **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbCartes)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbCartes)
         {
-            if (nbCartes != 1)
-            {
-                throw new ArgumentException("Peut prendre voler une seule carte");
-            }
             base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
-            JoueurPartie joueurPartieAdverse = partie.Joueurs.Where(x => x.Id == joueurAdverse.Id).FirstOrDefault();
 
-            //Cas ou on vérifier que tous les joueurs nont plus de carte
+            JoueurPartie joueurPartieAdverse = partie.Joueurs.FirstOrDefault(x => x.Id == joueurAdverse.Id);
+            //Cas ou on vérifier que tous les joueurs n'ont plus de carte
             if (joueurPartieAdverse.Cartes.Count == 0)
             {
+                //Vérification si les autres joueurs ont encore des cartes
                 foreach (JoueurPartie jp in partie.Joueurs)
                 {
                     if (jp.Id != partie.JoueurCourant.Id && jp.Id != joueurPartieAdverse.Id)
                     {
                         if (jp.Cartes.Count > 0)
+                        {
                             throw new ArgumentException(
                                 "Le jouer adverse doit avoir au moins une carte et un autre joueur a au moins une carte");
+                        }
                     }
                 }
                 //On va dans la pioche
                 Carte c = partie.Pioche.FirstOrDefault();
-                partie.Pioche.Remove(c);
-                partie.JoueurCourant.Cartes.Add(c);
+                try
+                {
+                    partie.Pioche.Remove(c);
+                    partie.JoueurCourant.Cartes.Add(c);
+                }
+                catch (Exception e)
+                {
+                    //Le joueur courrant posède toutes les cartes
+                }
                 return true;
             }
 

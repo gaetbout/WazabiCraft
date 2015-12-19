@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Wazabi.Model;
+﻿using Wazabi.Model;
 
 namespace Wazabi.Logique.StrategyCarteImpl
 {
@@ -9,16 +8,16 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * Permet de faire rejouer le joueur courrant et change le sens de jeu 
          **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbDe)
         {
-            if (partie.Sens) //Bon sens joueur courant => joueur d'avant
+            foreach (var joueur in partie.Joueurs)
             {
-                partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre + 1);
+                if (partie.JoueurCourant.Id != joueur.Id)
+                {
+                    joueur.NbSkips++;
+                }
             }
-            else // mauvais sens => joueurCourant = joueur d'après
-            {
-                partie.JoueurCourant = partie.Joueurs.ElementAt(partie.JoueurCourant.Ordre - 1);
-            }
+
             partie.Sens = !partie.Sens;
             return true;
         }

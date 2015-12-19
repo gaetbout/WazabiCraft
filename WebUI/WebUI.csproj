@@ -104,6 +104,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\carousel.css" />
     <Content Include="Content\Error.css" />
     <Content Include="Content\signin.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -122,6 +123,9 @@
     <Content Include="images\carte_pickaxe.png" />
     <Content Include="images\carte_poulet.png" />
     <Content Include="images\carte_sorciere.png" />
+    <Content Include="images\des_donner.png" />
+    <Content Include="images\des_pioche.png" />
+    <Content Include="images\des_wazabi.png" />
     <Content Include="images\favicon_2.png" />
     <Content Include="images\fond.png" />
     <Content Include="images\logo_wazabicraft.png" />
@@ -147,6 +151,9 @@
     <None Include="Service References\ServiceReferencePartie\GestionPartie.disco" />
     <None Include="Service References\ServiceReferencePartie\configuration91.svcinfo" />
     <None Include="Service References\ServiceReferencePartie\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferencePartie\GestionPartie1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReferencePartie\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -212,6 +219,13 @@
     </Content>
     <Content Include="Views\Partie\Plateau.cshtml" />
     <Content Include="Views\Partie\PlateauEnAttente.cshtml" />
+    <Content Include="Service References\ServiceReferencePartie\WebUI.ServiceReferencePartie.JoueurPartieClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Partie\PlateauCarte.cshtml" />
+    <Content Include="Views\Partie\CarteSens.cshtml" />
+    <Content Include="Views\Partie\CarteAdversaire.cshtml" />
+    <Content Include="Views\Principal\VoirParties.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

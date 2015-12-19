@@ -1,30 +1,51 @@
-﻿@using WebUI.ServiceReferencePartie
-@model PartieClient
+﻿<meta http-equiv="refresh" content="5">
+@using WebUI.ServiceReferencePartie
+@model WebUI.ServiceReferencePartie.PartieClient
 @{
     ViewBag.Title = "Plateau en attente";
     Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
 }
 
 <p>
-    Tours de : @Model.JoueurCourant.Pseudo
-
     <div class="panel-heading">
+        <h4 class="list-group-item-heading">C'est à @Model.JoueurCourant.Pseudo de jouer !</h4>
+        <br/>
         <h4> Joueurs suivants</h4>
     </div>
     <div class="panel-body">
         @{
             IEnumerable<JoueurPartieClient> liste = Model.Joueurs;
-            
+
             if (!Model.Sens)
             {
                 liste = liste.Reverse();
             }
-
-            foreach (var joueur in liste)
-            {
-                <p>@joueur.Pseudo</p>
-            }
         }
-
+        <div class="list-group">
+            @{
+                foreach (var joueur in liste)
+                {
+                    var css = "";
+                    if (joueur.Id == Model.JoueurCourant.Id)
+                    {
+                        css = "active";
+                    }
+                    else if (joueur.IdJoueur == ViewBag.Id)
+                    {
+                        css = "list-group-item-success";
+                    }
+                    <div class="list-group-item @css">
+                        <h4 class="list-group-item-heading">@joueur.Pseudo</h4>
+                        <p class="list-group-item-text">
+                            Nb dés: @joueur.MesDes.Count()
+                            <br/>
+                            Nb cartes: @joueur.MesCartes.Count()
+                        </p>
+                    </div>
+                }
+            }
+        </div>
     </div>
 </p>
+
+<a href="@Url.Action("QuitterPartie")" class="btn btn-lg btn-primary btn-block btnsc">Quitter la partie</a>

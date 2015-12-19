@@ -15,11 +15,9 @@ namespace Wazabi.Model
             this.strategy = strategy;
         }
 
-        public bool executeStrategy()
+        public bool executeStrategy(Partie p, JoueurPartie jp, int nbe)
         {
-            //TODO 
-            return false;
-            //return strategy.faireOperation(null,null,0);
+            return strategy.faireOperation(p, jp, nbe);
         }
     }
 }

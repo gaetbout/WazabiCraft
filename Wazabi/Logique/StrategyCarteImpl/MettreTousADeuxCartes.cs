@@ -10,7 +10,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * Permet de mettre tous les joueurs à deux carte random ssi il ne s'agit pas du joueurCourant
          **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbDe)
         {
             foreach (JoueurPartie jpTmp in partie.Joueurs)
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.Xml.Linq;
 using Wazabi.Model;
 
 namespace Wazabi
@@ -9,44 +10,68 @@ namespace Wazabi
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] // 1 seule instance est renvoyé
     public class GestionDe : IGestionDe
     {
-        public readonly int NB_DES_JOUEUR;
-        public readonly int NB_DES_TOTAL;
-
         private readonly WazabiEntities context = new WazabiEntities();
 
-        private IList<De> faces;
+        private readonly int nbDesJoueur;
+        private readonly int nbDesTotal;
+        private IList<De> probabiliteDes = new List<De>();
 
-        public GestionDe(int nbDeJoueur, int nbTotal, IList<De> faces)
+        public GestionDe(IEnumerable<XElement> xml)
         {
-            this.NB_DES_JOUEUR = nbDeJoueur;
-            this.NB_DES_TOTAL = nbTotal;
-            this.faces = new List<De>(faces);
+            nbDesJoueur = int.Parse(xml.First().Attribute("nbParJoueur").Value);
+            nbDesTotal = int.Parse(xml.First().Attribute("nbTotalDes").Value);
+
+            foreach (var face in xml.Descendants("face"))
+            {
+                for (int i = 0; i < (int.Parse(face.Attribute("nbFaces").Value)); i++)
+                {
+                    De tmp = new De();
+                    tmp.Id = probabiliteDes.Count();
+                    tmp.Valeur = face.Attribute("identif").Value;
+                    tmp.ImageRef = face.Attribute("src").Value;
+
+                    probabiliteDes.Add(tmp);
+                }
+            }
         }
 
-        public IList<De> GenererDes()
+        public void GenererDes(ICollection<JoueurPartie> joueurs)
         {
-            List<De> desDB = faces.OrderBy(c => new Random().Next()).ToList();
-
-            IList<De> des = new List<De>();
-            for (int i = 0; i < NB_DES_JOUEUR; i++)
+            foreach (JoueurPartie joueur in joueurs)
             {
-                des.Add(desDB.ElementAt(new Random().Next(NB_DES_TOTAL)));
-            }
+                IList<De> liste = probabiliteDes.OrderBy(c => Guid.NewGuid()).ToList();
+                Random rand = new Random();
 
-            return des;
+                for (int i = 0; i < nbDesJoueur; i++)
+                {
+                    De nouvelleValeur = liste.ElementAt(rand.Next(probabiliteDes.Count));
+
+                    De de = new De();
+                    de.Valeur = nouvelleValeur.Valeur;
+                    de.ImageRef = nouvelleValeur.ImageRef;
+
+                    joueur.Des.Add(de);
+                    context.SaveChanges();
+                }
+            }
         }
 
-        public IList<De> MelangerDe(int nbrDes)
+        public void MelangerDe(JoueurPartie joueur)
         {
-            List<De> desDB = faces.OrderBy(c => new Random().Next()).ToList();
+            IList<De> liste = probabiliteDes.OrderBy(c => Guid.NewGuid()).ToList();
 
-            IList<De> des = new List<De>();
-            for (int i = 0; i < nbrDes; i++)
+            Random rand = new Random();
+
+            foreach (De de in joueur.Des)
             {
-                des.Add(desDB.ElementAt(new Random().Next(nbrDes)));
-            }
+                double random = rand.NextDouble();
+                int count = probabiliteDes.Count;
+                int random2 = (int) Math.Floor(random*count);
+                De nouvelleValeur = liste.ElementAt(random2);
 
-            return des;
+                de.Valeur = nouvelleValeur.Valeur;
+                de.ImageRef = nouvelleValeur.ImageRef;
+            }
         }
     }
 }

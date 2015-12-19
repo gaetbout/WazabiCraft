@@ -63,6 +63,11 @@ namespace WebUI.Controllers
             }
         }
 
+        public ActionResult VoirParties()
+        {
+            return View(Repository.GetParties());
+        }
+
         public PartialViewResult Pseudo(Session session)
         {
             return PartialView(session);

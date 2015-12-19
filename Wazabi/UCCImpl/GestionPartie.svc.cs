@@ -14,20 +14,25 @@ namespace Wazabi.UCCImpl
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] // 1 seule instance est renvoyé
     public class GestionPartie : IGestionPartie
     {
-        public string But;
-        public int NbCartesJoueur;
-        public int NbCartesTotal;
+        private string But;
+        private int NbCartesJoueur;
+        private int NbCartesTotal;
         public int MinJoueurs;
-        public int MaxJoueurs;
+        private int MaxJoueurs;
 
-        private readonly WazabiEntities context = new WazabiEntities();
-        private GestionDe gestionDe;
-        private GestionCarte gestionCarte = new GestionCarte();
-        public Partie Partie = null;
+        public readonly WazabiEntities context = new WazabiEntities();
+        public GestionDe gestionDe;
+        public GestionCarte gestionCarte;
+        public Partie Partie;
         public EtatImpl Etat;
 
         public void Init()
         {
+            if (But != null)
+            {
+                return;
+            }
+
             XDocument xdoc;
             try
             {
@@ -40,54 +45,19 @@ namespace Wazabi.UCCImpl
 
             //Charger les données du jeu
             IEnumerable<XElement> donnees = from wazabi in xdoc.Descendants("wazabi") select wazabi;
-            this.But = donnees.First().Attribute("but").Value;
-            this.NbCartesJoueur = int.Parse(donnees.First().Attribute("nbCartesParJoueur").Value);
-            this.NbCartesTotal = int.Parse(donnees.First().Attribute("nbCartesTotal").Value);
-            this.MinJoueurs = int.Parse(donnees.First().Attribute("minJoueurs").Value);
-            this.MaxJoueurs = int.Parse(donnees.First().Attribute("maxJoueurs").Value);
+            But = donnees.First().Attribute("but").Value;
+            NbCartesJoueur = int.Parse(donnees.First().Attribute("nbCartesParJoueur").Value);
+            NbCartesTotal = int.Parse(donnees.First().Attribute("nbCartesTotal").Value);
+            MinJoueurs = int.Parse(donnees.First().Attribute("minJoueurs").Value);
+            MaxJoueurs = int.Parse(donnees.First().Attribute("maxJoueurs").Value);
 
             //Charges les données des dés 
-            IEnumerable<XElement> des = from de in xdoc.Descendants("de") select de;
-            IList<De> lesDes = new List<De>();
-            foreach (var face in des.Descendants("face"))
-            {
-                string check = face.Attribute("identif").Value;
-                if (!context.Des.Any(d => d.Valeur.Equals(check)))
-                {
-                    for (int i = 0; i < int.Parse(face.Attribute("nbFaces").Value); i++)
-                    {
-                        De tmp = new De();
-                        tmp.Valeur = face.Attribute("identif").Value;
-                        lesDes.Add(tmp);
-                        context.Des.Add(tmp);
-                    }
-                }
-            }
-
-            GestionDe gestionDe = new GestionDe(int.Parse(des.First().Attribute("nbParJoueur").Value),
-                int.Parse(des.First().Attribute("nbTotalDes").Value), lesDes);
+            IEnumerable<XElement> desXML = from de in xdoc.Descendants("de") select de;
+            gestionDe = new GestionDe(desXML);
 
             //Charger les cartes 
-            IEnumerable<XElement> cartes = from carte in xdoc.Descendants("carte") select carte;
-            // Read cartes
-            foreach (var carte in cartes)
-            {
-                string check = carte.Attribute("codeEffet").Value;
-                if (!context.Cartes.Any(c => c.CodeEffet.Equals(check)))
-                {
-                    for (int i = 0; i < int.Parse(carte.Attribute("nb").Value); i++)
-                    {
-                        Carte tmp = new Carte();
-                        tmp.Cout = int.Parse(carte.Attribute("cout").Value);
-                        tmp.CodeEffet = carte.Attribute("codeEffet").Value;
-                        tmp.Description = carte.Value;
-                        tmp.Effet = carte.Attribute("effet").Value;
-                        tmp.ImageRef = carte.Attribute("src").Value;
-                        context.Cartes.Add(tmp);
-                    }
-                }
-            }
-            context.SaveChanges();
+            IEnumerable<XElement> cartesXML = from carte in xdoc.Descendants("carte") select carte;
+            gestionCarte = new GestionCarte(cartesXML, NbCartesTotal);
         }
 
         public bool CreerPartie(JoueurClient joueur, string nom)
@@ -100,7 +70,7 @@ namespace Wazabi.UCCImpl
 
             Partie partieEnCours =
                 context.Parties.FirstOrDefault(
-                    p => p.Etat == (int)Partie.State.CREATION || p.Etat == (int)Partie.State.EN_COURS);
+                    p => p.Etat == (int) Partie.State.CREATION || p.Etat == (int) Partie.State.EN_COURS);
             if (partieEnCours != null)
             {
                 return false;
@@ -113,29 +83,18 @@ namespace Wazabi.UCCImpl
             Partie.Nom = nom;
             Partie.Sens = true;
 
-            JoueurPartie joueurPartie = new JoueurPartie();
-            joueurPartie.Joueur = temp;
-            joueurPartie.Ordre = 0;
-
-            Partie.Joueurs.Add(joueurPartie);
-
             context.Parties.Add(Partie);
             context.SaveChanges();
 
-            Etat = new EtatCreation(context, Partie);
-            return true;
+            Etat = new EtatCreation(this);
+
+            return Etat.RejoindrePartie(temp);
         }
 
 
         public bool LancerPartie()
         {
-            if (Etat.LancerPartie())
-            {
-                Etat = new EtatEnCours(context, Partie);
-                InitPlateau();
-                return true;
-            }
-            return false;
+            return Etat.LancerPartie();
         }
 
         public bool RejoindrePartie(JoueurClient joueur)
@@ -145,16 +104,12 @@ namespace Wazabi.UCCImpl
             {
                 throw new Exception("Le joueur qui essaie de rejoindre la partie n'existe pas en base de donnée");
             }
-            if (Partie == null)
+            if (Partie == null || Partie.Joueurs.Any(j => j.Joueur_Id == temp.Id))
             {
                 return false;
             }
-            if (Etat.RejoindrePartie(temp))
-            {
-                if (Partie.Joueurs.Count() == this.MinJoueurs) LancerPartie();
-                return true;
-            }
-            return false;
+
+            return Etat.RejoindrePartie(temp);
         }
 
         public PartieClient PartieCourante()
@@ -163,17 +118,19 @@ namespace Wazabi.UCCImpl
             {
                 return null;
             }
+
             return Etat.PartieCourante();
         }
 
-        private void InitPlateau()
+        public void InitPlateau()
         {
-            Etat.InitPlateau(this.NbCartesJoueur);
+            Etat.InitPlateau(NbCartesJoueur);
+            TourSuivant();
         }
 
-        private void TourSuivant()
+        public void TourSuivant()
         {
-            Etat.TourSuivant(this.gestionDe);
+            Etat.TourSuivant(gestionDe);
         }
 
         private JoueurPartie Suivant()
@@ -204,18 +161,13 @@ namespace Wazabi.UCCImpl
 
             foreach (Partie partie in context.Parties)
             {
-                JoueurPartieClient jpc = new JoueurPartieClient();
-                jpc.Id = partie.JoueurCourant.Id;
-                jpc.Pseudo = partie.JoueurCourant.Joueur.Pseudo;
-                PartieClient temp = new PartieClient();
-                temp.Etat = partie.Etat;
-                temp.Id = partie.Id;
-                temp.Nom = partie.Nom;
-                temp.Sens = partie.Sens;
-                temp.JoueurCourant = jpc;
-                collection.Add(temp);
+                if (partie.EtatType == Partie.State.FINIE)
+                {
+                    PartieClient temp = new PartieClient(partie);
+                    collection.Add(temp);
+                }
             }
-            return collection;
+            return collection.OrderByDescending(p => p.Id).ToList();
         }
 
 
@@ -227,9 +179,7 @@ namespace Wazabi.UCCImpl
 
             foreach (JoueurPartie jp in partie.Joueurs)
             {
-                JoueurPartieClient jpc = new JoueurPartieClient();
-                jpc.Id = jp.Id;
-                jpc.Pseudo = jp.Joueur.Pseudo;
+                JoueurPartieClient jpc = new JoueurPartieClient(jp);
                 collection.Add(jpc);
             }
 
@@ -239,9 +189,37 @@ namespace Wazabi.UCCImpl
 
         public void ClearBD()
         {
-            context.Database.ExecuteSqlCommand("DELETE FROM JoueurParties");
-            context.Database.ExecuteSqlCommand("DELETE FROM Parties");
-            context.Database.ExecuteSqlCommand("DELETE FROM Joueurs");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[DeJoueurPartie]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurPartieCarte]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurParties]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[PartieCarte]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Parties]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Joueurs]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Des]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Cartes]");
+        }
+
+
+        public bool ActionDes(Dictionary<string, string> dictionary)
+        {
+            return Etat.ActionDes(dictionary);
+        }
+
+        public bool ActionCartes(string codeEffet, string idJoueur, string value)
+        {
+            JoueurPartie joueurCourant = Partie.JoueurCourant;
+            Carte carte = joueurCourant.Cartes.FirstOrDefault(c => c.CodeEffet.Equals(codeEffet));
+
+            if (joueurCourant.Des.Count(d => d.Valeur.Equals("w")) >= carte.Cout &&
+                Etat.ActionCartes(codeEffet, idJoueur, value))
+            {
+                joueurCourant.Cartes.Remove(carte);
+                Partie.Pioche.Add(carte);
+
+                context.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

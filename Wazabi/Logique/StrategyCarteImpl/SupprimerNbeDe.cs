@@ -13,26 +13,15 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * Permet de supprimer nbDe (1 ou 2) au joueur courant
          * */
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbDe)
         {
             if (nbDe < 0 || nbDe > 2)
             {
                 throw new ArgumentException("Le nombre de Dé a supprimer doit être égal à 1 ou 2");
             }
-            if (nbDe == 1)
+            if (nbDe == 1 && partie.JoueurCourant.Des.Count(de => de.Valeur.Equals("d")) >= 2)
             {
-                int d = 0;
-                foreach (De de in partie.JoueurCourant.Des)
-                {
-                    if (de.Valeur.Equals("d"))
-                    {
-                        d++;
-                    }
-                }
-                if (d >= 2)
-                {
-                    return false;
-                }
+                return false;
             }
             for (int i = 0; i < nbDe; i++)
             {

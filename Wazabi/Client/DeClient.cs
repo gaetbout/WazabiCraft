@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using Wazabi.Model;
+﻿using Wazabi.Model;
 
 namespace Wazabi.Client
 {
@@ -11,7 +6,6 @@ namespace Wazabi.Client
     {
         public DeClient()
         {
-            
         }
 
         public DeClient(De de)

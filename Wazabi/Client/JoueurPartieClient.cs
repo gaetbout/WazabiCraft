@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Web;
 using Wazabi.Model;
 
 namespace Wazabi.Client
@@ -11,12 +8,12 @@ namespace Wazabi.Client
     {
         public JoueurPartieClient()
         {
-            
         }
 
         public JoueurPartieClient(JoueurPartie joueurPartie)
         {
             Id = joueurPartie.Id;
+            IdJoueur = joueurPartie.Joueur_Id;
             Pseudo = joueurPartie.Joueur.Pseudo;
             MesCartes = new List<CarteClient>();
             foreach (Carte carte in joueurPartie.Cartes)
@@ -32,6 +29,9 @@ namespace Wazabi.Client
 
         [DataMember]
         public int Id { get; set; }
+
+        [DataMember]
+        public int IdJoueur { get; set; }
 
         [DataMember]
         public string Pseudo { get; set; }

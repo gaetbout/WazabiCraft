@@ -10,10 +10,12 @@ namespace Wazabi.Logique
          * Cette méthode vérifier que le joueur actuel de la partie n'est pas le joueur passé en paramètre 
          **/
 
-        protected internal void verifierJoueurCourrantDifferentJoueurParam(Partie partie, Joueur joueurACheck)
+        protected internal void verifierJoueurCourrantDifferentJoueurParam(Partie partie, JoueurPartie joueurACheck)
         {
-            if (partie.JoueurCourant.Id != (joueurACheck.Id))
+            if (partie.JoueurCourant.Id == (joueurACheck.Id))
+            {
                 throw new ArgumentException("Joueur actuel identique au joueur dont il faut faire l'action");
+            }
         }
 
         /**
@@ -34,6 +36,6 @@ namespace Wazabi.Logique
             return tmp;
         }
 
-        public abstract bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe);
+        public abstract bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbDe);
     }
 }

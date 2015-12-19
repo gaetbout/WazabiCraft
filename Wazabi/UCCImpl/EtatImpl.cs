@@ -5,13 +5,11 @@ namespace Wazabi.UCCImpl
 {
     public abstract class EtatImpl
     {
-        protected internal readonly WazabiEntities context;
-        protected internal readonly Partie partie;
+        protected internal readonly GestionPartie gestionPartie;
 
-        public EtatImpl(WazabiEntities cont, Partie partie)
+        public EtatImpl(GestionPartie gestionPartie)
         {
-            this.context = cont;
-            this.partie = partie;
+            this.gestionPartie = gestionPartie;
         }
 
         public abstract bool LancerPartie();
@@ -22,5 +20,7 @@ namespace Wazabi.UCCImpl
         public abstract void QuitterPartie(JoueurClient joueur);
         public abstract void CloturerPartie(Joueur vainqueur);
         public abstract PartieClient PartieCourante();
+        public abstract bool ActionDes(System.Collections.Generic.Dictionary<string, string> dictionary);
+        public abstract bool ActionCartes(string codeEffet, string idJoueur = "0", string value = "0");
     }
 }

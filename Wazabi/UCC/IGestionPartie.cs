@@ -29,9 +29,18 @@ namespace Wazabi.UCC
         ICollection<PartieClient> GetParties();
 
         [OperationContract]
+        void TourSuivant();
+
+        [OperationContract]
         ICollection<JoueurPartieClient> GetJoueurPartie(int idPartie);
 
         [OperationContract]
         void ClearBD();
+
+        [OperationContract]
+        bool ActionDes(Dictionary<string, string> dictionary);
+
+        [OperationContract]
+        bool ActionCartes(string codeEffet, string idJoueur, string value);
     }
 }

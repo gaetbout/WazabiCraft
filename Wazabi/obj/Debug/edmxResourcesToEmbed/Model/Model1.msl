@@ -87,6 +87,7 @@
       <EndProperty Name="JoueurPartie">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
+      <Condition ColumnName="PartieJoueurPartie_JoueurPartie_Id" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="PartieJoueurPartie1" TypeName="WazabiModel.PartieJoueurPartie1" StoreEntitySet="JoueurParties">
       <EndProperty Name="Partie">

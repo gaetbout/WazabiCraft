@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Wazabi.Client" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Wazabi.Client" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Wazabi.Client" elementFormDefault="qualified"
+           targetNamespace="http://schemas.datacontract.org/2004/07/Wazabi.Client"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="JoueurClient">
     <xs:sequence>
       <xs:element minOccurs="0" name="ConfirmPassword" nillable="true" type="xs:string" />
@@ -11,18 +14,22 @@
   <xs:element name="JoueurClient" nillable="true" type="tns:JoueurClient" />
   <xs:complexType name="PartieClient">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Createur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Etat" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="JoueurCourant" nillable="true" type="tns:JoueurPartieClient" />
       <xs:element minOccurs="0" name="Joueurs" nillable="true" type="tns:ArrayOfJoueurPartieClient" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sens" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Vainqueur" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PartieClient" nillable="true" type="tns:PartieClient" />
   <xs:complexType name="JoueurPartieClient">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdJoueur" type="xs:int" />
       <xs:element minOccurs="0" name="MesCartes" nillable="true" type="tns:ArrayOfCarteClient" />
       <xs:element minOccurs="0" name="MesDes" nillable="true" type="tns:ArrayOfDeClient" />
       <xs:element minOccurs="0" name="Pseudo" nillable="true" type="xs:string" />
@@ -37,6 +44,8 @@
   <xs:element name="ArrayOfCarteClient" nillable="true" type="tns:ArrayOfCarteClient" />
   <xs:complexType name="CarteClient">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CodeEffet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cout" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Effet" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
@@ -60,8 +69,15 @@
   <xs:element name="DeClient" nillable="true" type="tns:DeClient" />
   <xs:complexType name="ArrayOfJoueurPartieClient">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoueurPartieClient" nillable="true" type="tns:JoueurPartieClient" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoueurPartieClient" nillable="true"
+                  type="tns:JoueurPartieClient" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfJoueurPartieClient" nillable="true" type="tns:ArrayOfJoueurPartieClient" />
+  <xs:complexType name="ArrayOfPartieClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartieClient" nillable="true" type="tns:PartieClient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartieClient" nillable="true" type="tns:ArrayOfPartieClient" />
 </xs:schema>

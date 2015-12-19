@@ -81,7 +81,7 @@
     <Property Name="Ordre" Type="int" Nullable="false" />
     <Property Name="Joueur_Id" Type="int" Nullable="false" />
     <Property Name="NbSkips" Type="int" Nullable="false" />
-    <Property Name="PartieJoueurPartie_JoueurPartie_Id" Type="int" Nullable="false" />
+    <Property Name="PartieJoueurPartie_JoueurPartie_Id" Type="int" Nullable="true" />
     <Property Name="PartieJoueurPartie1_JoueurPartie_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Joueurs">
@@ -167,7 +167,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PartieJoueurPartie">
-    <End Role="Partie" Type="WazabiModel.Store.Parties" Multiplicity="1" />
+    <End Role="Partie" Type="WazabiModel.Store.Parties" Multiplicity="0..1" />
     <End Role="JoueurPartie" Type="WazabiModel.Store.JoueurParties" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Partie">

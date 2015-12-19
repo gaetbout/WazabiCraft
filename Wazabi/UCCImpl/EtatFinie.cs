@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Wazabi.Client;
 using Wazabi.Model;
 
@@ -6,8 +7,8 @@ namespace Wazabi.UCCImpl
 {
     public class EtatFinie : EtatImpl
     {
-        public EtatFinie(WazabiEntities cont, Partie partie)
-            : base(cont, partie)
+        public EtatFinie(GestionPartie gestionPartie)
+            : base(gestionPartie)
         {
         }
 
@@ -49,6 +50,16 @@ namespace Wazabi.UCCImpl
         public override PartieClient PartieCourante()
         {
             return null;
+        }
+
+        public override bool ActionDes(Dictionary<string, string> dictionary)
+        {
+            throw new Exception("La partie est déjà cloturée!");
+        }
+
+        public override bool ActionCartes(string codeEffet, string idJoueur, string value)
+        {
+            throw new Exception("La partie est déjà cloturée!");
         }
     }
 }

@@ -1,5 +1,114 @@
-﻿
+﻿@model WebUI.ServiceReferencePartie.PartieClient
 @{
-    ViewBag.Title = "Plateau";
+    ViewBag.Title = "Vos dés !";
     Layout = "~/Views/Shared/_PrincipalLayout.cshtml";
 }
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @{
+
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            for (int i = 1; i < @Model.JoueurCourant.MesDes.Count(); i++)
+            {
+                <li data-target="#myCarousel" data-slide-to="@i"></li>
+            }
+        }
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        @{
+            int j = 0;
+            foreach (var de in @Model.JoueurCourant.MesDes)
+            {
+                if (j == 0)
+                {
+                    <div class="item active">
+                        <img src="@de.Image" alt="@de.Value" class="img-responsive center-block">
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <img src="@de.Image" alt="@de.Value" class="img-responsive center-block">
+                    </div>
+                }
+                j++;
+            }
+        }
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+@{
+    var nombreDe = @Model.JoueurCourant.MesDes.Count(d => d.Value.Equals("d"));
+    var nombreCarte = @Model.JoueurCourant.MesDes.Count(d => d.Value.Equals("c"));
+    var nombreWazabi = @Model.JoueurCourant.MesDes.Count(d => d.Value.Equals("w"));
+}
+<p>
+    Vous avez @nombreWazabi wazabicraft à utiliser !
+    <br/>
+    Vous avez @nombreCarte cartes à piocher !
+    <br/>
+    Vous avez @nombreDe dés à distribuer !
+</p>
+<p>
+    @{
+        foreach (var joueur in Model.Joueurs)
+        {
+            if (joueur.Id != @Model.JoueurCourant.Id)
+            {
+                <p>Vous donnez @Html.TextBox(@joueur.Id.ToString(), null, new {min = "0", max = @nombreDe, maxlength = "2", type = "number"}) dés à @joueur.Pseudo (@joueur.MesDes.Count() dés).</p>
+            }
+        }
+    }
+</p>
+
+<a href="" id="submit" class="btn btn-lg btn-primary btn-block btnsc">Envoyer !</a>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $("#submit").click(function(event) {
+        event.preventDefault();
+
+        var compteur = 0;
+        $("p > :input").each(function() {
+            if (!$(this).val().trim()) {
+                $(this).val(0);
+            }
+            compteur += parseInt($(this).val());
+        });
+
+        if (parseInt(compteur) == '@nombreDe') {
+            var data = {};
+            $("p > :input").each(function() {
+                if ($(this).val().trim()) {
+                    data[$(this).attr('name')] = $(this).val();
+                }
+            });
+
+            var postData = { myDictionary: data };
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                url: '@Url.Action("Plateau", "Partie")',
+                data: JSON.stringify(postData),
+                success: function(data) {
+                    window.location.href = data;
+                }
+            });
+        }
+    });
+</script>

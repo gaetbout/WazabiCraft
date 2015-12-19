@@ -10,11 +10,11 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * Permet de mettre joueurAdverse à un carte random
          **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int nbDe)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int nbDe)
         {
             base.verifierJoueurCourrantDifferentJoueurParam(partie, joueurAdverse);
 
-            JoueurPartie jpTmp = partie.Joueurs.Where(x => x.Id == joueurAdverse.Id).FirstOrDefault();
+            JoueurPartie jpTmp = partie.Joueurs.FirstOrDefault(x => x.Id == joueurAdverse.Id);
             if (jpTmp.Cartes.Count < 2)
             {
                 throw new ArgumentException("Le joueur adverse doit avoir au moins deux cartes");

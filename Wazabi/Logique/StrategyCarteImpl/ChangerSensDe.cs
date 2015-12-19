@@ -13,7 +13,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
          * si sens == 1 => gauche
          **/
 
-        public override bool faireOperation(Partie partie, Joueur joueurAdverse, int sens)
+        public override bool faireOperation(Partie partie, JoueurPartie joueurAdverse, int sens)
         {
             if (sens != 0 && sens != 1)
             {
@@ -26,7 +26,7 @@ namespace Wazabi.Logique.StrategyCarteImpl
             }
             //on va du 2e au dernier 
             IList<De> dePrec = new List<De>(partie.Joueurs.FirstOrDefault().Des);
-            for (int i = 1; i < partie.Joueurs.Count; i++)
+            for (int i = 0; i < partie.Joueurs.Count; i++)
             {
                 JoueurPartie jTmp = partie.Joueurs.ElementAt(i);
                 IList<De> deTmp = new List<De>(jTmp.Des);

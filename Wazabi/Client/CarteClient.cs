@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using Wazabi.Model;
+﻿using Wazabi.Model;
 
 namespace Wazabi.Client
 {
@@ -8,7 +6,6 @@ namespace Wazabi.Client
     {
         public CarteClient()
         {
-            
         }
 
         public CarteClient(Carte carte)
@@ -17,6 +14,8 @@ namespace Wazabi.Client
             Effet = carte.Effet;
             Description = carte.Description;
             Image = carte.ImageRef;
+            Cout = carte.Cout;
+            CodeEffet = carte.CodeEffet;
         }
 
         public int Id { get; set; }
@@ -26,5 +25,9 @@ namespace Wazabi.Client
         public string Description { get; set; }
 
         public string Image { get; set; }
+
+        public int Cout { get; set; }
+
+        public string CodeEffet { get; set; }
     }
 }

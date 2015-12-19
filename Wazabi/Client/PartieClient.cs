@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Wazabi.Client;
 using Wazabi.Model;
 
 namespace Wazabi.Client
@@ -10,7 +9,6 @@ namespace Wazabi.Client
     {
         public PartieClient()
         {
-            
         }
 
         public PartieClient(Partie partie)
@@ -19,6 +17,8 @@ namespace Wazabi.Client
             Nom = partie.Nom;
             Sens = partie.Sens;
             Etat = partie.Etat;
+            Createur = partie.Createur.Pseudo;
+            DateCreation = partie.DateHeureCreation.ToString();
 
             Joueurs = new List<JoueurPartieClient>();
             foreach (JoueurPartie joueurPartie in partie.Joueurs)
@@ -27,7 +27,15 @@ namespace Wazabi.Client
             }
             if (partie.JoueurCourant != null)
             {
-                JoueurCourant = new JoueurPartieClient(partie.JoueurCourant);    
+                JoueurCourant = new JoueurPartieClient(partie.JoueurCourant);
+            }
+            if (partie.Vainqueur != null)
+            {
+                Vainqueur = partie.Vainqueur.Pseudo;
+            }
+            else
+            {
+                Vainqueur = "Pas de Vainqueur";
             }
         }
 
@@ -42,6 +50,15 @@ namespace Wazabi.Client
 
         [DataMember]
         public string Nom { get; set; }
+
+        [DataMember]
+        public string Vainqueur { get; set; }
+
+        [DataMember]
+        public string Createur { get; set; }
+
+        [DataMember]
+        public string DateCreation { get; set; }
 
         [DataMember]
         public List<JoueurPartieClient> Joueurs { get; set; }

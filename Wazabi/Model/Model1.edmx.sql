@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/17/2015 12:01:55
+-- Date Created: 12/18/2015 11:59:33
 -- Generated from EDMX file: C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -109,7 +109,7 @@ CREATE TABLE [dbo].[JoueurParties] (
     [Ordre] int  NOT NULL,
     [Joueur_Id] int  NOT NULL,
     [NbSkips] int  NOT NULL,
-    [PartieJoueurPartie_JoueurPartie_Id] int  NOT NULL,
+    [PartieJoueurPartie_JoueurPartie_Id] int  NULL,
     [PartieJoueurPartie1_JoueurPartie_Id] int  NULL
 );
 GO

@@ -146,7 +146,7 @@
     </AssociationSet>
   </EntityContainer>
   <Association Name="PartieJoueurPartie">
-    <End Type="WazabiModel.Partie" Role="Partie" Multiplicity="1" />
+    <End Type="WazabiModel.Partie" Role="Partie" Multiplicity="0..1" />
     <End Type="WazabiModel.JoueurPartie" Role="JoueurPartie" Multiplicity="*" />
   </Association>
   <Association Name="PartieJoueurPartie1">
