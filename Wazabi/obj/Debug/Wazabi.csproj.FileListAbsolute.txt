@@ -52,6 +52,7 @@ C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
 C:\Users\pwasilewski\Desktop\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\bin\wazabi.xml
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\bin\Wazabi.dll.config
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\bin\Wazabi.dll
@@ -66,3 +67,19 @@ C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\bin\fr\EntityFramework.re
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\wazabi.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.dll.config
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\Wazabi.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\DevTrends.WCFDataAnnotations.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\EntityFramework.SqlServer.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\bin\fr\EntityFramework.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Wazabi\obj\Debug\Wazabi.csprojResolveAssemblyReference.cache
+>>>>>>> origin/Default-branch

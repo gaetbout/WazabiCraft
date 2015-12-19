@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -161,11 +162,16 @@ namespace Wazabi.UCCImpl
 
             foreach (Partie partie in context.Parties)
             {
+<<<<<<< HEAD
                 if (partie.EtatType == Partie.State.FINIE)
                 {
                     PartieClient temp = new PartieClient(partie);
                     collection.Add(temp);
                 }
+=======
+                PartieClient temp = new PartieClient(partie);
+                collection.Add(temp);
+>>>>>>> origin/Default-branch
             }
             return collection.OrderByDescending(p => p.Id).ToList();
         }
@@ -189,12 +195,16 @@ namespace Wazabi.UCCImpl
 
         public void ClearBD()
         {
+<<<<<<< HEAD
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[DeJoueurPartie]");
+=======
+>>>>>>> origin/Default-branch
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurPartieCarte]");
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[JoueurParties]");
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[PartieCarte]");
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Parties]");
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Joueurs]");
+<<<<<<< HEAD
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Des]");
             context.Database.ExecuteSqlCommand("DELETE FROM [Wazabi].[dbo].[Cartes]");
         }
@@ -220,6 +230,8 @@ namespace Wazabi.UCCImpl
                 return true;
             }
             return false;
+=======
+>>>>>>> origin/Default-branch
         }
     }
 }

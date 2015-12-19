@@ -146,6 +146,7 @@ C:\Users\pwasilewski\Desktop\WazabiCraft\WebUI\bin\fr\System.Web.Helpers.resourc
 C:\Users\pwasilewski\Desktop\WazabiCraft\WebUI\bin\fr\System.Web.Mvc.resources.dll
 C:\Users\pwasilewski\Desktop\WazabiCraft\WebUI\obj\Debug\WebUI.dll
 C:\Users\pwasilewski\Desktop\WazabiCraft\WebUI\obj\Debug\WebUI.pdb
+<<<<<<< HEAD
 C:\Users\pwasilewski\Desktop\WazabiCraft\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\bin\WebUI.dll.config
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\bin\WebUI.dll
@@ -182,3 +183,39 @@ C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\bin\fr\System.Web.Mvc.reso
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\obj\Debug\WebUI.dll
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\WebUI\obj\Debug\WebUI.pdb
+=======
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\WebUI.dll.config
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\WebUI.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\WebUI.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Common.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Helpers.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Mvc.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Razor.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.Razor.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\WebActivator.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Common.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Common.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Razor.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Webpages.Razor.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Helpers.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\System.Web.Mvc.xml
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Razor.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Webpages.Razor.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\obj\Debug\WebUI.dll
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\obj\Debug\WebUI.pdb
+C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
+>>>>>>> origin/Default-branch

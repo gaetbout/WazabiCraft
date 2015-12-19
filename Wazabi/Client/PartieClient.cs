@@ -37,6 +37,14 @@ namespace Wazabi.Client
             {
                 Vainqueur = "Pas de Vainqueur";
             }
+            if (partie.Vainqueur != null)
+            {
+                Vainqueur = partie.Vainqueur.Pseudo;
+            }
+            else
+            {
+                Vainqueur = "Pas de Vainqueur";
+            }
         }
 
         [DataMember]

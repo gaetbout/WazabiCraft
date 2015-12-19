@@ -93,6 +93,7 @@
   <xs:element name="GetPartiesResponse">
     <xs:complexType>
       <xs:sequence>
+<<<<<<< HEAD
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0"
                     name="GetPartiesResult" nillable="true" type="q5:ArrayOfPartieClient" />
       </xs:sequence>
@@ -108,6 +109,12 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+=======
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0" name="GetPartiesResult" nillable="true" type="q5:ArrayOfPartieClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+>>>>>>> origin/Default-branch
   <xs:element name="GetJoueurPartie">
     <xs:complexType>
       <xs:sequence>
@@ -118,8 +125,12 @@
   <xs:element name="GetJoueurPartieResponse">
     <xs:complexType>
       <xs:sequence>
+<<<<<<< HEAD
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0"
                     name="GetJoueurPartieResult" nillable="true" type="q6:ArrayOfJoueurPartieClient" />
+=======
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0" name="GetJoueurPartieResult" nillable="true" type="q6:ArrayOfJoueurPartieClient" />
+>>>>>>> origin/Default-branch
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -133,6 +144,7 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+<<<<<<< HEAD
   <xs:element name="ActionDes">
     <xs:complexType>
       <xs:sequence>
@@ -164,4 +176,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+=======
+>>>>>>> origin/Default-branch
 </xs:schema>

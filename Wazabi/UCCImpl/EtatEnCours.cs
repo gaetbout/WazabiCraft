@@ -97,11 +97,17 @@ namespace Wazabi.UCCImpl
 
         public override void QuitterPartie(JoueurClient joueur)
         {
+<<<<<<< HEAD
             Partie partie = gestionPartie.Partie;
             JoueurPartie joueurASupprimer = partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id);
 
             partie.Joueurs.Remove(joueurASupprimer);
 
+=======
+            (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id)).Cartes.Clear();
+            (partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id)).Des.Clear();
+            partie.Joueurs.Remove(partie.Joueurs.FirstOrDefault(j => j.Joueur_Id == joueur.Id));
+>>>>>>> origin/Default-branch
             if (partie.Joueurs.Count() == 1)
             {
                 Joueur vainqueur = (partie.Joueurs.FirstOrDefault()).Joueur;
@@ -121,6 +127,7 @@ namespace Wazabi.UCCImpl
 
         public override void CloturerPartie(Joueur vainqueur)
         {
+<<<<<<< HEAD
             Partie partie = gestionPartie.Partie;
             partie.Pioche.Clear();
 
@@ -136,6 +143,13 @@ namespace Wazabi.UCCImpl
             gestionPartie.Etat = null;
 
             gestionPartie.context.SaveChanges();
+=======
+            this.partie.EtatType = Partie.State.FINIE;
+            this.partie.Etat = (int) Partie.State.FINIE;
+            this.partie.Vainqueur = vainqueur;
+            this.partie.Vainqueur_Id = this.partie.Vainqueur.Id;
+            context.SaveChanges();
+>>>>>>> origin/Default-branch
         }
 
         public override PartieClient PartieCourante()

@@ -121,6 +121,12 @@ namespace WebUI.ServiceReferenceJoueur {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/Connexion", ReplyAction="http://tempuri.org/IGestionJoueur/ConnexionResponse")]
         System.Threading.Tasks.Task<WebUI.ServiceReferenceJoueur.JoueurClient> ConnexionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/GetJoueurs", ReplyAction="http://tempuri.org/IGestionJoueur/GetJoueursResponse")]
+        WebUI.ServiceReferenceJoueur.JoueurClient[] GetJoueurs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionJoueur/GetJoueurs", ReplyAction="http://tempuri.org/IGestionJoueur/GetJoueursResponse")]
+        System.Threading.Tasks.Task<WebUI.ServiceReferenceJoueur.JoueurClient[]> GetJoueursAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -164,6 +170,14 @@ namespace WebUI.ServiceReferenceJoueur {
         
         public System.Threading.Tasks.Task<WebUI.ServiceReferenceJoueur.JoueurClient> ConnexionAsync(WebUI.ServiceReferenceJoueur.JoueurClient joueur) {
             return base.Channel.ConnexionAsync(joueur);
+        }
+        
+        public WebUI.ServiceReferenceJoueur.JoueurClient[] GetJoueurs() {
+            return base.Channel.GetJoueurs();
+        }
+        
+        public System.Threading.Tasks.Task<WebUI.ServiceReferenceJoueur.JoueurClient[]> GetJoueursAsync() {
+            return base.Channel.GetJoueursAsync();
         }
     }
 }

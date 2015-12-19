@@ -28,4 +28,23 @@
     <div class="form-group">
         <a href="@Url.Action("VoirParties")" class="btn btn-lg btn-info btn-block btnsc">Voir parties</a>
     </div>
+<<<<<<< HEAD
+=======
+}
+else if (Model.Etat == 0)
+{
+    <div class="form-group">
+        <a class="btn btn-lg btn-warning btn-block btnsc" href="@Url.Action("RejoindrePartie")">Rejoindre la partie</a>
+    </div>
+}
+else if (Model.Etat == 1)
+{
+    <div class="form-group">
+        <a class="btn btn-lg btn-danger btn-block btnsc" href="" disabled="disabled">Une partie est déjà en cours</a>
+    </div>
+}
+
+<div class="form-group">
+    <a class="btn btn-lg btn-info btn-block btnsc" href="@Url.Action("VoirParties")">Voir parties</a>
+>>>>>>> origin/Default-branch
 </div>

@@ -35,4 +35,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetJoueurs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJoueursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wazabi.Client" minOccurs="0" name="GetJoueursResult" nillable="true" type="q4:ArrayOfJoueurClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
