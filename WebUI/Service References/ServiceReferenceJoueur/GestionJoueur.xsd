@@ -12,10 +12,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JoueurClient" nillable="true" type="tns:JoueurClient" />
-  <xs:complexType name="ArrayOfJoueurClient">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoueurClient" nillable="true" type="tns:JoueurClient" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJoueurClient" nillable="true" type="tns:ArrayOfJoueurClient" />
 </xs:schema>

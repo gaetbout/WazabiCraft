@@ -1,9 +1,5 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
-=======
-using System.Diagnostics;
->>>>>>> origin/Default-branch
 using System.Linq;
 using Wazabi.Client;
 using Wazabi.Model;

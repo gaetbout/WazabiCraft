@@ -1,12 +1,4 @@
 ﻿using System;
-<<<<<<< HEAD
-=======
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
->>>>>>> origin/Default-branch
 using Tests.ServiceJoueur;
 using Tests.ServicePartie;
 

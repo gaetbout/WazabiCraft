@@ -222,12 +222,9 @@
     <Content Include="Service References\ServiceReferencePartie\WebUI.ServiceReferencePartie.JoueurPartieClient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-<<<<<<< HEAD
     <Content Include="Views\Partie\PlateauCarte.cshtml" />
     <Content Include="Views\Partie\CarteSens.cshtml" />
     <Content Include="Views\Partie\CarteAdversaire.cshtml" />
-=======
->>>>>>> origin/Default-branch
     <Content Include="Views\Principal\VoirParties.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

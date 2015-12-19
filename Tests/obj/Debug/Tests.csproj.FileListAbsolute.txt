@@ -3,7 +3,6 @@ C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\b
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.pdb
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.exe
 C:\Users\Quentinn\Dropbox\Institut Paul Lambin\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.pdb
-<<<<<<< HEAD
 C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.exe.config
 C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.exe
 C:\Users\pwasilewski\Desktop\WazabiCraft\Tests\bin\Debug\Tests.pdb
@@ -15,10 +14,3 @@ C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Tests\bin\Debug\Tests.pdb
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Tests\obj\Debug\Tests.exe
 C:\Users\pwasilewski\Desktop\Backup\WazabiCraft\Tests\obj\Debug\Tests.pdb
-=======
-C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.exe.config
-C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.exe
-C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Tests\bin\Debug\Tests.pdb
-C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.exe
-C:\Users\Quentinn\Desktop\Projet sem 13\WazabiCraft\Tests\obj\Debug\Tests.pdb
->>>>>>> origin/Default-branch

@@ -636,15 +636,12 @@ namespace WebUI.ServiceReferencePartie {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetParties", ReplyAction="http://tempuri.org/IGestionPartie/GetPartiesResponse")]
         System.Threading.Tasks.Task<WebUI.ServiceReferencePartie.PartieClient[]> GetPartiesAsync();
         
-<<<<<<< HEAD
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/TourSuivant", ReplyAction="http://tempuri.org/IGestionPartie/TourSuivantResponse")]
         void TourSuivant();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/TourSuivant", ReplyAction="http://tempuri.org/IGestionPartie/TourSuivantResponse")]
         System.Threading.Tasks.Task TourSuivantAsync();
         
-=======
->>>>>>> origin/Default-branch
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/GetJoueurPartie", ReplyAction="http://tempuri.org/IGestionPartie/GetJoueurPartieResponse")]
         WebUI.ServiceReferencePartie.JoueurPartieClient[] GetJoueurPartie(int idPartie);
         
@@ -656,7 +653,6 @@ namespace WebUI.ServiceReferencePartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/ClearBD", ReplyAction="http://tempuri.org/IGestionPartie/ClearBDResponse")]
         System.Threading.Tasks.Task ClearBDAsync();
-<<<<<<< HEAD
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/ActionDes", ReplyAction="http://tempuri.org/IGestionPartie/ActionDesResponse")]
         bool ActionDes(System.Collections.Generic.Dictionary<string, string> dictionary);
@@ -669,8 +665,6 @@ namespace WebUI.ServiceReferencePartie {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionPartie/ActionCartes", ReplyAction="http://tempuri.org/IGestionPartie/ActionCartesResponse")]
         System.Threading.Tasks.Task<bool> ActionCartesAsync(string codeEffet, string idJoueur, string value);
-=======
->>>>>>> origin/Default-branch
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -756,7 +750,6 @@ namespace WebUI.ServiceReferencePartie {
             return base.Channel.GetPartiesAsync();
         }
         
-<<<<<<< HEAD
         public void TourSuivant() {
             base.Channel.TourSuivant();
         }
@@ -765,8 +758,6 @@ namespace WebUI.ServiceReferencePartie {
             return base.Channel.TourSuivantAsync();
         }
         
-=======
->>>>>>> origin/Default-branch
         public WebUI.ServiceReferencePartie.JoueurPartieClient[] GetJoueurPartie(int idPartie) {
             return base.Channel.GetJoueurPartie(idPartie);
         }
@@ -782,7 +773,6 @@ namespace WebUI.ServiceReferencePartie {
         public System.Threading.Tasks.Task ClearBDAsync() {
             return base.Channel.ClearBDAsync();
         }
-<<<<<<< HEAD
         
         public bool ActionDes(System.Collections.Generic.Dictionary<string, string> dictionary) {
             return base.Channel.ActionDes(dictionary);
@@ -799,7 +789,5 @@ namespace WebUI.ServiceReferencePartie {
         public System.Threading.Tasks.Task<bool> ActionCartesAsync(string codeEffet, string idJoueur, string value) {
             return base.Channel.ActionCartesAsync(codeEffet, idJoueur, value);
         }
-=======
->>>>>>> origin/Default-branch
     }
 }
